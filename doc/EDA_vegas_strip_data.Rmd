@@ -18,6 +18,9 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(caret)
 library(readr)
+library(ggplot2)
+library(GGally)
+library(repr)
 
 
 
@@ -43,6 +46,154 @@ dim(training_set)
 dim(test_set)
 ```
 
-```{}
 
-##
+### EDA 1:- Cleaning and wrangling data
+
+
+Checking top rows and column names of the dataset. 
+
+
+```{r}
+
+head(training_set)
+
+colnames(training_set)
+```
+
+
+The dataset has 20 columns, out of which 19 are features and `Score` is response variable for which relationship based on estimators need to be determined. 
+
+The column/feature names are clearly not tidyverse compliant and have white spaces which are a bit difficult to deal with during data analysis. 
+
+```{r}
+#changing column names
+
+colnames(training_set) <- c("user_country", "num_reviews", "num_hotel_reviews", "helpful_votes", "score", "stay_period", "traveller_type", "pool", "gym", "tennis_court", "spa", "casino", "free_internet", "hotel_name", "hotel_stars", "rooms", "user_continent", "member_years", "review_month", "review_weekday")
+
+head(training_set)
+
+```
+
+
+Checking for any NAs in the dataset. 
+
+
+```{r}
+
+any(is.na(training_set))
+
+```
+
+
+This is good as we do not have any NAs in the dataset.
+
+
+Checking datatype for individual columns in dataset.
+
+```{r}
+
+str(training_set)
+
+# checking summary info for the training dataframe
+
+summary(training_set)
+```
+
+
+Clearly based on summary statistics, the column `member_years` has negative values which seems incorrect as number of years of membership of a customer cannot be negative. 
+
+
+```{r}
+sort(training_set$member_years)[1:10]
+
+```
+
+Replacing the minimum value by 0 as it logically makes sense to do so.
+
+
+```{r}
+training_set[training_set$member_years== -1806,"member_years" ] = 0 
+
+min(training_set$member_years)
+```
+
+
+
+
+### EDA 2 :- Exploring relationship b/w features and hotel score
+
+
+Now we have clean data with no NA values, we can start inspecting individual features to see if we can identify any relationship between target score and the features.
+
+
+```{r}
+str(training_set)
+
+```
+
+Clearly the dataset has two kind of features.
+
+- **User specific** : user_country, member_years, user_continent, traveller_type etc.
+- **Hotel Specific** : rooms, free_internet, hotel_stars etc. 
+
+
+And within each category we have both categorical and numerical features. 
+
+
+We can first re-arrange columns for better interpretation and **remove hotel name** column as we do not want it to be one of the  features. 
+
+
+```{r}
+training_set <- training_set[c("user_country", "user_continent", "traveller_type",  "stay_period","review_month", "review_weekday", "member_years", "num_reviews", "helpful_votes", "pool", "gym", "tennis_court", "spa", "casino", "free_internet", "hotel_stars", "rooms", "num_hotel_reviews","score")]
+
+head(training_set)
+
+```
+
+
+Creating vectors for different categories of features. 
+
+
+```{r}
+
+user_specific_features <- c("user_country", "user_continent", "traveller_type",  "stay_period","review_month", "review_weekday", "member_years", "num_reviews", "helpful_votes")
+
+hotel_specific_features <- c("pool", "gym", "tennis_court", "spa", "casino", "free_internet", "hotel_stars", "rooms", "num_hotel_reviews")
+
+
+categorical_features <- c("user_country", "user_continent", "traveller_type",  "stay_period","review_month", "review_weekday", "pool", "gym", "tennis_court", "spa", "casino", "free_internet", "hotel_stars")
+
+numerical_features <- c( "member_years", "num_reviews", "helpful_votes",  "rooms", "num_hotel_reviews")
+
+```
+
+We already explored the numerical features and checked min/max values using `summary()` statistics earlier. Lets try exploring the `categorical features`.
+
+
+```{r}
+for (category in categorical_features){
+  print(category)
+  print(table(training_set[category]))
+  cat("\n")
+  cat("\n")
+}
+
+
+```
+
+Interestingly, to our surprise there are  a few hotels on Vegas Strip which do not have casino. 
+
+Also based on initial exploration of individual groups in each category; we are suspicious that users' `countries` should not have an impact on the hotel score. Also there were more visitors from some of the countries(USA, Canada, Australia) as compared to others(France etc.). 
+Plus we may have a new user from different country so our model will more potentially fail to generalize and it might be a good idea to use `user_continents` instead. We will however do some more visualization analysis to confirm same. 
+
+
+#### Inspecting Score's relationship with hotel specific features
+
+
+```{r}
+options(repr.plot.height = 8, repr.plot.width = 8)
+ggpairs(data = training_set, columns = c(hotel_specific_features, "score"))
+
+```
+
+
