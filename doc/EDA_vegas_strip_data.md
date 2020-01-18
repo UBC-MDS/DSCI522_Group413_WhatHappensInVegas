@@ -663,7 +663,41 @@ Having explored relationship between categorical features and target
 score. Lets see how continous features affect hotel scores.
 
 ``` r
-ggpairs(training_set, c(numerical_features, "score"))
+ggpairs(training_set, c(numerical_features, "score"))+
+   theme(panel.background = element_rect(fill =   "lavender"))
 ```
 
 ![](EDA_vegas_strip_data_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+
+Clearly based on the plot above we can see that there is not much
+correlation between numeric features and the scores. This theoretically
+makes sense as number of reviews from users, number of hotel reviews
+etc. should have minimal impact on scores. But it might not be a good
+idea to remove these features at this stage. We can first create
+baseline model and do further feature engineering.
+
+### Summary of EDA
+
+  - Based on the exploratory data analysis of different features, we see
+    that some features like having a pool, free internet etc.
+    signiciantly improves hotel scores while other features like most of
+    numeric features, review days etc. do not seem to have any
+    significant impact on average hotel scores.
+
+  - Two of the features/columns - user\_country and hotel\_names were
+    removed as based on EDA, those either do not contribute to the
+    average hotel score or their contribution cannot be generalized.
+    There are other features which may be removed but we will first
+    create a baseline model and compare relative feature importances
+    with EDA analysis and then do feature reduction.
+
+### Next Steps
+
+The planned next course of action is as follows.
+
+  - Do pre-processing of dataset before developing linear
+    regression(and/or other generalized linear regression models)
+  - Develop models
+  - Feature engineering based on results
+  - Improve models(iterative)
+  - Report final results

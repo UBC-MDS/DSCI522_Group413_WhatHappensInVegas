@@ -332,5 +332,12 @@ Clearly based on the plot above we can see that there is not much correlation be
 
 ### Next Steps
 
+The planned next course of action is as follows. 
+
+- Do pre-processing of dataset before developing linear regression(and/or other generalized linear regression models) 
+- Develop models
+- Feature engineering based on results
+- Improve models(iterative)
+- Report final results
 
 
