@@ -5,11 +5,21 @@ date: "1/17/2020"
 output: github_document
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
 
 ```
+## Contents
+
+1. [Introduction](#introduction)
+2. [Cleaning and wrangling data](#cleaning-and-wrangling-data)
+3. [Exploring relationship between features and hotel scores](#exploring-relationship-between-features-and-hotel-scores)
+    - [Inspecting relationship between hotel scores and categorical features](#inspecting-relationship-between-hotel-scores-and-categorical-features)
+    - [Inspecting relationship between hotel scores and numeric features](#inspecting-relationship-between-hotel-scores-and-numeric-features)
+4. [Summary of EDA](#summary-of-eda)
+5. [Next Steps](#next-steps)
 
 
 ```{r}
@@ -27,7 +37,7 @@ library(gridExtra)
 
 ```
 
-## Introduction and train/test split
+## Introduction
 
 In this document we perform exploratory data analysis on `Vegas Strip` dataaset to see if there is any relationship between different amenities which hotels provide and the score which guests give to those hotels on the strip. This exploratory analysis will then be extended to see if a predictive regression model can be developed to estimate user ratings based on hotel amenities.
 
@@ -48,7 +58,7 @@ dim(test_set)
 ```
 
 
-### EDA 1:- Cleaning and wrangling data
+## Cleaning and wrangling data
 
 
 Checking top rows and column names of the dataset. 
@@ -121,7 +131,7 @@ min(training_set$member_years)
 
 
 
-### EDA 2 :- Exploring relationship b/w features and hotel score
+## Exploring relationship between features and hotel scores
 
 
 Now we have clean data with no NA values, we can start inspecting individual features to see if we can identify any relationship between target score and the features.
@@ -188,7 +198,7 @@ Also based on initial exploration of individual groups in each category; we are 
 Plus we may have a new user from different country so our model will more potentially fail to generalize and it might be a good idea to use `user_continents` instead. We will however do some more visualization analysis to confirm same. 
 
 
-#### Inspecting Score's relationship with categorical features
+### Inspecting relationship between hotel scores and categorical features
 
 
 Creating a function to plot categorical features against score
@@ -223,7 +233,7 @@ grid.arrange(cat_plots[[12]], cat_plots[[13]])
 ```
 
 
-##### Observations
+#### Observations
 
 - Clearly based on the plots, some of the categorical features have signiciant impact on average user scores for hotels while others have minimal impact. 
 
@@ -305,7 +315,7 @@ grid.arrange(cat_plots[[4]], cat_plots[[5]])
 
 
 
-#### Inspecting relationship between hotel scores and numeric features
+### Inspecting relationship between hotel scores and numeric features
 
 
 Having explored relationship between categorical features and target score. Lets see how continous features affect hotel scores. 
@@ -323,14 +333,14 @@ Clearly based on the plot above we can see that there is not much correlation be
 
 
 
-### Summary of EDA
+## Summary of EDA
 
 - Based on the exploratory data analysis of different features, we see that some features like having a pool, free internet etc. signiciantly improves hotel scores while other features like most of numeric features, review days etc. do not seem to have any significant impact on average hotel scores. 
 
 - Two of the features/columns - user_country and hotel_names were removed as based on EDA, those either do  not contribute to the average hotel score or their contribution cannot be generalized. There are other features which may be removed but we will first create  a baseline model and compare relative feature importances with EDA analysis and then do feature reduction. 
 
 
-### Next Steps
+## Next Steps
 
 The planned next course of action is as follows. 
 

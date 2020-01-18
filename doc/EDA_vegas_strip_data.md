@@ -3,6 +3,21 @@ EDA on Vegas Strip dataset
 Arun, Bronwyn, Manish
 1/17/2020
 
+## Contents
+
+1.  [Introduction](#introduction)
+2.  [Cleaning and wrangling data](#cleaning-and-wrangling-data)
+3.  [Exploring relationship between features and hotel
+    scores](#exploring-relationship-between-features-and-hotel-scores)
+      - [Inspecting relationship between hotel scores and categorical
+        features](#inspecting-relationship-between-hotel-scores-and-categorical-features)
+      - [Inspecting relationship between hotel scores and numeric
+        features](#inspecting-relationship-between-hotel-scores-and-numeric-features)
+4.  [Summary of EDA](#summary-of-eda)
+5.  [Next Steps](#next-steps)
+
+<!-- end list -->
+
 ``` r
 # loading required libraries
 library(tidyverse)
@@ -84,7 +99,7 @@ library(gridExtra)
     ## 
     ##     combine
 
-## Introduction and train/test split
+## Introduction
 
 In this document we perform exploratory data analysis on `Vegas Strip`
 dataaset to see if there is any relationship between different amenities
@@ -134,7 +149,7 @@ dim(test_set)
 
     ## [1] 126  20
 
-### EDA 1:- Cleaning and wrangling data
+## Cleaning and wrangling data
 
 Checking top rows and column names of the dataset.
 
@@ -307,7 +322,7 @@ min(training_set$member_years)
 
     ## [1] 0
 
-### EDA 2 :- Exploring relationship b/w features and hotel score
+## Exploring relationship between features and hotel scores
 
 Now we have clean data with no NA values, we can start inspecting
 individual features to see if we can identify any relationship between
@@ -514,7 +529,7 @@ more potentially fail to generalize and it might be a good idea to use
 `user_continents` instead. We will however do some more visualization
 analysis to confirm same.
 
-#### Inspecting Score’s relationship with categorical features
+### Inspecting relationship between hotel scores and categorical features
 
 Creating a function to plot categorical features against score
 
@@ -563,7 +578,7 @@ grid.arrange(cat_plots[[12]], cat_plots[[13]])
 
 ![](EDA_vegas_strip_data_files/figure-gfm/unnamed-chunk-13-4.png)<!-- -->
 
-##### Observations
+#### Observations
 
   - Clearly based on the plots, some of the categorical features have
     signiciant impact on average user scores for hotels while others
@@ -657,7 +672,7 @@ grid.arrange(cat_plots[[4]], cat_plots[[5]])
 
 ![](EDA_vegas_strip_data_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
-#### Inspecting relationship between hotel scores and numeric features
+### Inspecting relationship between hotel scores and numeric features
 
 Having explored relationship between categorical features and target
 score. Lets see how continous features affect hotel scores.
@@ -676,7 +691,7 @@ etc. should have minimal impact on scores. But it might not be a good
 idea to remove these features at this stage. We can first create
 baseline model and do further feature engineering.
 
-### Summary of EDA
+## Summary of EDA
 
   - Based on the exploratory data analysis of different features, we see
     that some features like having a pool, free internet etc.
@@ -691,7 +706,7 @@ baseline model and do further feature engineering.
     create a baseline model and compare relative feature importances
     with EDA analysis and then do feature reduction.
 
-### Next Steps
+## Next Steps
 
 The planned next course of action is as follows.
 
