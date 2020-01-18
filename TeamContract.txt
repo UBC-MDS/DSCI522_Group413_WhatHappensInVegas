@@ -1,0 +1,25 @@
+- Outline expectations for each person for each module of the project
+- No meeting friday (5am - 2pm)
+- Be aware of the workload from other courses
+- Give at least 2 hours warning before emergency meetings 
+- Maintain constant communication on slack
+- MAKE ISSUES ON GITHUB
+- Make other group members aware if you will be unable to meet expectations
+- Understanding that some members will focus on project work in the second half of the week (but work can be done all week)
+- No expectations to work on Sundays
+- No expectations to work as a group beyond while planning
+- Member expectations for Milestone 1:
+	Arun:
+		Script to download and save data
+		eda
+	Bronwyn:
+		Project Setup, includes:
+			Team Contract
+			CoC
+			Contri
+			License
+	Manish:
+		Proposal
+- Answering the research question: Do amenities have an effect on hotel ratings? Can we predict a hotel's average rating based on their amenities? 
+- Be concious of how late in the week you're completing project work, try to complete majority of the work Wednesday(?).  
+- Help Manish with other labs so he can get them done in the first half of the week.
