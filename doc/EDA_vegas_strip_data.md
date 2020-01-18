@@ -1,4 +1,4 @@
-EDA on Vegas Strip dataset
+EDA on Vegas Strip Hotel scores
 ================
 Arun, Bronwyn, Manish
 1/17/2020
@@ -16,89 +16,6 @@ Arun, Bronwyn, Manish
 4.  [Summary of EDA](#summary-of-eda)
 5.  [Next Steps](#next-steps)
 
-<!-- end list -->
-
-``` r
-# loading required libraries
-library(tidyverse)
-```
-
-    ## Warning: package 'tidyverse' was built under R version 3.5.3
-
-    ## -- Attaching packages ----------------------- tidyverse 1.3.0 --
-
-    ## v ggplot2 3.2.1     v purrr   0.3.3
-    ## v tibble  2.1.3     v dplyr   0.8.3
-    ## v tidyr   1.0.0     v stringr 1.4.0
-    ## v readr   1.3.1     v forcats 0.4.0
-
-    ## Warning: package 'ggplot2' was built under R version 3.5.3
-
-    ## Warning: package 'tibble' was built under R version 3.5.3
-
-    ## Warning: package 'tidyr' was built under R version 3.5.3
-
-    ## Warning: package 'readr' was built under R version 3.5.3
-
-    ## Warning: package 'purrr' was built under R version 3.5.3
-
-    ## Warning: package 'dplyr' was built under R version 3.5.3
-
-    ## Warning: package 'stringr' was built under R version 3.5.3
-
-    ## Warning: package 'forcats' was built under R version 3.5.3
-
-    ## -- Conflicts -------------------------- tidyverse_conflicts() --
-    ## x dplyr::filter() masks stats::filter()
-    ## x dplyr::lag()    masks stats::lag()
-
-``` r
-library(caret)
-```
-
-    ## Loading required package: lattice
-
-    ## 
-    ## Attaching package: 'caret'
-
-    ## The following object is masked from 'package:purrr':
-    ## 
-    ##     lift
-
-``` r
-library(readr)
-library(ggplot2)
-library(GGally)
-```
-
-    ## Warning: package 'GGally' was built under R version 3.5.3
-
-    ## 
-    ## Attaching package: 'GGally'
-
-    ## The following object is masked from 'package:dplyr':
-    ## 
-    ##     nasa
-
-``` r
-library(repr)
-```
-
-    ## Warning: package 'repr' was built under R version 3.5.3
-
-``` r
-library(gridExtra)
-```
-
-    ## Warning: package 'gridExtra' was built under R version 3.5.3
-
-    ## 
-    ## Attaching package: 'gridExtra'
-
-    ## The following object is masked from 'package:dplyr':
-    ## 
-    ##     combine
-
 ## Introduction
 
 In this document we perform exploratory data analysis on `Vegas Strip`
@@ -107,6 +24,19 @@ which hotels provide and the score which guests give to those hotels on
 the strip. This exploratory analysis will then be extended to see if a
 predictive regression model can be developed to estimate user ratings
 based on hotel amenities.
+
+Loading required libraries
+
+``` r
+# loading required libraries
+library(tidyverse)
+library(caret)
+library(readr)
+library(ggplot2)
+library(GGally)
+library(repr)
+library(gridExtra)
+```
 
 Before doing any EDA splitting dataset into training and test set.
 
@@ -223,7 +153,7 @@ any(is.na(training_set))
 
     ## [1] FALSE
 
-This is good as we do not have any NAs in the dataset.
+This is good as we **do not have any NAs** in the dataset.
 
 Checking datatype for individual columns in dataset.
 
