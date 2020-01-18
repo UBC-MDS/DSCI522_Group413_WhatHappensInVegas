@@ -71,6 +71,19 @@ library(repr)
 
     ## Warning: package 'repr' was built under R version 3.5.3
 
+``` r
+library(gridExtra)
+```
+
+    ## Warning: package 'gridExtra' was built under R version 3.5.3
+
+    ## 
+    ## Attaching package: 'gridExtra'
+
+    ## The following object is masked from 'package:dplyr':
+    ## 
+    ##     combine
+
 ## Introduction and train/test split
 
 In this document we perform exploratory data analysis on `Vegas Strip`
@@ -501,36 +514,147 @@ more potentially fail to generalize and it might be a good idea to use
 `user_continents` instead. We will however do some more visualization
 analysis to confirm same.
 
-#### Inspecting Score’s relationship with hotel specific features
+#### Inspecting Score’s relationship with categorical features
+
+Creating a function to plot categorical features against score
 
 ``` r
-options(repr.plot.height = 8, repr.plot.width = 8)
-ggpairs(data = training_set, columns = c(hotel_specific_features, "score"))
+# function to create plot for categorical features
+
+
+plot_categorical <- function(df, col_name_x, col_name_y = "score"){
+  
+  p <-  ggplot(df, aes_string(x = col_name_x, y  = col_name_y))+
+    geom_bar(stat = "summary", fun.y = "mean", fill = "royalblue3")+
+    geom_jitter()+
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5),panel.background = element_rect(fill =   "lavender"))+
+    ggtitle(paste("Average ", col_name_y," vs ", col_name_x))
+  p
+}
+
+# list to hold plots
+
+cat_plots <- vector('list', length(categorical_features))
+
+cat_plots <- lapply(categorical_features, plot_categorical, df = training_set)
+
+options(repr.plot.height = 10, repr.plot.width = 8)
+
+grid.arrange(cat_plots[[1]], cat_plots[[2]], cat_plots[[3]],  layout_matrix = rbind(c(1,1),c(2,3)))
 ```
 
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
 ![](EDA_vegas_strip_data_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+
+``` r
+grid.arrange(cat_plots[[4]], cat_plots[[5]], cat_plots[[6]], cat_plots[[7]])
+```
+
+![](EDA_vegas_strip_data_files/figure-gfm/unnamed-chunk-13-2.png)<!-- -->
+
+``` r
+grid.arrange(cat_plots[[8]], cat_plots[[9]], cat_plots[[10]], cat_plots[[11]])
+```
+
+![](EDA_vegas_strip_data_files/figure-gfm/unnamed-chunk-13-3.png)<!-- -->
+
+``` r
+grid.arrange(cat_plots[[12]], cat_plots[[13]])
+```
+
+![](EDA_vegas_strip_data_files/figure-gfm/unnamed-chunk-13-4.png)<!-- -->
+
+##### Observations
+
+  - Clearly based on the plots, some of the categorical features have
+    signiciant impact on average user scores for hotels while others
+    have minimal impact.
+
+  - As analyzed earlier, based on plots of `score vs country` and `score
+    vs continents`; it makes sense to use continents to study the
+    relationship based on continents as compared to countries. This will
+    help in better generalization of model.
+
+  - Most of the `Traveller types` seem to give similar averge hotel
+    ratings with an exception of `Solo` travelers who rated hotels a bit
+    lower. The travellers who visited in groups of friends rated the
+    hotels higher as compared to other travel groups.
+
+  - Features `stay_period` and `review_weekday` seems to have same
+    similar average scores for all stay periods and review days
+    respectively. The average scores however sligtly seems to dip for
+    mid-week reviews(Wednesday). We might need to see if these features
+    can be removed from the model altogether to analyze/predict average
+    scores.
+
+  - Amenities like `gym`,`tennis_court`, and `spa` seems to have slight
+    positive impact on hotel scores. We however might need to check any
+    collinearity within these features. Having a `pool` however improves
+    hotel scores signiciantly.
+
+  - For each `review_month`, there were small variations in score; it
+    will however be a good idea to reduce the number of categories to
+    four quarters rather than 12 months.
+
+  - Providing visitors with `free internet` seems to improve hotel
+    scores signicantly.
+
+  - Although there is a small sample of hotels with no `casino` but
+    those seems to have been rated better than the ones with casino. We
+    will need to check if this is just due to class imbalance.
+
+  - Different `Hotel stars` show variations in user scores. The trend
+    needs to be investigated though.
+
+Performing some wrangling based on the observations to further polish
+the dataset.
+
+``` r
+# removing user_countries column
+
+training_set <- training_set[, -c(1)]
+
+# Re-categorizing review months as quarters of a year rather than individual months. 
+training_set$review_month <- factor(training_set$review_month)
+
+levels(training_set$review_month) = list("Q1" = c("January", "February", "March"),
+                                       "Q2" = c("April", "May", "June"),
+                                       "Q3" = c("July", "August", "September"),
+                                       "Q4" = c("October", "November", "December"))
+
+
+# Re-categorizing review_weekday as weekends and weekdays rather than days of the week. 
+# including Friday in weekend category
+
+training_set$review_weekday <- factor(training_set$review_weekday)
+levels(training_set$review_weekday) <- list("Weekday" = c("Monday", "Tuesday", "Wednesday", "Thursday"),
+                                            "Weekend" = c("Friday","Saturday", "Sunday"))
+
+
+# renaming these columns 
+
+colnames(training_set)[4:5] <- c("review_quarter", "review_day")
+
+# updating categorical feature vector 
+categorical_features <- categorical_features[-1]
+categorical_features[4:5] <- c("review_quarter", "review_day")
+
+# updating user_specific feature vector
+user_specific_features <- user_specific_features[-1]
+user_specific_features[4:5] <- c("review_quarter", "review_day")
+```
+
+Visualizing updated relationship plots for these variables.
+
+``` r
+# list to hold plots
+
+cat_plots <- vector('list', length(categorical_features))
+
+cat_plots <- lapply(categorical_features, plot_categorical, df = training_set)
+
+grid.arrange(cat_plots[[4]], cat_plots[[5]])
+```
+
+![](EDA_vegas_strip_data_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+
+#### Inspecting relationship between hotel scores and numeric features
