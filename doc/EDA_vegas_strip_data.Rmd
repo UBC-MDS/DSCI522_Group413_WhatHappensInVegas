@@ -306,3 +306,31 @@ grid.arrange(cat_plots[[4]], cat_plots[[5]])
 
 
 #### Inspecting relationship between hotel scores and numeric features
+
+
+Having explored relationship between categorical features and target score. Lets see how continous features affect hotel scores. 
+
+
+```{r}
+ggpairs(training_set, c(numerical_features, "score"))+
+   theme(panel.background = element_rect(fill =   "lavender"))
+
+```
+
+
+
+Clearly based on the plot above we can see that there is not much correlation between numeric features and the scores. This theoretically makes sense as number of reviews from users, number of hotel reviews etc. should have minimal impact on scores. But it might not be a good idea to remove these features at this stage. We can first create baseline model and do further feature engineering. 
+
+
+
+### Summary of EDA
+
+- Based on the exploratory data analysis of different features, we see that some features like having a pool, free internet etc. signiciantly improves hotel scores while other features like most of numeric features, review days etc. do not seem to have any significant impact on average hotel scores. 
+
+- Two of the features/columns - user_country and hotel_names were removed as based on EDA, those either do  not contribute to the average hotel score or their contribution cannot be generalized. There are other features which may be removed but we will first create  a baseline model and compare relative feature importances with EDA analysis and then do feature reduction. 
+
+
+### Next Steps
+
+
+

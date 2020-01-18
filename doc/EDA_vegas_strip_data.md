@@ -658,3 +658,12 @@ grid.arrange(cat_plots[[4]], cat_plots[[5]])
 ![](EDA_vegas_strip_data_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 #### Inspecting relationship between hotel scores and numeric features
+
+Having explored relationship between categorical features and target
+score. Lets see how continous features affect hotel scores.
+
+``` r
+ggpairs(training_set, c(numerical_features, "score"))
+```
+
+![](EDA_vegas_strip_data_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
