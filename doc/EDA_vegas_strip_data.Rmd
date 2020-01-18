@@ -1,0 +1,48 @@
+---
+title: "EDA on Vegas Strip dataset"
+author: "Arun, Bronwyn, Manish"
+date: "1/17/2020"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+
+```
+
+
+```{r}
+
+# loading required libraries
+library(tidyverse)
+library(caret)
+library(readr)
+
+
+
+```
+
+## Introduction and train/test split
+
+In this document we perform exploratory data analysis on `Vegas Strip` dataaset to see if there is any relationship between different amenities which hotels provide and the score which guests give to those hotels on the strip. This exploratory analysis will then be extended to see if a predictive regression model can be developed to estimate user ratings based on hotel amenities.
+
+Before doing any EDA splitting dataset into training and test set. 
+
+```{r}
+# reading dataset 
+vegas_data <- read_csv2("../data/vegas_data.csv")
+
+#splitting into training test data set  based on hotel names
+set.seed(787)
+train_index <- caret::createDataPartition(vegas_data$`Hotel name`,  p = 0.75, list = FALSE)
+training_set <- vegas_data[train_index,]
+test_set <- vegas_data[- train_index,]
+
+dim(training_set)
+dim(test_set)
+```
+
+```{}
+
+##
