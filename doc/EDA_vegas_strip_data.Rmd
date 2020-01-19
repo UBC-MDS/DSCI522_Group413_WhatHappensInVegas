@@ -1,0 +1,372 @@
+---
+title: "EDA on Vegas Strip Hotel scores"
+author: "Arun, Bronwyn, Manish"
+date: "1/17/2020"
+output: github_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+
+```
+## Contents
+
+1. [Introduction](#introduction)
+2. [Cleaning and wrangling data](#cleaning-and-wrangling-data)
+3. [Exploring relationship between features and hotel scores](#exploring-relationship-between-features-and-hotel-scores)
+    - [Inspecting relationship between hotel scores and categorical features](#inspecting-relationship-between-hotel-scores-and-categorical-features)
+    - [Inspecting relationship between hotel scores and numeric features](#inspecting-relationship-between-hotel-scores-and-numeric-features)
+4. [Summary of EDA](#summary-of-eda)
+5. [Next Steps](#next-steps)
+
+
+
+
+## Introduction
+
+In this document we perform exploratory data analysis on `Vegas Strip` dataaset to see if there is any relationship between different amenities which hotels provide and the score which guests give to those hotels on the strip. This exploratory analysis will then be extended to see if a predictive regression model can be developed to estimate user ratings based on hotel amenities.
+
+Loading required libraries
+
+
+```{r warning=FALSE, message=FALSE}
+
+# loading required libraries
+library(tidyverse)
+library(caret)
+library(readr)
+library(ggplot2)
+library(GGally)
+library(repr)
+library(gridExtra)
+
+
+
+```
+Before doing any EDA splitting dataset into training and test set. 
+
+```{r}
+# reading dataset 
+vegas_data <- read_csv2("../data/vegas_data.csv")
+
+#splitting into training test data set  based on hotel names
+set.seed(787)
+train_index <- caret::createDataPartition(vegas_data$`Hotel name`,  p = 0.75, list = FALSE)
+training_set <- vegas_data[train_index,]
+test_set <- vegas_data[- train_index,]
+
+dim(training_set)
+dim(test_set)
+```
+
+
+## Cleaning and wrangling data
+
+
+Checking top rows and column names of the dataset. 
+
+
+```{r}
+
+head(training_set)
+
+colnames(training_set)
+```
+
+
+The dataset has 20 columns, out of which 19 are features and `Score` is response variable for which relationship based on estimators need to be determined. 
+
+The column/feature names are clearly not tidyverse compliant and have white spaces which are a bit difficult to deal with during data analysis. 
+
+```{r}
+#changing column names
+
+colnames(training_set) <- c("user_country", "num_reviews", "num_hotel_reviews", "helpful_votes", "score", "stay_period", "traveller_type", "pool", "gym", "tennis_court", "spa", "casino", "free_internet", "hotel_name", "hotel_stars", "rooms", "user_continent", "member_years", "review_month", "review_weekday")
+
+head(training_set)
+
+```
+
+
+
+
+Checking for any NAs in the dataset. 
+
+
+```{r}
+
+any(is.na(training_set))
+
+```
+
+
+This is good as we **do not have any NAs** in the dataset.
+
+
+
+
+Checking datatype for individual columns in dataset.
+
+```{r}
+
+str(training_set)
+
+# checking summary info for the training dataframe
+
+summary(training_set)
+```
+
+
+
+
+Clearly based on summary statistics, the column `member_years` has negative values which seems incorrect as number of years of membership of a customer cannot be negative. 
+
+
+```{r}
+sort(training_set$member_years)[1:10]
+
+```
+
+
+
+
+Replacing the minimum value by 0 as it logically makes sense to do so.
+
+
+```{r}
+training_set[training_set$member_years== -1806,"member_years" ] = 0 
+
+min(training_set$member_years)
+```
+
+
+
+
+## Exploring relationship between features and hotel scores
+
+
+Now we have clean data with no NA values, we can start inspecting individual features to see if we can identify any relationship between target score and the features.
+
+
+```{r}
+str(training_set)
+
+```
+
+Clearly the dataset has two kind of features.
+
+- **User specific** : user_country, member_years, user_continent, traveller_type etc.
+- **Hotel Specific** : rooms, free_internet, hotel_stars etc. 
+
+
+And within each category we have both categorical and numerical features. 
+
+
+We can first re-arrange columns for better interpretation and **remove hotel name** column as we do not want it to be one of the  features. 
+
+
+```{r}
+training_set <- training_set[c("user_country", "user_continent", "traveller_type",  "stay_period","review_month", "review_weekday", "member_years", "num_reviews", "helpful_votes", "pool", "gym", "tennis_court", "spa", "casino", "free_internet", "hotel_stars", "rooms", "num_hotel_reviews","score")]
+
+head(training_set)
+
+```
+
+
+Creating vectors for different categories of features. 
+
+
+```{r}
+
+user_specific_features <- c("user_country", "user_continent", "traveller_type",  "stay_period","review_month", "review_weekday", "member_years", "num_reviews", "helpful_votes")
+
+hotel_specific_features <- c("pool", "gym", "tennis_court", "spa", "casino", "free_internet", "hotel_stars", "rooms", "num_hotel_reviews")
+
+
+categorical_features <- c("user_country", "user_continent", "traveller_type",  "stay_period","review_month", "review_weekday", "pool", "gym", "tennis_court", "spa", "casino", "free_internet", "hotel_stars")
+
+numerical_features <- c( "member_years", "num_reviews", "helpful_votes",  "rooms", "num_hotel_reviews")
+
+```
+
+
+
+
+
+We already explored the numerical features and checked min/max values using `summary()` statistics earlier. Lets try exploring the `categorical features`.
+
+
+```{r}
+for (category in categorical_features){
+  print(category)
+  print(table(training_set[category]))
+  cat("\n")
+  cat("\n")
+}
+
+
+```
+
+Interestingly, to our surprise there are  a few hotels on Vegas Strip which do not have casino. 
+
+Also based on initial exploration of individual groups in each category; we are suspicious that users' `countries` should not have an impact on the hotel score. Also there were more visitors from some of the countries(USA, Canada, Australia) as compared to others(France etc.). 
+Plus we may have a new user from different country so our model will more potentially fail to generalize and it might be a good idea to use `user_continents` instead. We will however do some more visualization analysis to confirm same. 
+
+
+### Inspecting relationship between hotel scores and categorical features
+
+
+Creating a function to plot categorical features against score
+
+```{r}
+
+# function to create plot for categorical features
+
+
+plot_categorical <- function(df, col_name_x, col_name_y = "score"){
+  
+  p <-  ggplot(df, aes_string(x = col_name_x, y  = col_name_y))+
+    geom_bar(stat = "summary", fun.y = "mean", fill = "royalblue3")+
+    geom_jitter()+
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5),panel.background = element_rect(fill =   "lavender"))+
+    ggtitle(paste("Average ", col_name_y," vs ", col_name_x))
+  p
+}
+
+# list to hold plots
+
+cat_plots <- vector('list', length(categorical_features))
+
+cat_plots <- lapply(categorical_features, plot_categorical, df = training_set)
+
+options(repr.plot.height = 10, repr.plot.width = 8)
+
+grid.arrange(cat_plots[[1]], cat_plots[[2]], cat_plots[[3]],  layout_matrix = rbind(c(1,1),c(2,3)))
+grid.arrange(cat_plots[[4]], cat_plots[[5]], cat_plots[[6]], cat_plots[[7]])
+grid.arrange(cat_plots[[8]], cat_plots[[9]], cat_plots[[10]], cat_plots[[11]])
+grid.arrange(cat_plots[[12]], cat_plots[[13]])
+```
+
+
+#### Observations
+
+- Clearly based on the plots, some of the categorical features have signiciant impact on average user scores for hotels while others have minimal impact. 
+
+- As analyzed earlier, based on plots of `score vs country` and `score vs continents`; it makes sense to use continents to study the relationship based on continents as compared to countries. This will help in better generalization of model.
+
+- Most of the `Traveller types` seem to give similar averge hotel ratings with an exception of `Solo` travelers who rated hotels a bit lower. The travellers who visited in groups of friends rated the hotels higher as compared to other travel groups.
+
+
+- Features `stay_period` and `review_weekday` seems to have same similar average scores for all stay periods and review days respectively. The average scores however sligtly seems to dip for mid-week reviews(Wednesday). We might need to see if these features can be removed from the model altogether to analyze/predict average scores.
+
+- Amenities like `gym`,`tennis_court`, and `spa` seems to have slight positive impact on hotel scores. We however might need to check any collinearity within these features. Having a `pool` however improves hotel scores signiciantly. 
+
+- For each `review_month`, there were small variations in score; it will however be a good idea to reduce the number of categories to four quarters rather than 12 months. 
+
+- Providing visitors with `free internet` seems to improve hotel scores signicantly. 
+
+- Although there is a small sample of hotels with no `casino` but those seems to have been rated better than the ones with casino. We will need to check if this is just due to class imbalance. 
+
+- Different `Hotel stars` show variations in user scores. The trend needs to be investigated though.
+
+
+
+
+
+Performing some wrangling based on the observations to further polish the dataset. 
+
+```{r}
+# removing user_countries column
+
+training_set <- training_set[, -c(1)]
+
+# Re-categorizing review months as quarters of a year rather than individual months. 
+training_set$review_month <- factor(training_set$review_month)
+
+levels(training_set$review_month) = list("Q1" = c("January", "February", "March"),
+                                       "Q2" = c("April", "May", "June"),
+                                       "Q3" = c("July", "August", "September"),
+                                       "Q4" = c("October", "November", "December"))
+
+
+# Re-categorizing review_weekday as weekends and weekdays rather than days of the week. 
+# including Friday in weekend category
+
+training_set$review_weekday <- factor(training_set$review_weekday)
+levels(training_set$review_weekday) <- list("Weekday" = c("Monday", "Tuesday", "Wednesday", "Thursday"),
+                                            "Weekend" = c("Friday","Saturday", "Sunday"))
+
+
+# renaming these columns 
+
+colnames(training_set)[4:5] <- c("review_quarter", "review_day")
+
+# updating categorical feature vector 
+categorical_features <- categorical_features[-1]
+categorical_features[4:5] <- c("review_quarter", "review_day")
+
+# updating user_specific feature vector
+user_specific_features <- user_specific_features[-1]
+user_specific_features[4:5] <- c("review_quarter", "review_day")
+
+
+
+
+```
+
+
+Visualizing updated relationship plots for these variables.
+
+
+
+```{r}
+# list to hold plots
+
+cat_plots <- vector('list', length(categorical_features))
+
+cat_plots <- lapply(categorical_features, plot_categorical, df = training_set)
+
+grid.arrange(cat_plots[[4]], cat_plots[[5]])
+
+```
+
+
+
+### Inspecting relationship between hotel scores and numeric features
+
+
+Having explored relationship between categorical features and target score. Lets see how continous features affect hotel scores. 
+
+
+```{r}
+ggpairs(training_set, c(numerical_features, "score"))+
+   theme(panel.background = element_rect(fill =   "lavender"))
+
+```
+
+
+
+Clearly based on the plot above we can see that there is not much correlation between numeric features and the scores. This theoretically makes sense as number of reviews from users, number of hotel reviews etc. should have minimal impact on scores. But it might not be a good idea to remove these features at this stage. We can first create baseline model and do further feature engineering. 
+
+
+
+## Summary of EDA
+
+- Based on the exploratory data analysis of different features, we see that some features like having a pool, free internet etc. signiciantly improves hotel scores while other features like most of numeric features, review days etc. do not seem to have any significant impact on average hotel scores. 
+
+- Two of the features/columns - user_country and hotel_names were removed as based on EDA, those either do  not contribute to the average hotel score or their contribution cannot be generalized. There are other features which may be removed but we will first create  a baseline model and compare relative feature importances with EDA analysis and then do feature reduction. 
+
+
+## Next Steps
+
+The planned next course of action is as follows. 
+
+- Do pre-processing of dataset before developing linear regression(and/or other generalized linear regression models) 
+- Develop models
+- Feature engineering based on results
+- Improve models(iterative)
+- Report final results
+
+
