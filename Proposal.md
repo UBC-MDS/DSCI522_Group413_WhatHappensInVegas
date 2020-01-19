@@ -9,6 +9,8 @@
 
 3. We plan to use the dataset and implement a Linear regression model or/and a Generalized linear model get predictions for the ratings of the hotel between values of 1 and 5.
 
-4. We intend to use ggpairs to analyse the data and produce the plots that illustrate the relations between the key features of the model and the response variable.
+4. We intend to use "ggpairs" and "grid arrange" to analyse the data and produce the plots that illustrate the relations between the key features of the model and the response variable.
 
 5. The results of the research findings are to be shared using figures and tables such as Mean Square Error, R- Square and Residual plots. 
+
+6. The link to the Rscript is [here](https://github.com/UBC-MDS/DSCI522_Group413_WhatHappensInVegas/blob/master/src/download_file.R)
