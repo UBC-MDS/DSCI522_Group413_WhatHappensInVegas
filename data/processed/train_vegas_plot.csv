@@ -1,0 +1,379 @@
+user_continent;traveller_type;stay_period;review_quarter;review_day;member_years;num_reviews;helpful_votes;pool;gym;tennis_court;spa;casino;free_internet;hotel_stars;rooms;num_hotel_reviews;score
+North America;Friends;Dec-Feb;Q1;Weekday; 9; 11; 13;NO;YES;NO;NO;YES;YES;3,0;3773;  4;5
+North America;Business;Dec-Feb;Q1;Weekend; 3;119; 75;NO;YES;NO;NO;YES;YES;3,0;3773; 21;3
+North America;Families;Mar-May;Q1;Weekend; 2; 36; 25;NO;YES;NO;NO;YES;YES;3,0;3773;  9;5
+Europe;Friends;Mar-May;Q1;Weekend; 6; 14; 14;NO;YES;NO;NO;YES;YES;3,0;3773;  7;4
+Europe;Couples;Mar-May;Q2;Weekend; 4; 45; 46;NO;YES;NO;NO;YES;YES;3,0;3773; 12;4
+North America;Families;Mar-May;Q2;Weekday; 0;  2;  4;NO;YES;NO;NO;YES;YES;3,0;3773;  1;4
+Asia;Friends;Mar-May;Q2;Weekend; 3; 24;  8;NO;YES;NO;NO;YES;YES;3,0;3773;  3;4
+North America;Families;Mar-May;Q2;Weekday; 5; 12; 11;NO;YES;NO;NO;YES;YES;3,0;3773;  7;3
+North America;Families;Jun-Aug;Q2;Weekend; 9;102; 58;NO;YES;NO;NO;YES;YES;3,0;3773; 24;2
+Oceania;Friends;Jun-Aug;Q2;Weekend; 4; 20; 24;NO;YES;NO;NO;YES;YES;3,0;3773;  9;3
+North America;Friends;Jun-Aug;Q3;Weekday; 1;  7;  9;NO;YES;NO;NO;YES;YES;3,0;3773;  6;2
+Europe;Friends;Jun-Aug;Q3;Weekend; 1;  3;  0;NO;YES;NO;NO;YES;YES;3,0;3773;  3;3
+North America;Families;Sep-Nov;Q3;Weekday; 4;  8;  9;NO;YES;NO;NO;YES;YES;3,0;3773;  8;1
+North America;Families;Sep-Nov;Q3;Weekend; 2;  9;  1;NO;YES;NO;NO;YES;YES;3,0;3773;  3;4
+Europe;Couples;Sep-Nov;Q4;Weekend; 7; 10;  2;NO;YES;NO;NO;YES;YES;3,0;3773;  5;4
+Oceania;Couples;Sep-Nov;Q4;Weekday; 3;  4;  3;NO;YES;NO;NO;YES;YES;3,0;3773;  3;1
+Europe;Families;Dec-Feb;Q4;Weekend; 0; 18; 19;NO;YES;NO;NO;YES;YES;3,0;3773;  7;4
+North America;Couples;Dec-Feb;Q4;Weekend; 5;  4;  3;NO;YES;NO;NO;YES;YES;3,0;3773;  4;2
+North America;Business;Dec-Feb;Q1;Weekend;11;114; 52;YES;YES;NO;YES;YES;YES;3,0;3981; 42;4
+North America;Couples;Dec-Feb;Q1;Weekend; 8; 30; 17;YES;YES;NO;YES;YES;YES;3,0;3981; 12;5
+Europe;Business;Dec-Feb;Q1;Weekday; 3; 87; 36;YES;YES;NO;YES;YES;YES;3,0;3981; 18;3
+North America;Solo;Mar-May;Q1;Weekday; 1; 26; 28;YES;YES;NO;YES;YES;YES;3,0;3981; 10;5
+Europe;Couples;Mar-May;Q1;Weekday; 8;  8;  9;YES;YES;NO;YES;YES;YES;3,0;3981;  7;5
+North America;Couples;Mar-May;Q2;Weekend; 7; 11; 13;YES;YES;NO;YES;YES;YES;3,0;3981;  8;5
+North America;Solo;Mar-May;Q2;Weekday; 1; 56;  7;YES;YES;NO;YES;YES;YES;3,0;3981;  8;3
+Africa;Friends;Mar-May;Q2;Weekday; 4; 13;  8;YES;YES;NO;YES;YES;YES;3,0;3981; 12;3
+Europe;Couples;Jun-Aug;Q2;Weekend; 6; 20;  4;YES;YES;NO;YES;YES;YES;3,0;3981;  7;3
+North America;Friends;Jun-Aug;Q3;Weekend; 6; 70; 24;YES;YES;NO;YES;YES;YES;3,0;3981; 27;4
+Africa;Friends;Jun-Aug;Q3;Weekday; 1;  6;  7;YES;YES;NO;YES;YES;YES;3,0;3981;  3;4
+North America;Families;Jun-Aug;Q3;Weekday; 2; 24;  9;YES;YES;NO;YES;YES;YES;3,0;3981;  6;2
+North America;Couples;Sep-Nov;Q3;Weekend; 8; 20; 59;YES;YES;NO;YES;YES;YES;3,0;3981;  5;3
+Europe;Friends;Sep-Nov;Q4;Weekday; 5; 47; 27;YES;YES;NO;YES;YES;YES;3,0;3981;  6;4
+North America;Families;Sep-Nov;Q4;Weekend; 6; 35; 19;YES;YES;NO;YES;YES;YES;3,0;3981;  8;4
+Europe;Friends;Sep-Nov;Q4;Weekend; 1;  6;  4;YES;YES;NO;YES;YES;YES;3,0;3981;  0;4
+Europe;Couples;Dec-Feb;Q4;Weekday; 7; 74; 54;YES;YES;NO;YES;YES;YES;3,0;3981; 47;4
+Asia;Solo;Dec-Feb;Q4;Weekday; 4; 34; 30;YES;YES;NO;YES;YES;YES;3,0;3981;  8;3
+Europe;Couples;Dec-Feb;Q1;Weekday; 3;576;340;YES;YES;NO;YES;YES;NO;4,0;3003; 43;3
+North America;Solo;Dec-Feb;Q1;Weekend; 5; 20; 11;YES;YES;NO;YES;YES;NO;4,0;3003;  8;4
+North America;Couples;Dec-Feb;Q1;Weekday; 3;418;132;YES;YES;NO;YES;YES;NO;4,0;3003; 32;2
+North America;Couples;Dec-Feb;Q1;Weekday; 2; 73; 22;YES;YES;NO;YES;YES;NO;4,0;3003; 13;4
+North America;Couples;Mar-May;Q1;Weekday; 2; 30; 32;YES;YES;NO;YES;YES;NO;4,0;3003; 10;3
+North America;Business;Mar-May;Q1;Weekday; 2; 63; 17;YES;YES;NO;YES;YES;NO;4,0;3003; 15;4
+Oceania;Couples;Mar-May;Q2;Weekend; 2; 20; 11;YES;YES;NO;YES;YES;NO;4,0;3003;  7;4
+Europe;Couples;Jun-Aug;Q2;Weekday; 9;  7;  7;YES;YES;NO;YES;YES;NO;4,0;3003;  5;4
+North America;Friends;Jun-Aug;Q2;Weekday; 1; 13; 15;YES;YES;NO;YES;YES;NO;4,0;3003;  9;4
+Europe;Families;Jun-Aug;Q3;Weekend; 1; 10;  4;YES;YES;NO;YES;YES;NO;4,0;3003;  5;4
+Oceania;Couples;Jun-Aug;Q3;Weekday; 7;  9; 19;YES;YES;NO;YES;YES;NO;4,0;3003;  6;3
+Europe;Solo;Jun-Aug;Q3;Weekday; 5; 36; 36;YES;YES;NO;YES;YES;NO;4,0;3003; 19;2
+Europe;Families;Jun-Aug;Q3;Weekend; 5; 33; 19;YES;YES;NO;YES;YES;NO;4,0;3003; 12;3
+Europe;Couples;Sep-Nov;Q3;Weekday; 5; 19; 16;YES;YES;NO;YES;YES;NO;4,0;3003; 17;4
+North America;Families;Sep-Nov;Q4;Weekend; 1; 23; 11;YES;YES;NO;YES;YES;NO;4,0;3003; 17;3
+North America;Couples;Sep-Nov;Q4;Weekend; 1; 13;  3;YES;YES;NO;YES;YES;NO;4,0;3003;  3;2
+Asia;Business;Sep-Nov;Q4;Weekday; 0;  1;  2;YES;YES;NO;YES;YES;NO;4,0;3003;  0;1
+Europe;Business;Dec-Feb;Q4;Weekend; 0; 21;  6;YES;YES;NO;YES;YES;NO;4,0;3003; 18;2
+Europe;Business;Dec-Feb;Q1;Weekend; 6; 29; 14;YES;YES;YES;YES;YES;YES;4,0;2884; 11;3
+North America;Friends;Dec-Feb;Q1;Weekday; 9; 19;167;YES;YES;YES;YES;YES;YES;4,0;2884; 12;4
+North America;Solo;Dec-Feb;Q1;Weekday; 0; 17; 16;YES;YES;YES;YES;YES;YES;4,0;2884;  9;5
+North America;Couples;Mar-May;Q1;Weekend; 1; 43; 20;YES;YES;YES;YES;YES;YES;4,0;2884;  8;4
+North America;Friends;Mar-May;Q1;Weekend; 2; 12;  3;YES;YES;YES;YES;YES;YES;4,0;2884;  8;4
+Asia;Families;Mar-May;Q2;Weekend; 1; 12; 25;YES;YES;YES;YES;YES;YES;4,0;2884;  4;3
+Europe;Friends;Mar-May;Q2;Weekend; 3; 10;  5;YES;YES;YES;YES;YES;YES;4,0;2884;  0;4
+North America;Families;Jun-Aug;Q2;Weekday; 6; 27; 16;YES;YES;YES;YES;YES;YES;4,0;2884; 17;3
+Oceania;Couples;Jun-Aug;Q3;Weekday; 3; 21; 14;YES;YES;YES;YES;YES;YES;4,0;2884; 20;5
+Asia;Solo;Jun-Aug;Q3;Weekday; 5; 43; 27;YES;YES;YES;YES;YES;YES;4,0;2884; 14;4
+Europe;Couples;Jun-Aug;Q3;Weekend; 5;  7;  4;YES;YES;YES;YES;YES;YES;4,0;2884;  3;4
+Europe;Couples;Sep-Nov;Q3;Weekend; 0; 11;  6;YES;YES;YES;YES;YES;YES;4,0;2884;  9;3
+North America;Business;Sep-Nov;Q3;Weekday; 2; 78; 30;YES;YES;YES;YES;YES;YES;4,0;2884; 11;4
+Oceania;Families;Sep-Nov;Q4;Weekday; 5; 12;  4;YES;YES;YES;YES;YES;YES;4,0;2884;  7;5
+Asia;Couples;Sep-Nov;Q4;Weekend; 7;  4;  1;YES;YES;YES;YES;YES;YES;4,0;2884;  3;5
+Oceania;Families;Sep-Nov;Q4;Weekend; 2; 27;  8;YES;YES;YES;YES;YES;YES;4,0;2884;  9;4
+North America;Friends;Dec-Feb;Q4;Weekend; 4; 12;  7;YES;YES;YES;YES;YES;YES;4,0;2884;  3;4
+North America;Couples;Dec-Feb;Q4;Weekday;12; 21; 48;YES;YES;YES;YES;YES;YES;4,0;2884; 16;5
+North America;Friends;Dec-Feb;Q1;Weekend; 2; 12;  1;YES;YES;YES;YES;YES;YES;4,0;1467;  6;5
+Asia;Couples;Dec-Feb;Q1;Weekday; 5; 79; 51;YES;YES;YES;YES;YES;YES;4,0;1467; 39;3
+Asia;Business;Dec-Feb;Q1;Weekday; 2; 18; 16;YES;YES;YES;YES;YES;YES;4,0;1467; 10;3
+North America;Business;Mar-May;Q1;Weekday; 3; 13;  8;YES;YES;YES;YES;YES;YES;4,0;1467;  3;4
+Europe;Couples;Mar-May;Q2;Weekend; 3; 19; 28;YES;YES;YES;YES;YES;YES;4,0;1467;  9;5
+Asia;Business;Mar-May;Q2;Weekday; 3; 88;103;YES;YES;YES;YES;YES;YES;4,0;1467; 15;4
+Oceania;Couples;Mar-May;Q2;Weekday; 1;  8;  0;YES;YES;YES;YES;YES;YES;4,0;1467;  4;4
+Europe;Friends;Mar-May;Q2;Weekend; 1; 39; 31;YES;YES;YES;YES;YES;YES;4,0;1467; 15;3
+Europe;Business;Jun-Aug;Q2;Weekday; 3;130; 61;YES;YES;YES;YES;YES;YES;4,0;1467; 41;4
+Oceania;Friends;Jun-Aug;Q2;Weekday; 7; 79;105;YES;YES;YES;YES;YES;YES;4,0;1467; 78;4
+Europe;Couples;Jun-Aug;Q3;Weekday; 1; 18; 17;YES;YES;YES;YES;YES;YES;4,0;1467;  6;4
+Oceania;Friends;Jun-Aug;Q3;Weekend; 1;  8;  3;YES;YES;YES;YES;YES;YES;4,0;1467;  7;5
+Oceania;Couples;Jun-Aug;Q3;Weekend; 0; 15;  6;YES;YES;YES;YES;YES;YES;4,0;1467;  4;5
+North America;Couples;Sep-Nov;Q3;Weekday; 0; 27;  9;YES;YES;YES;YES;YES;YES;4,0;1467;  0;1
+Europe;Friends;Sep-Nov;Q4;Weekday; 1; 22;  6;YES;YES;YES;YES;YES;YES;4,0;1467;  6;5
+Asia;Solo;Sep-Nov;Q4;Weekend; 1; 31; 11;YES;YES;YES;YES;YES;YES;4,0;1467;  8;4
+Europe;Couples;Dec-Feb;Q4;Weekend; 4; 10; 11;YES;YES;YES;YES;YES;YES;4,0;1467;  6;5
+Europe;Families;Dec-Feb;Q4;Weekday; 4; 12;  3;YES;YES;YES;YES;YES;YES;4,0;1467;  3;5
+North America;Friends;Dec-Feb;Q1;Weekday; 7; 50; 24;YES;YES;NO;YES;YES;YES;5,0;3348; 14;5
+North America;Families;Dec-Feb;Q1;Weekday;10;153; 81;YES;YES;NO;YES;YES;YES;5,0;3348; 38;5
+North America;Families;Dec-Feb;Q1;Weekday; 2; 14; 12;YES;YES;NO;YES;YES;YES;5,0;3348;  3;5
+North America;Families;Mar-May;Q1;Weekend; 4; 31; 10;YES;YES;NO;YES;YES;YES;5,0;3348; 12;5
+North America;Families;Mar-May;Q1;Weekend; 9; 15; 29;YES;YES;NO;YES;YES;YES;5,0;3348; 10;3
+North America;Couples;Mar-May;Q2;Weekday; 3;  5;  4;YES;YES;NO;YES;YES;YES;5,0;3348;  5;5
+North America;Couples;Mar-May;Q2;Weekend; 2; 46; 21;YES;YES;NO;YES;YES;YES;5,0;3348;  4;4
+Europe;Couples;Mar-May;Q2;Weekend; 4; 15; 39;YES;YES;NO;YES;YES;YES;5,0;3348;  6;1
+North America;Couples;Jun-Aug;Q2;Weekend; 2; 17; 13;YES;YES;NO;YES;YES;YES;5,0;3348; 15;4
+North America;Solo;Jun-Aug;Q2;Weekday; 9; 25; 36;YES;YES;NO;YES;YES;YES;5,0;3348; 22;1
+North America;Couples;Jun-Aug;Q3;Weekday; 1; 14;  4;YES;YES;NO;YES;YES;YES;5,0;3348;  8;5
+Europe;Families;Jun-Aug;Q3;Weekday; 6; 59; 37;YES;YES;NO;YES;YES;YES;5,0;3348; 56;3
+Europe;Families;Jun-Aug;Q3;Weekend; 3; 11; 17;YES;YES;NO;YES;YES;YES;5,0;3348; 10;5
+North America;Couples;Sep-Nov;Q3;Weekday; 3; 10;  7;YES;YES;NO;YES;YES;YES;5,0;3348;  7;5
+Oceania;Couples;Sep-Nov;Q4;Weekend; 4; 35; 43;YES;YES;NO;YES;YES;YES;5,0;3348; 24;5
+Oceania;Families;Sep-Nov;Q4;Weekend; 0;  6;  9;YES;YES;NO;YES;YES;YES;5,0;3348;  6;3
+North America;Families;Dec-Feb;Q4;Weekend; 3; 23;  2;YES;YES;NO;YES;YES;YES;5,0;3348;  7;4
+North America;Couples;Dec-Feb;Q4;Weekend;13; 48; 67;YES;YES;NO;YES;YES;YES;5,0;3348; 21;4
+Oceania;Friends;Dec-Feb;Q1;Weekday; 1; 12;  3;YES;YES;NO;YES;YES;YES;5,0;2959;  6;5
+Europe;Couples;Dec-Feb;Q1;Weekday; 8;127; 80;YES;YES;NO;YES;YES;YES;5,0;2959; 40;5
+North America;Couples;Mar-May;Q1;Weekday; 1; 12;  1;YES;YES;NO;YES;YES;YES;5,0;2959;  5;5
+North America;Couples;Mar-May;Q1;Weekend;10; 17; 74;YES;YES;NO;YES;YES;YES;5,0;2959; 17;5
+Europe;Friends;Mar-May;Q2;Weekday; 7; 23; 21;YES;YES;NO;YES;YES;YES;5,0;2959;  7;4
+North America;Business;Mar-May;Q2;Weekday; 2;102; 45;YES;YES;NO;YES;YES;YES;5,0;2959; 17;5
+Europe;Families;Mar-May;Q2;Weekday; 8;113; 55;YES;YES;NO;YES;YES;YES;5,0;2959; 15;5
+North America;Business;Mar-May;Q2;Weekday; 1; 30; 10;YES;YES;NO;YES;YES;YES;5,0;2959;  8;2
+Europe;Couples;Jun-Aug;Q2;Weekday; 7; 24; 24;YES;YES;NO;YES;YES;YES;5,0;2959; 24;2
+North America;Business;Jun-Aug;Q3;Weekday; 1;  6; 14;YES;YES;NO;YES;YES;YES;5,0;2959;  4;1
+Oceania;Friends;Jun-Aug;Q3;Weekday; 7;  3;  0;YES;YES;NO;YES;YES;YES;5,0;2959;  3;4
+North America;Families;Jun-Aug;Q3;Weekend; 4; 41; 56;YES;YES;NO;YES;YES;YES;5,0;2959; 10;5
+North America;Couples;Jun-Aug;Q3;Weekend;10; 19; 56;YES;YES;NO;YES;YES;YES;5,0;2959;  8;4
+Europe;Couples;Sep-Nov;Q3;Weekday; 1; 18; 10;YES;YES;NO;YES;YES;YES;5,0;2959;  9;5
+Europe;Friends;Sep-Nov;Q4;Weekend; 0; 18; 16;YES;YES;NO;YES;YES;YES;5,0;2959;  4;5
+Africa;Business;Sep-Nov;Q4;Weekday; 5;  9;  7;YES;YES;NO;YES;YES;YES;5,0;2959;  7;5
+North America;Business;Sep-Nov;Q4;Weekend; 0; 50; 45;YES;YES;NO;YES;YES;YES;5,0;2959; 19;5
+North America;Families;Dec-Feb;Q4;Weekend; 5;  7;  8;YES;YES;NO;YES;YES;YES;5,0;2959;  3;5
+North America;Couples;Dec-Feb;Q1;Weekend; 4; 28; 31;YES;YES;NO;YES;YES;YES;5,0;3025; 23;3
+North America;Families;Dec-Feb;Q1;Weekend;10; 32; 11;YES;YES;NO;YES;YES;YES;5,0;3025;  6;5
+North America;Couples;Dec-Feb;Q1;Weekend; 9;  4;  4;YES;YES;NO;YES;YES;YES;5,0;3025;  0;5
+North America;Couples;Dec-Feb;Q1;Weekday; 3; 37;  9;YES;YES;NO;YES;YES;YES;5,0;3025;  8;4
+North America;Families;Mar-May;Q1;Weekday; 6; 10;  7;YES;YES;NO;YES;YES;YES;5,0;3025;  3;5
+North America;Families;Mar-May;Q1;Weekend; 8; 36; 80;YES;YES;NO;YES;YES;YES;5,0;3025; 30;5
+North America;Couples;Mar-May;Q2;Weekend; 5; 31; 14;YES;YES;NO;YES;YES;YES;5,0;3025; 10;4
+Europe;Couples;Mar-May;Q2;Weekend; 0; 17;  8;YES;YES;NO;YES;YES;YES;5,0;3025;  4;5
+Europe;Business;Mar-May;Q2;Weekend; 0; 57; 71;YES;YES;NO;YES;YES;YES;5,0;3025; 20;5
+North America;Friends;Jun-Aug;Q2;Weekday; 6; 42; 22;YES;YES;NO;YES;YES;YES;5,0;3025;  8;4
+North America;Couples;Jun-Aug;Q2;Weekend; 8; 28; 14;YES;YES;NO;YES;YES;YES;5,0;3025; 20;3
+North America;Families;Jun-Aug;Q3;Weekend; 9; 20; 21;YES;YES;NO;YES;YES;YES;5,0;3025; 11;5
+Europe;Friends;Jun-Aug;Q3;Weekend; 8; 75; 93;YES;YES;NO;YES;YES;YES;5,0;3025; 19;4
+North America;Families;Sep-Nov;Q3;Weekend; 2; 93;  8;YES;YES;NO;YES;YES;YES;5,0;3025;  4;5
+North America;Families;Sep-Nov;Q4;Weekday; 1;  9; 15;YES;YES;NO;YES;YES;YES;5,0;3025;  3;5
+Oceania;Couples;Sep-Nov;Q4;Weekday; 2;  5;  9;YES;YES;NO;YES;YES;YES;5,0;3025;  3;5
+Asia;Friends;Sep-Nov;Q4;Weekend; 0; 37; 10;YES;YES;NO;YES;YES;YES;5,0;3025;  7;5
+North America;Couples;Dec-Feb;Q4;Weekday; 7;  6;  4;YES;YES;NO;YES;YES;YES;5,0;3025;  4;5
+North America;Families;Dec-Feb;Q1;Weekday; 4;  5;  9;YES;YES;YES;YES;YES;YES;5,0;2700;  3;5
+North America;Couples;Dec-Feb;Q1;Weekend; 3;  7; 20;YES;YES;YES;YES;YES;YES;5,0;2700;  5;4
+North America;Friends;Mar-May;Q1;Weekend; 6; 20; 16;YES;YES;YES;YES;YES;YES;5,0;2700; 13;5
+North America;Business;Mar-May;Q2;Weekend; 4;125; 48;YES;YES;YES;YES;YES;YES;5,0;2700; 35;5
+North America;Couples;Mar-May;Q2;Weekday; 1; 11; 10;YES;YES;YES;YES;YES;YES;5,0;2700;  7;4
+Asia;Solo;Mar-May;Q2;Weekday; 7; 16; 16;YES;YES;YES;YES;YES;YES;5,0;2700; 10;3
+Europe;Couples;Mar-May;Q2;Weekday; 3; 19;  5;YES;YES;YES;YES;YES;YES;5,0;2700;  5;5
+North America;Couples;Jun-Aug;Q2;Weekday; 6; 73;365;YES;YES;YES;YES;YES;YES;5,0;2700; 27;5
+North America;Couples;Jun-Aug;Q2;Weekday;11;  5;  4;YES;YES;YES;YES;YES;YES;5,0;2700;  4;5
+North America;Couples;Jun-Aug;Q3;Weekday; 3; 30; 17;YES;YES;YES;YES;YES;YES;5,0;2700; 10;5
+North America;Couples;Jun-Aug;Q3;Weekend; 6; 67; 99;YES;YES;YES;YES;YES;YES;5,0;2700; 46;5
+Europe;Solo;Jun-Aug;Q3;Weekend; 9; 18; 25;YES;YES;YES;YES;YES;YES;5,0;2700; 13;5
+North America;Business;Sep-Nov;Q3;Weekday; 4; 12; 11;YES;YES;YES;YES;YES;YES;5,0;2700;  7;2
+North America;Friends;Sep-Nov;Q3;Weekend; 7; 40; 26;YES;YES;YES;YES;YES;YES;5,0;2700; 12;5
+North America;Couples;Sep-Nov;Q4;Weekday; 3;142; 31;YES;YES;YES;YES;YES;YES;5,0;2700; 17;4
+Europe;Couples;Sep-Nov;Q4;Weekday; 8;  2; 14;YES;YES;YES;YES;YES;YES;5,0;2700; 18;5
+Europe;Couples;Dec-Feb;Q4;Weekday; 5; 10; 10;YES;YES;YES;YES;YES;YES;5,0;2700;  6;5
+North America;Couples;Dec-Feb;Q4;Weekday; 9; 16; 55;YES;YES;YES;YES;YES;YES;5,0;2700; 13;5
+Asia;Business;Dec-Feb;Q1;Weekend; 5; 69; 41;YES;YES;NO;YES;YES;YES;5,0;1282; 58;5
+North America;Families;Dec-Feb;Q1;Weekday; 0;  1;  2;YES;YES;NO;YES;YES;YES;5,0;1282;  0;5
+North America;Couples;Mar-May;Q1;Weekday; 5; 49; 23;YES;YES;NO;YES;YES;YES;5,0;1282;  8;5
+Asia;Couples;Mar-May;Q2;Weekday; 7; 16;  6;YES;YES;NO;YES;YES;YES;5,0;1282;  7;4
+North America;Couples;Mar-May;Q2;Weekday; 0;  1;  1;YES;YES;NO;YES;YES;YES;5,0;1282;  0;5
+Asia;Families;Mar-May;Q2;Weekend; 7; 19; 17;YES;YES;NO;YES;YES;YES;5,0;1282; 11;4
+South America;Families;Mar-May;Q2;Weekend; 7;  7;  8;YES;YES;NO;YES;YES;YES;5,0;1282;  4;5
+North America;Couples;Jun-Aug;Q2;Weekend; 8; 38; 16;YES;YES;NO;YES;YES;YES;5,0;1282; 18;5
+North America;Business;Jun-Aug;Q2;Weekday; 9; 48; 30;YES;YES;NO;YES;YES;YES;5,0;1282; 14;5
+North America;Families;Jun-Aug;Q3;Weekend; 3;136; 55;YES;YES;NO;YES;YES;YES;5,0;1282; 20;5
+North America;Families;Jun-Aug;Q3;Weekday; 6; 26;  1;YES;YES;NO;YES;YES;YES;5,0;1282;  8;4
+Asia;Couples;Jun-Aug;Q3;Weekend; 4;  3;  2;YES;YES;NO;YES;YES;YES;5,0;1282;  3;4
+Europe;Families;Sep-Nov;Q3;Weekday; 0; 24; 12;YES;YES;NO;YES;YES;YES;5,0;1282; 18;5
+Africa;Families;Sep-Nov;Q3;Weekday; 1;  2; 15;YES;YES;NO;YES;YES;YES;5,0;1282;  0;1
+Europe;Friends;Sep-Nov;Q4;Weekday;11;  4;  3;YES;YES;NO;YES;YES;YES;5,0;1282;  3;5
+Europe;Couples;Sep-Nov;Q4;Weekday; 0;  1;  1;YES;YES;NO;YES;YES;YES;5,0;1282;  0;2
+Oceania;Families;Sep-Nov;Q4;Weekday; 2; 35; 17;YES;YES;NO;YES;YES;YES;5,0;1282; 16;4
+North America;Business;Dec-Feb;Q4;Weekday; 2;110; 76;YES;YES;NO;YES;YES;YES;5,0;1282; 19;4
+North America;Business;Dec-Feb;Q1;Weekend; 1;  2;  2;YES;NO;NO;NO;YES;YES;4,5; 188;  0;4
+North America;Solo;Mar-May;Q1;Weekday; 1;  9;  6;YES;NO;NO;NO;YES;YES;4,5; 188;  9;2
+North America;Couples;Mar-May;Q2;Weekday; 1;  3;  1;YES;NO;NO;NO;YES;YES;4,5; 188;  0;5
+North America;Friends;Mar-May;Q2;Weekend; 9;235;267;YES;NO;NO;NO;YES;YES;4,5; 188;111;5
+North America;Couples;Mar-May;Q2;Weekday; 3; 59; 21;YES;NO;NO;NO;YES;YES;4,5; 188;  9;5
+North America;Friends;Jun-Aug;Q2;Weekday; 0;  2;  2;YES;NO;NO;NO;YES;YES;4,5; 188;  0;5
+North America;Couples;Jun-Aug;Q2;Weekday; 0;  2;  1;YES;NO;NO;NO;YES;YES;4,5; 188;  0;5
+North America;Couples;Jun-Aug;Q3;Weekday;11; 21; 53;YES;NO;NO;NO;YES;YES;4,5; 188; 18;5
+North America;Friends;Jun-Aug;Q3;Weekday; 0;  4; 16;YES;NO;NO;NO;YES;YES;4,5; 188;  0;1
+Europe;Couples;Jun-Aug;Q3;Weekday; 3;184; 70;YES;NO;NO;NO;YES;YES;4,5; 188; 52;5
+Europe;Families;Jun-Aug;Q3;Weekday; 2;262;150;YES;NO;NO;NO;YES;YES;4,5; 188; 75;4
+North America;Couples;Sep-Nov;Q3;Weekend; 0; 69; 17;YES;NO;NO;NO;YES;YES;4,5; 188; 11;5
+Oceania;Business;Sep-Nov;Q3;Weekend; 2; 92; 27;YES;NO;NO;NO;YES;YES;4,5; 188; 12;4
+North America;Families;Sep-Nov;Q4;Weekday; 8;131;116;YES;NO;NO;NO;YES;YES;4,5; 188; 61;3
+North America;Couples;Sep-Nov;Q4;Weekend; 5; 49; 53;YES;NO;NO;NO;YES;YES;4,5; 188; 22;3
+North America;Business;Sep-Nov;Q4;Weekday; 3;148; 55;YES;NO;NO;NO;YES;YES;4,5; 188; 33;4
+North America;Couples;Dec-Feb;Q4;Weekday; 4; 26; 22;YES;NO;NO;NO;YES;YES;4,5; 188;  7;4
+North America;Couples;Dec-Feb;Q4;Weekday; 2; 13;  1;YES;NO;NO;NO;YES;YES;4,5; 188;  4;4
+Europe;Couples;Dec-Feb;Q1;Weekday; 8;127; 81;YES;YES;NO;YES;YES;YES;5,0;2034; 40;4
+North America;Business;Dec-Feb;Q1;Weekend; 4; 15; 12;YES;YES;NO;YES;YES;YES;5,0;2034;  5;5
+North America;Couples;Mar-May;Q1;Weekend; 7; 16; 23;YES;YES;NO;YES;YES;YES;5,0;2034; 14;5
+North America;Friends;Mar-May;Q1;Weekday; 1;113; 27;YES;YES;NO;YES;YES;YES;5,0;2034; 38;4
+Europe;Families;Mar-May;Q2;Weekday; 7;  7;  5;YES;YES;NO;YES;YES;YES;5,0;2034;  5;3
+South America;Friends;Mar-May;Q2;Weekday;10; 73; 99;YES;YES;NO;YES;YES;YES;5,0;2034; 32;4
+Europe;Couples;Jun-Aug;Q2;Weekend; 2; 28; 30;YES;YES;NO;YES;YES;YES;5,0;2034; 12;5
+North America;Business;Jun-Aug;Q2;Weekday; 4; 34; 26;YES;YES;NO;YES;YES;YES;5,0;2034;  8;4
+North America;Friends;Jun-Aug;Q3;Weekday; 3;  4;  5;YES;YES;NO;YES;YES;YES;5,0;2034;  3;5
+North America;Families;Jun-Aug;Q3;Weekend; 3; 32; 14;YES;YES;NO;YES;YES;YES;5,0;2034; 11;5
+Europe;Families;Jun-Aug;Q3;Weekday; 1;  9;  4;YES;YES;NO;YES;YES;YES;5,0;2034;  3;5
+North America;Families;Jun-Aug;Q3;Weekend; 4;333;200;YES;YES;NO;YES;YES;YES;5,0;2034; 58;5
+North America;Couples;Sep-Nov;Q3;Weekday; 6; 29; 15;YES;YES;NO;YES;YES;YES;5,0;2034; 11;5
+Europe;Friends;Sep-Nov;Q3;Weekday; 5; 85; 68;YES;YES;NO;YES;YES;YES;5,0;2034; 43;5
+Europe;Business;Sep-Nov;Q4;Weekday; 4; 34;  7;YES;YES;NO;YES;YES;YES;5,0;2034; 10;4
+Asia;Couples;Sep-Nov;Q4;Weekend; 5; 13;  8;YES;YES;NO;YES;YES;YES;5,0;2034;  7;5
+North America;Couples;Sep-Nov;Q4;Weekend; 5;  5; 14;YES;YES;NO;YES;YES;YES;5,0;2034;  5;5
+North America;Friends;Dec-Feb;Q4;Weekday; 8;169; 41;YES;YES;NO;YES;YES;YES;5,0;2034; 25;5
+North America;Couples;Dec-Feb;Q1;Weekend; 6;  4;  2;YES;YES;NO;YES;YES;YES;3,5;1228;  3;5
+North America;Families;Dec-Feb;Q1;Weekday;10; 50; 48;YES;YES;NO;YES;YES;YES;3,5;1228; 39;2
+North America;Business;Dec-Feb;Q1;Weekday; 4; 10;  1;YES;YES;NO;YES;YES;YES;3,5;1228;  3;5
+Europe;Couples;Mar-May;Q1;Weekday; 8; 60; 42;YES;YES;NO;YES;YES;YES;3,5;1228;  7;5
+Europe;Couples;Mar-May;Q1;Weekday; 5; 92; 18;YES;YES;NO;YES;YES;YES;3,5;1228; 49;4
+North America;Families;Mar-May;Q2;Weekday;10;  7; 45;YES;YES;NO;YES;YES;YES;3,5;1228;  5;4
+South America;Families;Mar-May;Q2;Weekend; 9; 37; 38;YES;YES;NO;YES;YES;YES;3,5;1228; 31;5
+North America;Couples;Mar-May;Q2;Weekend; 3; 70; 19;YES;YES;NO;YES;YES;YES;3,5;1228; 25;1
+North America;Friends;Jun-Aug;Q2;Weekday; 1;  9;  4;YES;YES;NO;YES;YES;YES;3,5;1228;  3;5
+Europe;Families;Jun-Aug;Q3;Weekday; 4; 39;  9;YES;YES;NO;YES;YES;YES;3,5;1228; 18;4
+North America;Couples;Jun-Aug;Q3;Weekday; 5; 78; 24;YES;YES;NO;YES;YES;YES;3,5;1228; 17;4
+Europe;Families;Jun-Aug;Q3;Weekend; 4; 48; 19;YES;YES;NO;YES;YES;YES;3,5;1228; 21;5
+North America;Families;Sep-Nov;Q3;Weekend; 7;112; 41;YES;YES;NO;YES;YES;YES;3,5;1228; 34;5
+Europe;Couples;Sep-Nov;Q4;Weekday; 2; 11; 16;YES;YES;NO;YES;YES;YES;3,5;1228;  3;2
+North America;Business;Sep-Nov;Q4;Weekday; 9;  9; 11;YES;YES;NO;YES;YES;YES;3,5;1228;  5;4
+North America;Families;Sep-Nov;Q4;Weekday; 0;  4;  1;YES;YES;NO;YES;YES;YES;3,5;1228;  4;3
+North America;Couples;Dec-Feb;Q4;Weekday; 7; 42; 36;YES;YES;NO;YES;YES;YES;3,5;1228; 11;5
+Oceania;Couples;Dec-Feb;Q4;Weekday; 7; 20;  9;YES;YES;NO;YES;YES;YES;3,5;1228; 16;4
+North America;Business;Dec-Feb;Q1;Weekend; 6;160; 88;YES;YES;NO;NO;YES;YES;3,5; 732; 34;4
+North America;Families;Dec-Feb;Q1;Weekday; 4; 84; 36;YES;YES;NO;NO;YES;YES;3,5; 732; 18;5
+North America;Business;Dec-Feb;Q1;Weekday; 5; 21; 20;YES;YES;NO;NO;YES;YES;3,5; 732; 13;5
+Europe;Friends;Mar-May;Q1;Weekday; 6; 95; 55;YES;YES;NO;NO;YES;YES;3,5; 732; 37;4
+Europe;Business;Mar-May;Q1;Weekday;10;118;131;YES;YES;NO;NO;YES;YES;3,5; 732;107;5
+North America;Couples;Mar-May;Q2;Weekday;10;  6;  8;YES;YES;NO;NO;YES;YES;3,5; 732;  0;5
+North America;Couples;Mar-May;Q2;Weekday; 2; 60; 31;YES;YES;NO;NO;YES;YES;3,5; 732;  4;4
+Oceania;Couples;Mar-May;Q2;Weekend; 7;275;339;YES;YES;NO;NO;YES;YES;3,5; 732; 79;4
+North America;Business;Mar-May;Q2;Weekday; 6; 46; 42;YES;YES;NO;NO;YES;YES;3,5; 732; 39;4
+North America;Families;Jun-Aug;Q2;Weekday; 4;  6;  6;YES;YES;NO;NO;YES;YES;3,5; 732;  5;5
+Asia;Families;Jun-Aug;Q3;Weekday; 1; 20;  7;YES;YES;NO;NO;YES;YES;3,5; 732; 12;5
+Asia;Families;Jun-Aug;Q3;Weekend; 5; 62; 25;YES;YES;NO;NO;YES;YES;3,5; 732; 40;5
+North America;Friends;Sep-Nov;Q3;Weekday; 0;  6;  5;YES;YES;NO;NO;YES;YES;3,5; 732;  3;5
+Asia;Business;Sep-Nov;Q4;Weekday; 7; 18;  8;YES;YES;NO;NO;YES;YES;3,5; 732;  9;3
+North America;Families;Sep-Nov;Q4;Weekday; 4;159; 78;YES;YES;NO;NO;YES;YES;3,5; 732; 43;5
+Asia;Couples;Sep-Nov;Q4;Weekday; 1; 47; 20;YES;YES;NO;NO;YES;YES;3,5; 732; 23;4
+Europe;Couples;Sep-Nov;Q4;Weekend; 5; 86; 46;YES;YES;NO;NO;YES;YES;3,5; 732; 12;4
+North America;Couples;Dec-Feb;Q4;Weekday; 1; 42; 13;YES;YES;NO;NO;YES;YES;3,5; 732;  9;5
+North America;Friends;Dec-Feb;Q1;Weekday; 8; 25; 12;YES;YES;YES;YES;YES;YES;3,0; 716;  5;5
+Europe;Business;Dec-Feb;Q1;Weekend; 4; 12;  6;YES;YES;YES;YES;YES;YES;3,0; 716; 12;3
+North America;Business;Dec-Feb;Q1;Weekend; 5;608;319;YES;YES;YES;YES;YES;YES;3,0; 716;117;5
+North America;Friends;Mar-May;Q1;Weekend; 8;  5;  3;YES;YES;YES;YES;YES;YES;3,0; 716;  4;5
+North America;Couples;Mar-May;Q1;Weekday; 7; 26; 34;YES;YES;YES;YES;YES;YES;3,0; 716; 17;5
+South America;Couples;Mar-May;Q2;Weekday; 7; 11;  9;YES;YES;YES;YES;YES;YES;3,0; 716;  5;5
+North America;Couples;Mar-May;Q2;Weekday; 3; 39; 13;YES;YES;YES;YES;YES;YES;3,0; 716; 10;4
+Asia;Families;Mar-May;Q2;Weekday; 0;  1;  3;YES;YES;YES;YES;YES;YES;3,0; 716;  0;2
+North America;Business;Mar-May;Q2;Weekday; 5;108; 22;YES;YES;YES;YES;YES;YES;3,0; 716; 20;3
+Asia;Friends;Jun-Aug;Q2;Weekend; 1;119; 46;YES;YES;YES;YES;YES;YES;3,0; 716; 20;5
+North America;Business;Jun-Aug;Q3;Weekend; 3;  7;  7;YES;YES;YES;YES;YES;YES;3,0; 716;  3;4
+North America;Business;Jun-Aug;Q3;Weekday; 0;  3;  2;YES;YES;YES;YES;YES;YES;3,0; 716;  3;3
+North America;Couples;Jun-Aug;Q3;Weekday; 6; 11; 19;YES;YES;YES;YES;YES;YES;3,0; 716;  3;4
+North America;Couples;Sep-Nov;Q3;Weekday; 0; 13;  6;YES;YES;YES;YES;YES;YES;3,0; 716;  4;5
+North America;Business;Sep-Nov;Q4;Weekend; 7; 38; 17;YES;YES;YES;YES;YES;YES;3,0; 716; 12;5
+North America;Couples;Sep-Nov;Q4;Weekend; 8;167;119;YES;YES;YES;YES;YES;YES;3,0; 716; 71;4
+North America;Families;Dec-Feb;Q4;Weekend; 4;  9;  5;YES;YES;YES;YES;YES;YES;3,0; 716;  8;5
+North America;Friends;Dec-Feb;Q4;Weekday; 5; 13;  4;YES;YES;YES;YES;YES;YES;3,0; 716;  4;5
+North America;Business;Dec-Feb;Q1;Weekday; 6; 65; 72;YES;YES;NO;NO;NO;YES;3,0; 315; 24;3
+Europe;Couples;Dec-Feb;Q1;Weekend; 4; 61; 26;YES;YES;NO;NO;NO;YES;3,0; 315; 13;2
+North America;Friends;Mar-May;Q1;Weekend; 9; 66; 21;YES;YES;NO;NO;NO;YES;3,0; 315; 13;5
+North America;Couples;Mar-May;Q1;Weekday; 2;  9;  4;YES;YES;NO;NO;NO;YES;3,0; 315;  7;5
+North America;Families;Mar-May;Q2;Weekday; 1; 82; 61;YES;YES;NO;NO;NO;YES;3,0; 315; 14;3
+North America;Friends;Mar-May;Q2;Weekend; 6; 11; 12;YES;YES;NO;NO;NO;YES;3,0; 315;  8;3
+North America;Families;Mar-May;Q2;Weekday; 3;  2;  1;YES;YES;NO;NO;NO;YES;3,0; 315;  1;3
+North America;Families;Jun-Aug;Q3;Weekend; 7; 56; 25;YES;YES;NO;NO;NO;YES;3,0; 315;  7;3
+North America;Couples;Jun-Aug;Q3;Weekday; 3; 45; 22;YES;YES;NO;NO;NO;YES;3,0; 315;  6;5
+North America;Families;Jun-Aug;Q3;Weekend; 1; 23; 11;YES;YES;NO;NO;NO;YES;3,0; 315; 23;5
+North America;Friends;Sep-Nov;Q3;Weekend; 4; 56; 24;YES;YES;NO;NO;NO;YES;3,0; 315; 18;5
+North America;Business;Sep-Nov;Q3;Weekend;10;290;300;YES;YES;NO;NO;NO;YES;3,0; 315;263;4
+Oceania;Families;Sep-Nov;Q4;Weekend; 0; 26;  9;YES;YES;NO;NO;NO;YES;3,0; 315;  7;4
+Asia;Couples;Sep-Nov;Q4;Weekend; 5;116; 53;YES;YES;NO;NO;NO;YES;3,0; 315; 44;4
+Europe;Business;Sep-Nov;Q4;Weekday; 5; 14; 15;YES;YES;NO;NO;NO;YES;3,0; 315;  5;4
+North America;Business;Sep-Nov;Q4;Weekend; 4; 13;  1;YES;YES;NO;NO;NO;YES;3,0; 315;  7;5
+North America;Couples;Dec-Feb;Q4;Weekday; 8; 20; 25;YES;YES;NO;NO;NO;YES;3,0; 315;  9;4
+North America;Families;Dec-Feb;Q4;Weekday; 2;  3;  3;YES;YES;NO;NO;NO;YES;3,0; 315;  3;5
+North America;Friends;Dec-Feb;Q1;Weekday; 2; 17; 12;YES;YES;YES;NO;NO;YES;3,5; 787;  3;4
+Oceania;Families;Dec-Feb;Q1;Weekend; 4; 21; 13;YES;YES;YES;NO;NO;YES;3,5; 787; 11;5
+North America;Couples;Dec-Feb;Q1;Weekday; 3; 60; 33;YES;YES;YES;NO;NO;YES;3,5; 787; 11;5
+North America;Couples;Dec-Feb;Q1;Weekday;11; 12; 15;YES;YES;YES;NO;NO;YES;3,5; 787;  4;5
+North America;Friends;Mar-May;Q1;Weekday; 4; 27; 51;YES;YES;YES;NO;NO;YES;3,5; 787; 12;5
+North America;Families;Mar-May;Q2;Weekday; 6; 69; 38;YES;YES;YES;NO;NO;YES;3,5; 787; 22;5
+North America;Business;Mar-May;Q2;Weekday; 5; 54; 15;YES;YES;YES;NO;NO;YES;3,5; 787; 10;4
+Europe;Couples;Jun-Aug;Q2;Weekday; 6; 35; 27;YES;YES;YES;NO;NO;YES;3,5; 787; 17;5
+Asia;Families;Jun-Aug;Q2;Weekend; 7; 23;  7;YES;YES;YES;NO;NO;YES;3,5; 787; 12;5
+Europe;Families;Jun-Aug;Q3;Weekend; 3;  6; 14;YES;YES;YES;NO;NO;YES;3,5; 787;  3;5
+North America;Friends;Jun-Aug;Q3;Weekday; 4; 27; 16;YES;YES;YES;NO;NO;YES;3,5; 787;  8;4
+North America;Friends;Sep-Nov;Q3;Weekday; 6; 14; 14;YES;YES;YES;NO;NO;YES;3,5; 787;  3;5
+North America;Business;Sep-Nov;Q3;Weekend; 8;415;265;YES;YES;YES;NO;NO;YES;3,5; 787;162;4
+Europe;Couples;Sep-Nov;Q4;Weekday; 6; 76; 32;YES;YES;YES;NO;NO;YES;3,5; 787; 27;3
+Europe;Couples;Sep-Nov;Q4;Weekday; 4; 24; 30;YES;YES;YES;NO;NO;YES;3,5; 787; 12;4
+Asia;Families;Sep-Nov;Q4;Weekday; 4; 23; 23;YES;YES;YES;NO;NO;YES;3,5; 787;  9;3
+North America;Families;Sep-Nov;Q4;Weekend; 2;182; 47;YES;YES;YES;NO;NO;YES;3,5; 787; 24;4
+North America;Friends;Dec-Feb;Q4;Weekend; 5;101; 46;YES;YES;YES;NO;NO;YES;3,5; 787; 35;5
+Europe;Business;Dec-Feb;Q1;Weekend; 2; 31; 20;YES;YES;NO;YES;YES;YES;5,0;4027; 11;4
+North America;Families;Dec-Feb;Q1;Weekend; 5; 60; 15;YES;YES;NO;YES;YES;YES;5,0;4027; 16;4
+North America;Couples;Dec-Feb;Q1;Weekend; 0;  1;  2;YES;YES;NO;YES;YES;YES;5,0;4027;  0;5
+North America;Couples;Mar-May;Q1;Weekday; 2;  9; 13;YES;YES;NO;YES;YES;YES;5,0;4027;  3;3
+North America;Couples;Mar-May;Q1;Weekday; 5; 19;  5;YES;YES;NO;YES;YES;YES;5,0;4027;  7;5
+Asia;Couples;Mar-May;Q2;Weekend; 9;116;206;YES;YES;NO;YES;YES;YES;5,0;4027; 78;5
+Oceania;Couples;Mar-May;Q2;Weekend; 2; 22; 26;YES;YES;NO;YES;YES;YES;5,0;4027; 13;4
+Oceania;Families;Mar-May;Q2;Weekday; 1; 83; 26;YES;YES;NO;YES;YES;YES;5,0;4027; 10;4
+Europe;Couples;Mar-May;Q2;Weekday; 0; 20;  9;YES;YES;NO;YES;YES;YES;5,0;4027;  3;5
+North America;Couples;Jun-Aug;Q2;Weekday; 1;  7;  6;YES;YES;NO;YES;YES;YES;5,0;4027;  5;5
+Oceania;Couples;Jun-Aug;Q3;Weekday; 4; 15; 19;YES;YES;NO;YES;YES;YES;5,0;4027;  6;4
+Europe;Couples;Jun-Aug;Q3;Weekend; 5; 13; 12;YES;YES;NO;YES;YES;YES;5,0;4027;  7;4
+North America;Families;Jun-Aug;Q3;Weekday;10; 19; 24;YES;YES;NO;YES;YES;YES;5,0;4027;  8;5
+Europe;Couples;Sep-Nov;Q3;Weekday; 7; 29; 15;YES;YES;NO;YES;YES;YES;5,0;4027;  7;5
+South America;Couples;Sep-Nov;Q4;Weekend; 2; 20;  8;YES;YES;NO;YES;YES;YES;5,0;4027;  0;5
+Europe;Couples;Sep-Nov;Q4;Weekday; 8; 39; 31;YES;YES;NO;YES;YES;YES;5,0;4027; 20;4
+Oceania;Couples;Sep-Nov;Q4;Weekend; 4; 43; 29;YES;YES;NO;YES;YES;YES;5,0;4027; 38;5
+North America;Couples;Dec-Feb;Q4;Weekday;10;  6; 12;YES;YES;NO;YES;YES;YES;5,0;4027;  6;4
+Oceania;Solo;Dec-Feb;Q1;Weekend; 3; 16;  3;YES;YES;NO;YES;YES;YES;5,0;3933;  6;4
+North America;Families;Dec-Feb;Q1;Weekday; 5; 15; 13;YES;YES;NO;YES;YES;YES;5,0;3933;  3;5
+North America;Business;Dec-Feb;Q1;Weekend; 1; 41;111;YES;YES;NO;YES;YES;YES;5,0;3933;  9;5
+North America;Business;Mar-May;Q1;Weekday; 0; 30; 17;YES;YES;NO;YES;YES;YES;5,0;3933;  9;2
+Europe;Business;Mar-May;Q2;Weekday; 4; 23; 18;YES;YES;NO;YES;YES;YES;5,0;3933; 10;5
+Europe;Friends;Mar-May;Q2;Weekend; 3; 12; 16;YES;YES;NO;YES;YES;YES;5,0;3933;  6;3
+Europe;Couples;Mar-May;Q2;Weekday; 1; 15; 17;YES;YES;NO;YES;YES;YES;5,0;3933;  6;5
+Europe;Families;Jun-Aug;Q2;Weekday; 0;  5;  5;YES;YES;NO;YES;YES;YES;5,0;3933;  0;5
+North America;Business;Jun-Aug;Q2;Weekend; 6; 32; 11;YES;YES;NO;YES;YES;YES;5,0;3933;  5;4
+North America;Couples;Jun-Aug;Q3;Weekend; 5; 28; 23;YES;YES;NO;YES;YES;YES;5,0;3933;  5;5
+Asia;Families;Jun-Aug;Q3;Weekend;10; 77; 48;YES;YES;NO;YES;YES;YES;5,0;3933; 18;4
+North America;Solo;Jun-Aug;Q3;Weekday; 0; 11;  2;YES;YES;NO;YES;YES;YES;5,0;3933;  8;4
+Europe;Couples;Sep-Nov;Q3;Weekday; 6; 13;  2;YES;YES;NO;YES;YES;YES;5,0;3933;  3;5
+North America;Business;Sep-Nov;Q3;Weekday; 2; 62; 31;YES;YES;NO;YES;YES;YES;5,0;3933; 13;4
+Europe;Couples;Sep-Nov;Q4;Weekend; 5; 26; 42;YES;YES;NO;YES;YES;YES;5,0;3933; 22;5
+Europe;Couples;Sep-Nov;Q4;Weekend; 1; 13; 12;YES;YES;NO;YES;YES;YES;5,0;3933;  6;4
+Europe;Friends;Sep-Nov;Q4;Weekday; 4; 26; 43;YES;YES;NO;YES;YES;YES;5,0;3933; 18;5
+Asia;Families;Dec-Feb;Q4;Weekend; 4; 20; 19;YES;YES;NO;YES;YES;YES;5,0;3933; 18;2
+North America;Couples;Dec-Feb;Q1;Weekend; 7; 14;  7;YES;YES;NO;YES;YES;YES;4,0;2916;  3;4
+North America;Couples;Dec-Feb;Q1;Weekday; 1; 19; 12;YES;YES;NO;YES;YES;YES;4,0;2916;  3;5
+North America;Couples;Dec-Feb;Q1;Weekday; 1;  4;  2;YES;YES;NO;YES;YES;YES;4,0;2916;  4;2
+North America;Couples;Mar-May;Q1;Weekday; 9;121; 59;YES;YES;NO;YES;YES;YES;4,0;2916; 13;2
+North America;Couples;Mar-May;Q1;Weekend; 2; 14;  6;YES;YES;NO;YES;YES;YES;4,0;2916;  7;5
+North America;Friends;Mar-May;Q2;Weekday; 3; 73; 39;YES;YES;NO;YES;YES;YES;4,0;2916;  4;3
+North America;Friends;Mar-May;Q2;Weekday; 6;  9;  4;YES;YES;NO;YES;YES;YES;4,0;2916;  5;5
+North America;Couples;Jun-Aug;Q3;Weekend; 3; 50; 23;YES;YES;NO;YES;YES;YES;4,0;2916; 15;4
+Europe;Families;Jun-Aug;Q3;Weekday; 3; 22; 11;YES;YES;NO;YES;YES;YES;4,0;2916;  9;4
+Africa;Families;Jun-Aug;Q3;Weekend; 4; 85; 65;YES;YES;NO;YES;YES;YES;4,0;2916; 37;5
+North America;Couples;Jun-Aug;Q3;Weekday; 3; 73; 26;YES;YES;NO;YES;YES;YES;4,0;2916;  7;5
+North America;Couples;Sep-Nov;Q3;Weekday; 2; 20; 27;YES;YES;NO;YES;YES;YES;4,0;2916; 10;4
+North America;Couples;Sep-Nov;Q3;Weekday; 2; 13; 13;YES;YES;NO;YES;YES;YES;4,0;2916;  6;5
+North America;Couples;Sep-Nov;Q4;Weekend; 0;  6;  6;YES;YES;NO;YES;YES;YES;4,0;2916;  4;5
+North America;Couples;Sep-Nov;Q4;Weekday; 6; 48; 25;YES;YES;NO;YES;YES;YES;4,0;2916;  8;4
+North America;Couples;Sep-Nov;Q4;Weekend; 0; 24;  5;YES;YES;NO;YES;YES;YES;4,0;2916;  3;5
+North America;Couples;Dec-Feb;Q4;Weekend; 4;123; 63;YES;YES;NO;YES;YES;YES;4,0;2916; 26;5
+North America;Friends;Dec-Feb;Q4;Weekday; 1; 24;  6;YES;YES;NO;YES;YES;YES;4,0;2916;  7;4
+North America;Families;Dec-Feb;Q1;Weekday; 7; 15;  4;YES;YES;NO;YES;YES;YES;4,0; 826;  3;3
+Europe;Solo;Dec-Feb;Q1;Weekend; 3;189;129;YES;YES;NO;YES;YES;YES;4,0; 826; 72;4
+North America;Couples;Dec-Feb;Q1;Weekday; 8; 25; 27;YES;YES;NO;YES;YES;YES;4,0; 826; 19;3
+North America;Business;Mar-May;Q1;Weekday; 4; 33; 12;YES;YES;NO;YES;YES;YES;4,0; 826; 11;5
+North America;Friends;Mar-May;Q1;Weekday; 4; 14; 13;YES;YES;NO;YES;YES;YES;4,0; 826;  7;5
+Africa;Solo;Mar-May;Q2;Weekend;12;169; 85;YES;YES;NO;YES;YES;YES;4,0; 826; 43;4
+North America;Friends;Mar-May;Q2;Weekend; 4; 20; 21;YES;YES;NO;YES;YES;YES;4,0; 826; 17;3
+North America;Couples;Mar-May;Q2;Weekday; 3; 17; 18;YES;YES;NO;YES;YES;YES;4,0; 826; 10;4
+North America;Solo;Jun-Aug;Q2;Weekday;11; 96;161;YES;YES;NO;YES;YES;YES;4,0; 826; 47;4
+Asia;Families;Jun-Aug;Q3;Weekday; 6; 12;  9;YES;YES;NO;YES;YES;YES;4,0; 826; 11;4
+North America;Couples;Jun-Aug;Q3;Weekday; 6;  9;  1;YES;YES;NO;YES;YES;YES;4,0; 826;  8;5
+North America;Families;Jun-Aug;Q3;Weekday; 7; 23; 22;YES;YES;NO;YES;YES;YES;4,0; 826; 21;3
+North America;Solo;Sep-Nov;Q3;Weekend; 6; 30; 19;YES;YES;NO;YES;YES;YES;4,0; 826; 27;5
+North America;Couples;Sep-Nov;Q3;Weekday;11; 63; 59;YES;YES;NO;YES;YES;YES;4,0; 826; 16;3
+Europe;Couples;Sep-Nov;Q4;Weekday; 1; 35; 25;YES;YES;NO;YES;YES;YES;4,0; 826;  3;5
+North America;Couples;Sep-Nov;Q4;Weekday; 8; 50; 29;YES;YES;NO;YES;YES;YES;4,0; 826; 13;4
+North America;Families;Dec-Feb;Q4;Weekday; 9;  9;  5;YES;YES;NO;YES;YES;YES;4,0; 826;  6;2
+North America;Families;Dec-Feb;Q4;Weekday; 5; 20;112;YES;YES;NO;YES;YES;YES;4,0; 826; 19;4
