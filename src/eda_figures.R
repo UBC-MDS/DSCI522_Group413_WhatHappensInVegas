@@ -3,7 +3,7 @@
 
 "Creates eda plots for the pre-processed training data from the Vegas Strip data (from https://archive.ics.uci.edu/ml/machine-learning-databases/00397/LasVegasTripAdvisorReviews-Dataset.csv).
 Saves the plots as a pdf and png file.
-Usage: src/eda_wisc.r --train=<train> --out_dir=<out_dir>
+Usage: src/eda_figures.r --train=<train> --out_dir=<out_dir>
   
 Options:
 --train=<train>     Path (including filename) to training data (which needs to be saved as a feather file)
