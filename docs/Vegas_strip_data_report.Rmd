@@ -1,0 +1,77 @@
+---
+title: "What happens in vegas: Predicting hotel ratings from amenities provided"
+author: "Tiffany A. Timbers </br>"
+date: "2019/12/30 (updated: `r Sys.Date()`)"
+always_allow_html: true
+output: 
+  html_document:
+    toc: true
+bibliography: breast_cancer_refs.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+library(caret)
+```
+
+```{r load model results}
+model <- readRDS("../results/final_model.rds")
+model_quality <- readRDS("../results/final_model_quality.rds")
+```
+
+# Summary
+
+Here we attempt to build a linear regression model to estimate the relationship between certain hotel amenities and the average  user ratings that the hotel gets from the consumers. Our final linear model performed quite well on the unseen test dataset and recorded a score of ...
+
+Here we attempt to build a classification model using the k-nearest neighbours algorithm which can use breast cancer tumour image measurements to predict whether a newly discovered breast cancer tumour is benign (i.e., is not harmful and does not require treatment) or malignant (i.e., is harmful and requires treatment intervention). Our final classifier performed fairly well on an unseen test data set, with Cohen's Kappa score of `r round(model_quality$overall[2], 1)` and an overall accuracy calculated to be `r round(model_quality$overall[1], 2)`. On the `r sum(model_quality$table)` test data cases, it correctly predicted  `r model_quality$table[2, 2] + model_quality$table[1, 1]`. However it incorrectly predicted  `r model_quality$table[2, 1] + model_quality$table[1, 2]` cases, and importantly these cases were false negatives; predicting that a tumour is benign when in fact it is malignant. These kind of incorrect predictions could have a severly negative impact on a patients health outcome, thus we recommend continuing study to improve this prediction model before it is put into production in the clinic.
+
+
+# Introduction
+
+Most travel and hotel bookings are nowadays being made online and one of the key parameters a potential consumer refers to before deciding on which hotel to book is the ratings given to a hotel by the previous users. For this project we are trying to answer the question: Given the presence of certain amenities in a hotel what is the expected average user rating for that hotel? Tourism industry professionals, travel agents, investors and Hotel owners who wish to attract clients can draw benefit from such a model. 
+
+# Methods
+
+## Data
+
+The Dataset chosen for the research project is the “Las Vegas Strip Dataset” which is a collated information about customer feedback on 21 Hotels located in the Las Vegas Strip. The data is extracted from popular, respected and well-regarded travel portal “TripAdvisor”. 
+-Moro, S., Rita, P., & Coelho, J. (2017). Stripping customers' feedback on hotels through data mining: The case of Las Vegas Strip. Tourism Management Perspectives, 23, 41-52. 
+It was sourced from the UCI machine learning repositories and can be found [here](https://archive.ics.uci.edu/ml/datasets/Las+Vegas+Strip). Each row in the data set represents information about the amenities present in the hotel such as swimming pool, spa, wifi and other contextual data and the user rating for the hotel.
+
+
+## Analysis
+
+The k-nearest neighbors (k-nn) algorithm was used to build a classification model to predict whether a tumour mass was benign or malignant (found in the class column of the data set). All variables included in the original data set, with the exception of the standard error of fractal dimension, smoothness, symmetry and texture were used to fit the model. The hyperparameter $K$ was chosen using 30-fold cross validation with Cohen's Kappa as the classification metric. The R and Python programming languages [@R; @Python] and the following R and Python packages were used to perform the analysis: caret [@caret], docopt [@docopt], feather [@feather], knitr [@knitr], tidyverse [@tidyverse], docopt [@docoptpython], os [@Python], feather [@feather] Pandas [@mckinney-proc-scipy-2010]. The code used to perform the analysis and create this report can be found here: https://github.com/ttimbers/breast_cancer_predictor.
+
+
+# Results & Discussion
+
+To look at whether each of the predictors might be useful to predict the tumour class, we plotted the distributions of each predictor from the training data set and coloured the distribution by class (benign: blue and malignant: orange). In doing this we see that class distributions for all of the mean and max predictors for all the measurements overlap somewhat, but do show quite a difference in their centres and spreads. This is less so for the standard error (se) predictors. In particular, the standard errors of fractal dimension, smoothness, symmetry and texture look very similar in both the distribution centre and spread. Thus, we choose to omit these from our model.
+
+```{r predictor-distributions, echo=FALSE, fig.cap="Figure 1. Comparison of the empirical distributions of training data predictors between benign and malignant tumour masses.", out.width = '100%'}
+knitr::include_graphics("../results/predictor_distributions_across_class.png")
+```
+
+We chose to use a simple classification model using the k-nearest neighbours algorithm. To find the model that best predicted whether a tumour was benign or malignant, we performed 30-fold cross validation using Cohen's Kappa as our metric of model prediction performance to select K (number of nearest neighbours). We observed that the optimal K was `r model$bestTune$k`.
+
+```{r choosing-k, echo=FALSE, fig.cap="Figure 2. Results from 30-fold cross validation to choose K. Cohen's Kappa was used as the classification metric as K was varied.", out.width = '60%'}
+knitr::include_graphics("../results/kappa_vs_k.png")
+```
+
+Our prediction model performed quite well on test data, with a final Cohen's Kappa score of `r round(model_quality$overall[2], 1)` and an overall accuracy calculated to be `r round(model_quality$overall[1], 2)`. Other indicators that our model performed well come from the confusion matrix, where it only made `r model_quality$table[2, 1] + model_quality$table[1, 2]` mistakes. However all `r model_quality$table[2, 1] + model_quality$table[1, 2]` mistakes were predicting a malignant tumour as benign, given the impications this has for patients health, this model is not good enough to yet implement in the clinic.
+
+
+```{r confusion-matrix, echo=FALSE}
+kable(model_quality$table, caption = "Table 1. Confusion matrix of model performance on test data.") %>%
+  kable_styling() %>%
+  add_header_above(c(" ", "Reference" = 2)) %>% 
+  pack_rows("Predicted", 1, 2)
+```
+
+TO ADD: Further discussion of model results, including how it might be improved with more work.
+
+# References
+
