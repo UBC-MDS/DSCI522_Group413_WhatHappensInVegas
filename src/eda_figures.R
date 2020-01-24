@@ -23,21 +23,33 @@ opt <- docopt(doc)
 main <- function(train, out_dir) {
   
   # visualize predictor distributions by class
-  train_data <- read_feather(train) %>% 
-    gather(key = predictor, value = value, -class) %>% 
-    mutate(predictor = str_replace_all(predictor, "_", " ")) %>% 
-    ggplot(aes(x = value, y = class, colour = class, fill = class)) +
-    facet_wrap(. ~ predictor, scale = "free", ncol = 4) +
-    geom_density_ridges(alpha = 0.8) +
-    scale_fill_tableau() +
-    scale_colour_tableau() +
-    guides(fill = FALSE, color = FALSE) +
-    theme(axis.title.x = element_blank(),
-          axis.title.y = element_blank())
-  ggsave(paste0(out_dir, "/predictor_distributions_across_class.png"), 
-         train_data,
-         width = 8, 
-         height = 10)
+  train_data <- read_csv2(train)
+  
+  train_data_fig_1 <- train_data %>%
+    select(pool, gym, tennis_court, spa, casino, free_internet, score)%>%
+    gather(key = amenity, value = has_amenity, -score) %>% 
+    ggplot(aes(x = score, colour = has_amenity, fill = has_amenity)) +
+    facet_wrap(. ~ amenity, scale = "free", ncol = 3) +
+    geom_density(alpha = 0.4) + 
+    labs(x = "Score", y = "Density", colour = "Has amenity", fill = "Has amenity")
+  
+  train_data_fig_2 <- train_data %>%
+    select(member_years,num_reviews,helpful_votes,hotel_stars,rooms,num_hotel_reviews, score)%>%
+    gather(key = predictor, value = value, -score)%>%
+    ggplot(aes(x = value, y = as.factor(score), colour = as.factor(score), fill = as.factor(score))) +
+    facet_wrap(. ~ predictor, scale = "free")+
+    geom_density_ridges(alpha = 0.2)+ 
+    labs(x = "", y = "Score", colour = "Score", fill = "Score")
+  
+  
+  ggsave("score_distributions_across_predictors.png", 
+         train_data_fig_1,
+         width = 10, 
+         height = 4)
+  ggsave("numeric_predictor_distributions_across_scores.png", 
+         train_data_fig_2,
+         width = 10, 
+         height = 4)
 }
 
 main(opt[["--train"]], opt[["--out_dir"]])
