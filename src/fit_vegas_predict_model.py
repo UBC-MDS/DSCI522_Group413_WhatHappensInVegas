@@ -1,5 +1,5 @@
-# author: Tiffany Timbers
-# date: 2019-12-18
+# authors: Arun, Bronwyn, Manish
+# date: 2020-01-23
 
 """Fits a linear regression model on the pre-processed training data from the Vegas strip data (from https://archive.ics.uci.edu/ml/machine-learning-databases/00397/LasVegasTripAdvisorReviews-Dataset.csv).
 Saves the model as a rds file.
