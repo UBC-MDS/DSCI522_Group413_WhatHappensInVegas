@@ -49,7 +49,7 @@ Before doing any EDA splitting dataset into training and test set.
 
 ```{r}
 # reading dataset 
-vegas_data <- read_csv2("../data/vegas_data.csv")
+vegas_data <- read_csv2("../data/raw/vegas_data.csv")
 
 #splitting into training test data set  based on hotel names
 set.seed(787)

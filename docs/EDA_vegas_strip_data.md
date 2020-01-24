@@ -42,7 +42,7 @@ Before doing any EDA splitting dataset into training and test set.
 
 ``` r
 # reading dataset 
-vegas_data <- read_csv2("../data/vegas_data.csv")
+vegas_data <- read_csv2("../data/raw/vegas_data.csv")
 ```
 
     ## Using ',' as decimal and '.' as grouping mark. Use read_delim() for more control.
@@ -96,11 +96,11 @@ head(training_set)
     ## 4 UK                        14                7              14     4
     ## 5 UK                        45               12              46     4
     ## 6 USA                        2                1               4     4
-    ## # ... with 15 more variables: `Period of stay` <chr>, `Traveler
-    ## #   type` <chr>, Pool <chr>, Gym <chr>, `Tennis court` <chr>, Spa <chr>,
-    ## #   Casino <chr>, `Free internet` <chr>, `Hotel name` <chr>, `Hotel
-    ## #   stars` <dbl>, `Nr. rooms` <dbl>, `User continent` <chr>, `Member
-    ## #   years` <dbl>, `Review month` <chr>, `Review weekday` <chr>
+    ## # ... with 15 more variables: `Period of stay` <chr>, `Traveler type` <chr>,
+    ## #   Pool <chr>, Gym <chr>, `Tennis court` <chr>, Spa <chr>, Casino <chr>, `Free
+    ## #   internet` <chr>, `Hotel name` <chr>, `Hotel stars` <dbl>, `Nr.
+    ## #   rooms` <dbl>, `User continent` <chr>, `Member years` <dbl>, `Review
+    ## #   month` <chr>, `Review weekday` <chr>
 
 ``` r
 colnames(training_set)
@@ -141,9 +141,8 @@ head(training_set)
     ## 6 USA                    2                1             4     4 Mar-May    
     ## # ... with 14 more variables: traveller_type <chr>, pool <chr>, gym <chr>,
     ## #   tennis_court <chr>, spa <chr>, casino <chr>, free_internet <chr>,
-    ## #   hotel_name <chr>, hotel_stars <dbl>, rooms <dbl>,
-    ## #   user_continent <chr>, member_years <dbl>, review_month <chr>,
-    ## #   review_weekday <chr>
+    ## #   hotel_name <chr>, hotel_stars <dbl>, rooms <dbl>, user_continent <chr>,
+    ## #   member_years <dbl>, review_month <chr>, review_weekday <chr>
 
 Checking for any NAs in the dataset.
 
@@ -203,34 +202,27 @@ summary(training_set)
     ##  Mean   :4.122                                                           
     ##  3rd Qu.:5.000                                                           
     ##  Max.   :5.000                                                           
-    ##      gym            tennis_court           spa           
-    ##  Length:378         Length:378         Length:378        
-    ##  Class :character   Class :character   Class :character  
-    ##  Mode  :character   Mode  :character   Mode  :character  
-    ##                                                          
-    ##                                                          
-    ##                                                          
-    ##     casino          free_internet       hotel_name         hotel_stars   
-    ##  Length:378         Length:378         Length:378         Min.   :3.000  
-    ##  Class :character   Class :character   Class :character   1st Qu.:3.500  
-    ##  Mode  :character   Mode  :character   Mode  :character   Median :4.000  
-    ##                                                           Mean   :4.143  
-    ##                                                           3rd Qu.:5.000  
-    ##                                                           Max.   :5.000  
-    ##      rooms      user_continent      member_years        review_month      
-    ##  Min.   : 188   Length:378         Min.   :-1806.0000   Length:378        
-    ##  1st Qu.: 826   Class :character   1st Qu.:    2.0000   Class :character  
-    ##  Median :2700   Mode  :character   Median :    4.0000   Mode  :character  
-    ##  Mean   :2196                      Mean   :   -0.4392                     
-    ##  3rd Qu.:3025                      3rd Qu.:    6.7500                     
-    ##  Max.   :4027                      Max.   :   13.0000                     
-    ##  review_weekday    
-    ##  Length:378        
-    ##  Class :character  
-    ##  Mode  :character  
-    ##                    
-    ##                    
-    ## 
+    ##      gym            tennis_court           spa               casino         
+    ##  Length:378         Length:378         Length:378         Length:378        
+    ##  Class :character   Class :character   Class :character   Class :character  
+    ##  Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+    ##                                                                             
+    ##                                                                             
+    ##                                                                             
+    ##  free_internet       hotel_name         hotel_stars        rooms     
+    ##  Length:378         Length:378         Min.   :3.000   Min.   : 188  
+    ##  Class :character   Class :character   1st Qu.:3.500   1st Qu.: 826  
+    ##  Mode  :character   Mode  :character   Median :4.000   Median :2700  
+    ##                                        Mean   :4.143   Mean   :2196  
+    ##                                        3rd Qu.:5.000   3rd Qu.:3025  
+    ##                                        Max.   :5.000   Max.   :4027  
+    ##  user_continent      member_years        review_month       review_weekday    
+    ##  Length:378         Min.   :-1806.0000   Length:378         Length:378        
+    ##  Class :character   1st Qu.:    2.0000   Class :character   Class :character  
+    ##  Mode  :character   Median :    4.0000   Mode  :character   Mode  :character  
+    ##                     Mean   :   -0.4392                                        
+    ##                     3rd Qu.:    6.7500                                        
+    ##                     Max.   :   13.0000
 
 Clearly based on summary statistics, the column `member_years` has
 negative values which seems incorrect as number of years of membership
@@ -394,10 +386,10 @@ for (category in categorical_features){
     ## 
     ## [1] "review_month"
     ## 
-    ##     April    August  December  February   January      July      June 
-    ##        29        30        33        33        27        34        30 
-    ##     March       May  November   October September 
-    ##        34        36        33        27        32 
+    ##     April    August  December  February   January      July      June     March 
+    ##        29        30        33        33        27        34        30        34 
+    ##       May  November   October September 
+    ##        36        33        27        32 
     ## 
     ## 
     ## [1] "review_weekday"
