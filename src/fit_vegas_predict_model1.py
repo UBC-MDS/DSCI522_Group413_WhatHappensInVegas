@@ -7,7 +7,12 @@ Created on Thu Jan 23 19:11:48 2020
 
 # importing required libraries
 
+
+import matplotlib.pyplot as plt
+
+from pandas.plotting import table
 import numpy as np
+import selenium
 
 import pickle
 import pandas as pd
@@ -142,7 +147,7 @@ chart = alt.Chart(errors_df).mark_line().encode(
     color = "error_type").properties(
 title = "MSE error based on number features selected")   
 
-chart.save("my_c")
+chart.save("result.png")
 
  ## Simple linear regression 
 model = LinearRegression()
@@ -166,7 +171,13 @@ cols_to_consider = X_train.columns[np.argsort(model.coef_)][[-1,-2,-3,-4,-5,-6,-
 
 
 #cols_to_consider
+## saving important features in numpy arraay to disk
 
+np.save("test", cols_to_consider, allow_pickle= True)
+
+#test
+#test = np.load("test.npy", allow_pickle = True )
+#print(test)
 # modeling on the important features
 
 X_train = X_train[cols_to_consider]
@@ -202,8 +213,28 @@ parameters = {
     'alpha' : np.logspace(-6, 6, 13)
 }
 model = grid_fit_model(rid_model,X_train,y_train,parameters= parameters, cv=10 )
+
+
+#saving model
+filename = 'finalized_model.sav'
+pickle.dump(model, open(filename, 'wb'))
+ # EDIT: see deprecation warnings below
+
+
+#exporting results on test set
+results_df = model_results(model)
+ax = plt.subplot(111, frame_on=False) # no visible frame
+ax.xaxis.set_visible(False)  # hide the x axis
+ax.yaxis.set_visible(False)  # hide the y axis
+
+table(ax, results_df, loc = "center",  colWidths = [0.5]*len(results_df.columns),
+    
+    cellLoc = 'center', rowLoc = 'center')
+
+plt.savefig('mytable.png', bbox_inches='tight')
+
 print("Model fitted based on training data and results are generated ")
-#print(model_results(model))
+#print()
 #print("Best validation score",-1*model.best_score_)
 #
 ## error on test set -- not that good.
