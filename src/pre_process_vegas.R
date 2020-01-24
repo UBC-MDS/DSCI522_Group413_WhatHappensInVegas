@@ -151,7 +151,7 @@ user_specific_features[4:5] <- c("review_quarter", "review_day")
 
 
 ## preprocessing begins
-
+training_set$hotel_stars = factor(training_set$hotel_stars)
 
 ## scaling numeric features
 set.seed(14)
@@ -229,7 +229,8 @@ user_specific_features <- user_specific_features[-1]
 user_specific_features[4:5] <- c("review_quarter", "review_day")
 
 
-
+## preprocessing begins
+test_set$hotel_stars = factor(test_set$hotel_stars)
 
 test_set[, numerical_features] = predict(preProcValues, test_set[,numerical_features])
 
@@ -243,8 +244,8 @@ test_set <- cbind(data.frame(predict(dmy,test_set[categorical_features])), test_
 
 
 # write training and test data to feather files
-write_csv2(training_set, paste0(out_dir, "/training_ml.csv"))
-write_csv2(test_set, paste0(out_dir, "/test_ml.csv"))
+write_csv(training_set, paste0(out_dir, "/training_ml.csv"))
+write_csv(test_set, paste0(out_dir, "/test_ml.csv"))
 
 }
 
