@@ -3,14 +3,6 @@ What happens in vegas: Predicting hotel ratings from amenities provided
 Bronwyn Baillie, Arun Maria, Manish Joshi </br>
 2020/1/24
 
-  - [Summary](#summary)
-  - [Introduction](#introduction)
-  - [Methods](#methods)
-      - [Data](#data)
-      - [Analysis](#analysis)
-  - [Results](#results)
-  - [References](#references)
-
 # Summary
 
 Here we attempt to build a linear regression model which can use data
@@ -38,12 +30,12 @@ benefit from such a model.
 
 ## Data
 
-The Dataset chosen for the research project is the “Las Vegas Strip
-Dataset” which is a collated information about customer feedback on 21
+The Dataset chosen for the research project is the â€œLas Vegas Strip
+Datasetâ€ which is a collated information about customer feedback on 21
 Hotels located in the Las Vegas Strip. The data is extracted from
-popular, respected and well-regarded travel portal “TripAdvisor”. -Moro,
-S., Rita, P., & Coelho, J. (2017). Stripping customers’ feedback on
-hotels through data mining: The case of Las Vegas Strip. Tourism
+popular, respected and well-regarded travel portal â€œTripAdvisorâ€.
+-Moro, S., Rita, P., & Coelho, J. (2017). Stripping customers’ feedback
+on hotels through data mining: The case of Las Vegas Strip. Tourism
 Management Perspectives, 23, 41-52. It was sourced from the UCI machine
 learning repositories and can be found
 [here](https://archive.ics.uci.edu/ml/datasets/Las+Vegas+Strip). Each
