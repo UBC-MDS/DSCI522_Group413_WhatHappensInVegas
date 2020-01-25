@@ -9,7 +9,7 @@ Usage: src/fit_vegas_predict_model.py  --train=<train> --out_dir=<out_dir>
 Options:
 
 --train=<train>     Path (including filename) to training data 
---out_dir=<out_dir> Path to directory where the serialized model should be written
+--out_dir=<out_dir> Path to directory where the serialized model results should be written
 """
   
 # importing required libraries
@@ -48,6 +48,7 @@ import altair as alt
 opt = docopt(__doc__)
 
 def main(train,  out_dir):
+    out_dir = "results"
     os.makedirs(out_dir)
     
     # Loading Dividing data into training and test set features
@@ -154,7 +155,7 @@ def main(train,  out_dir):
     
     chart = alt.Chart(errors_df).mark_line().encode(
         x =alt.X( 'features_selected:Q', title ="Number of Features selected"),
-        y = alt.X( 'error:Q', title ="Mean Squared Error"),
+        y = alt.Y( 'error:Q', title ="Mean Squared Error"),
         color = "error_type").properties(
     title = "MSE error based on number features selected")   
     
