@@ -139,7 +139,7 @@ user_specific_features <- user_specific_features[-1]
 user_specific_features[4:5] <- c("review_quarter", "review_day")
 
 
-
+training_set_plot <- training_set
 
 
 
@@ -244,6 +244,7 @@ test_set <- cbind(data.frame(predict(dmy,test_set[categorical_features])), test_
 
 
 # write training and test data to feather files
+write_csv(training_set_plot, paste0(out_dir, "/train_vegas_plot.csv"))
 write_csv(training_set, paste0(out_dir, "/training_ml.csv"))
 write_csv(test_set, paste0(out_dir, "/test_ml.csv"))
 

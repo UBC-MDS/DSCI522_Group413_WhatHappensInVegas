@@ -1,27 +1,20 @@
 What happens in vegas: Predicting hotel ratings from amenities provided
 ================
 Bronwyn Baillie, Arun Maria, Manish Joshi </br>
-2020/1/24
-
-  - [Summary](#summary)
-  - [Introduction](#introduction)
-  - [Methods](#methods)
-      - [Data](#data)
-      - [Analysis](#analysis)
-  - [Results](#results)
-  - [References](#references)
+2020/1/24 (updated: 2020-01-25)
 
 # Summary
 
-Here we attempt to build a linear regression model which can use data
-about the hotel amenities and predict what kind of user ratings can be
-expected for the hotel given these amenities are functional in the
-hotel. Exploratory data analysis was performed in R and only on the
-training data. Different hotel specific features were checked against
-the ratings given to the hotel by the users. From the preliminary EDA it
-became apparent that some features do not have much impact on the hotel
-ratings whereas certain features such as the presence of a Swim pool and
-wifi internet had a positive impact on the hotel ratings.
+Here we attempt to build a linear regression model which can use
+data(Moro 2017) about the hotel amenities and predict what kind of user
+ratings can be expected for the hotel given these amenities are
+functional in the hotel. Exploratory data analysis was performed in R(R
+Core Team 2019) and only on the training data. Different hotel specific
+features were checked against the ratings given to the hotel by the
+users. From the preliminary EDA it became apparent that some features do
+not have much impact on the hotel ratings whereas certain features such
+as the presence of a Swim pool and wifi internet had a positive impact
+on the hotel ratings.
 
 # Introduction
 
@@ -53,17 +46,52 @@ and the user rating for the hotel.
 
 ## Analysis
 
-From the preliminary EDA it became apparent that some features do not
-have much impact on the hotel ratings whereas certain features such as
-the presence of a Swim pool and wifi internet had a positive impact on
-the hotel ratings.
+From the preliminary EDA(Wickham 2017) it became apparent that some
+features do not have much impact on the hotel ratings whereas certain
+features such as the presence of a Swim pool and wifi internet had a
+positive impact on the hotel ratings.
 
-The training of the model was done in Python. The model performed poorly
-with a high Mean Square Error when all the features were used in the
-training dataset. Linear regression (weights) values were used to
-determine the important features and the rest of the features were
-removed to train data.
-<img src="../results/result_features.png" title="Figure 2. Realation between number of features and validation error" alt="Figure 2. Realation between number of features and validation error" width="100%" />
+<div class="figure">
+
+<img src="../src/eda_plots/numeric_predictor_distributions_across_scores.png" alt="Figure 1. Hotel scores distribution for numeric features" width="100%" />
+
+<p class="caption">
+
+Figure 1. Hotel scores distribution for numeric features
+
+</p>
+
+</div>
+
+<div class="figure">
+
+<img src="../src/eda_plots/score_distributions_across_predictors.png" alt="Figure 2. Hotel scores distribution for categorical features" width="100%" />
+
+<p class="caption">
+
+Figure 2. Hotel scores distribution for categorical features
+
+</p>
+
+</div>
+
+The training of the model was done in Python(Van Rossum and Drake 2009).
+The model(Pedregosa et al. 2011) performed poorly with a high Mean
+Square Error when all the features were used in the training dataset.
+Linear regression (weights) values were used to determine the important
+features and the rest of the features were removed to train data.
+
+<div class="figure">
+
+<img src="../results/result_features.png" alt="Figure 2. Realation between number of features and validation error" width="100%" />
+
+<p class="caption">
+
+Figure 2. Realation between number of features and validation error
+
+</p>
+
+</div>
 
 The features which had a significant impact on the user scores were 1.
 Swimming pool, 2.Free Wifi Internet and the Visitor’s continent. These
@@ -79,13 +107,75 @@ final model.
 
 # Results
 
-  - Results of the fitting model are as shown below. The error metric
-    used is MSE (mean square error)
+  - Results(Sievert 2018) of the fitting model are as shown below. The
+    error metric used is MSE (mean square error)
 
   - The final error obtained on the unseen test data is 0.867 which is
     similar to the training error obtained. The model generalizes well
     and does not overfit.
 
-<img src="../results/error_table.png" title="Figure 3. The error metric used is Mean Square Error (MSE)." alt="Figure 3. The error metric used is Mean Square Error (MSE)." width="100%" />
+<div class="figure">
+
+<img src="../results/error_table.png" alt="Figure 3. The error metric used is Mean Square Error (MSE)." width="100%" />
+
+<p class="caption">
+
+Figure 3. The error metric used is Mean Square Error (MSE).
+
+</p>
+
+</div>
 
 # References
+
+<div id="refs" class="references">
+
+<div id="ref-vegas">
+
+Moro, Rita, S. 2017. “UCI Machine Learning Repository.” University of
+California, Irvine, School of Information; Computer Sciences.
+<https://archive.ics.uci.edu/ml/datasets/Las+Vegas+Strip>.
+
+</div>
+
+<div id="ref-scikit-learn">
+
+Pedregosa, F., G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O.
+Grisel, M. Blondel, et al. 2011. “Scikit-Learn: Machine Learning in
+Python.” *Journal of Machine Learning Research* 12: 2825–30.
+
+</div>
+
+<div id="ref-R">
+
+R Core Team. 2019. *R: A Language and Environment for Statistical
+Computing*. Vienna, Austria: R Foundation for Statistical Computing.
+<https://www.R-project.org/>.
+
+</div>
+
+<div id="ref-2018-altair">
+
+Sievert, Jacob VanderPlas AND Brian E. Granger AND Jeffrey Heer AND
+Dominik Moritz AND Kanit Wongsuphasawat AND Arvind Satyanarayan AND
+Eitan Lees AND Ilia Timofeev AND Ben Welsh AND Scott. 2018. “Altair:
+Interactive Statistical Visualizations for Python.” *The Journal of Open
+Source Software* 3 (32). <http://idl.cs.washington.edu/papers/altair>.
+
+</div>
+
+<div id="ref-Python">
+
+Van Rossum, Guido, and Fred L. Drake. 2009. *Python 3 Reference Manual*.
+Scotts Valley, CA: CreateSpace.
+
+</div>
+
+<div id="ref-tidyverse">
+
+Wickham, Hadley. 2017. *Tidyverse: Easily Install and Load the
+’Tidyverse’*. <https://CRAN.R-project.org/package=tidyverse>.
+
+</div>
+
+</div>

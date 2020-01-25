@@ -39,7 +39,7 @@ and the user rating for the hotel.(Van Rossum and Drake 2009)
 
 ## Report
 
-The final report can be found [here]()
+The final report can be found [here](docs/Vegas_strip_data_report.md)
 
 ## Usage
 
@@ -49,23 +49,29 @@ commands at the command line/terminal from the root directory of this
 project:
 
     # download data
-    #python src/download_data.py --out_type=feather #--url=http://mlr.cs.umass.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data #--out_file=data/raw/wdbc.feather
+    #Rscript.exe src/download_file.R https://archive.ics.uci.edu/ml/machine-learning-databases/00397/LasVegasTripAdvisorReviews-Dataset.csv data/raw/vegas_data.csv
     
     # run eda report
-    #Rscript -e "rmarkdown::render('src/breast_cancer_eda.Rmd')"
+    #Rscript.exe -e "rmarkdown::render('docs/EDA_vegas_strip_data.Rmd')"
     
     # pre-process data
-    #Rscript src/pre_process_wisc.r --input=data/raw/wdbc.feather --out_dir=data/processed
+    #Rscript.exe src/pre_process_vegas.R --input=data/raw/vegas_data.csv --out_dir=data/processed
     
     # create exploratory data analysis figure and write to file
-    #Rscript src/eda_wisc.r --train=data/processed/training.feather --out_dir=results
+    #Rscript src/eda_figures.R --train=data/processed/train_vegas_plot.csv --out_dir=src/eda_plots
+    
+    #Delete old results
+    rm -rf results
+    
+    # tune model
+    python src/fit_vegas_predict_model.py  --train=data/processed/training_ml.csv --out_dir=results
     
     
     # test model
-    #Rscript src/breast_cancer_test_results.r --test=data/processed/test.feather --out_dir=results
+    # python src/vegas_test_results.py  --test=data/processed/test_ml.csv --out_dir=results
     
     # render final report
-    #Rscript -e "rmarkdown::render('doc/breast_cancer_predict_report.Rmd', output_format = #'github_document')"
+    #Rscript.exe -e "rmarkdown::render('docs/Vegas_strip_data_report.Rmd', 'github_document')"
 
 ## Dependencies
 
@@ -92,6 +98,12 @@ project:
       - reticulate==1.14
 
 # References
+
+Moro, S., Rita, P., & Coelho, J. (2017). Stripping customers’ feedback
+on hotels through data mining: The case of Las Vegas Strip. Tourism
+Management Perspectives, 23, 41-52. “UCI Machine Learning Repository.”
+University of California, Irvine, School of Information; Computer
+Sciences. <http://archive.ics.uci.edu/ml>.
 
 <div id="refs" class="references">
 

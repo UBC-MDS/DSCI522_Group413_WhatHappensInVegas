@@ -1,12 +1,12 @@
 ---
 title: "What happens in vegas: Predicting hotel ratings from amenities provided"
 author: "Bronwyn Baillie, Arun Maria, Manish Joshi </br>"
-date: "2020/1/24"
+date: "2020/1/24 (updated: `r Sys.Date()`)"
 always_allow_html: true
 output: 
   html_document:
     toc: true
-bibliography: references.bib
+bibliography: vegas_hotels_refs.bib 
 ---
 
 ```{r setup, include=FALSE}
@@ -20,7 +20,7 @@ library(caret)
 
 # Summary
 
-Here we attempt to build a linear regression model which can use data about the hotel amenities and predict what kind of user ratings can be expected for the hotel given these amenities are functional in the hotel.  Exploratory data analysis was performed in R and only on the training data. Different hotel specific features were checked against the ratings given to the hotel by the users. From the preliminary EDA it became apparent that some features do not have much impact on the hotel ratings whereas certain features such as the presence of a Swim pool and wifi internet had a positive impact on the hotel ratings.
+Here we attempt to build a linear regression model which can use data[@vegas] about the hotel amenities and predict what kind of user ratings can be expected for the hotel given these amenities are functional in the hotel.  Exploratory data analysis was performed in R[@R] and only on the training data. Different hotel specific features were checked against the ratings given to the hotel by the users. From the preliminary EDA it became apparent that some features do not have much impact on the hotel ratings whereas certain features such as the presence of a Swim pool and wifi internet had a positive impact on the hotel ratings.
 
 
 # Introduction
@@ -38,14 +38,19 @@ It was sourced from the UCI machine learning repositories and can be found [here
 
 ## Analysis
 
-From the preliminary EDA it became apparent that some features do not have much impact on the hotel ratings whereas certain features such as the presence of a Swim pool and wifi internet had a positive impact on the hotel ratings. 
+From the preliminary EDA[@tidyverse] it became apparent that some features do not have much impact on the hotel ratings whereas certain features such as the presence of a Swim pool and wifi internet had a positive impact on the hotel ratings. 
 
-```{r}
+```{r echo=FALSE, fig.cap="Figure 1. Hotel scores distribution for numeric features", out.width = '100%'}
+knitr::include_graphics("../src/eda_plots/numeric_predictor_distributions_across_scores.png")
+
+```
+```{r echo=FALSE, fig.cap="Figure 2. Hotel scores distribution for categorical features", out.width = '100%'}
+knitr::include_graphics("../src/eda_plots/score_distributions_across_predictors.png")
 
 ```
 
 
-The training of the model was done in Python. The model performed poorly with a high Mean Square Error when all the features were used in the training dataset. Linear regression (weights) values were used to determine the important features and the rest of the features were removed to train data.
+The training of the model was done in Python[@Python]. The model[@scikit-learn] performed poorly with a high Mean Square Error when all the features were used in the training dataset. Linear regression (weights) values were used to determine the important features and the rest of the features were removed to train data.
 ```{r echo=FALSE, fig.cap="Figure 2. Realation between number of features and validation error", out.width = '100%'}
 knitr::include_graphics("../results/result_features.png")
 
@@ -59,7 +64,7 @@ The Model was then trained with a different regression algorithms such as 1. lin
 
 # Results
 
-- Results of the fitting model are as shown below. The error metric used is MSE (mean square error)
+- Results[@2018-altair] of the fitting model are as shown below. The error metric used is MSE (mean square error)
 
 - The final error obtained on the unseen test data is 0.867 which is similar to the training error obtained. The model generalizes well and does not overfit. 
 
@@ -67,10 +72,4 @@ The Model was then trained with a different regression algorithms such as 1. lin
 knitr::include_graphics("../results/error_table.png")
 ```
 
-
-
-
-
-
 # References
-
