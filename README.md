@@ -1,6 +1,12 @@
-What happens in vegas: Predicting hotel ratings from amenities provided
+What happens in vegas: Predicting hotel ratings from hotel and user data
 ================
 Bronwyn Baillie , Arun Maria , Manish Joshi
+
+  - [About](#about)
+  - [Report](#report)
+  - [Usage](#usage)
+  - [Dependencies](#dependencies)
+  - [References](#references)
 
 Demo of a data analysis project for DSCI 522 (Data Science workflows); a
 course in the Master of Data Science program at the University of
