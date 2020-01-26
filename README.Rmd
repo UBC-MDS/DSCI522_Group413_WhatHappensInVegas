@@ -1,5 +1,5 @@
 ---
-title: "What happens in vegas: Predicting hotel ratings from amenities provided"
+title: "What happens in vegas: Predicting hotel ratings from hotel and user data"
 author: "Bronwyn Baillie , Arun Maria , Manish Joshi "
 bibliography: docs/vegas_hotels_refs.bib
 output:

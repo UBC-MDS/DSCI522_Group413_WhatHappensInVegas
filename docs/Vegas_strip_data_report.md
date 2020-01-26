@@ -5,26 +5,28 @@ Bronwyn Baillie, Arun Maria, Manish Joshi </br>
 
 # Summary
 
-Here we attempt to build a linear regression model which can use
-data(Moro 2017) about the hotel amenities and predict what kind of user
-ratings can be expected for the hotel given these amenities are
-functional in the hotel. Exploratory data analysis was performed in R(R
-Core Team 2019) and only on the training data. Different hotel specific
-features were checked against the ratings given to the hotel by the
-users. From the preliminary EDA it became apparent that some features do
-not have much impact on the hotel ratings whereas certain features such
-as the presence of a Swim pool and wifi internet had a positive impact
-on the hotel ratings.
+In this project, we build a regression model that uses data collected
+from TripAdvisor user reviews of Las Vegas hotels to predict what kind
+of user ratings can be expected for a hotel (Moro 2017). Exploratory
+data analysis was performed in R on only a portion of our data reserved
+for training (R Core Team 2019). In our preliminary EDA, we checked the
+effect of different user and hotel specific features against user
+ratings, and it became apparent that most features did not have much
+impact on the hotel ratings. However, upon further analysis throughout
+our project we discovered that some features, such as the presence of a
+swimming pool, free wifi, and user continent, did have an effect on
+hotel ratings.
 
 # Introduction
 
-Most travel and hotel bookings are nowadays being made online and one of
-the key parameters a potential consumer refers to before deciding on
-which hotel to book is the ratings given to a hotel by the previous
-users. For this project we are trying to answer the question: Given the
-presence of certain amenities in a hotel what is the expected average
-user rating for that hotel? Tourism industry professionals, travel
-agents, investors and Hotel owners who wish to attract clients can draw
+Most travel and hotel bookings nowadays are being made online, and one
+of the key parameters a potential consumer refers to before deciding on
+which hotel to book is the ratings given to a hotel by users who had
+previously visited. For this project we wanted to be able to predict the
+expected user rating of a hotel, given various features about both the
+user and the hotel, and determine which user and hotel features had the
+most effect on that rating. Tourism industry professionals, travel
+agents, investors, and Hotel owners who wish to attract clients can draw
 benefit from such a model.
 
 # Methods
@@ -32,24 +34,28 @@ benefit from such a model.
 ## Data
 
 The Dataset chosen for the research project is the “Las Vegas Strip
-Dataset” which is a collated information about customer feedback on 21
+Dataset” which is collated information about customer feedback on 21
 Hotels located in the Las Vegas Strip. The data is extracted from
 popular, respected and well-regarded travel portal “TripAdvisor”. -Moro,
 S., Rita, P., & Coelho, J. (2017). Stripping customers’ feedback on
 hotels through data mining: The case of Las Vegas Strip. Tourism
 Management Perspectives, 23, 41-52. It was sourced from the UCI machine
-learning repositories and can be found
+learning repositories, and can be found
 [here](https://archive.ics.uci.edu/ml/datasets/Las+Vegas+Strip). Each
-row in the data set represents information about the amenities present
-in the hotel such as swimming pool, spa, wifi and other contextual data
-and the user rating for the hotel.
+row in the data set represents information about one user review, and
+contains variables such as the name of the hotel, amenities present in
+the hotel such as a swimming pool, spa, or wifi, imformation about the
+reviewer like the number of reviews they’ve given and the number of
+years they’ve been a member, all along with the user’s rating for the
+hotel.
 
 ## Analysis
 
-From the preliminary EDA(Wickham 2017) it became apparent that some
-features do not have much impact on the hotel ratings whereas certain
-features such as the presence of a Swim pool and wifi internet had a
-positive impact on the hotel ratings.
+From the preliminary EDA, it became apparent that some features did not
+have much impact on the hotel ratings, whereas other features such as
+the presence of a swimming pool and free wifi showed a potential effect.
+Many of these realizations came from visualizations made using the
+ggplot2 library in R (Wickham 2016).
 
 <div class="figure">
 
@@ -75,11 +81,12 @@ Figure 2. Hotel scores distribution for categorical features
 
 </div>
 
-The training of the model was done in Python(Van Rossum and Drake 2009).
-The model(Pedregosa et al. 2011) performed poorly with a high Mean
-Square Error when all the features were used in the training dataset.
-Linear regression (weights) values were used to determine the important
-features and the rest of the features were removed to train data.
+The training of the model was done in Python (Van Rossum and Drake
+2009). The model performed poorly with a high mean square error when all
+the features were used in the training dataset, so scikit-learn’s
+recursive feature elimination function was used to remove unnecessary
+features and improve our model (Pedregosa et al. 2011). The improvements
+in error can be seen visualized below using altair (Sievert 2018).
 
 <div class="figure">
 
@@ -93,22 +100,24 @@ Figure 2. Realation between number of features and validation error
 
 </div>
 
-The features which had a significant impact on the user scores were 1.
-Swimming pool, 2.Free Wifi Internet and the Visitor’s continent. These
+Our model showed the most promise in terms of both training and
+validation errors when we limited our model to have just 3 features. The
+3 features selected were whether or not the hotel had a swimming pool,
+whether or not the hotel had free Wifi, and the user’s continent. These
 metrics were in line with what was seen during the EDA stage.
 
-The Model was then trained with a different regression algorithms such
-as 1. linear regression 2. RFregressor 3. Lasso 4. ridge regression and
-5. SVM. from sklearn package in Python. A 10- fold cross validation was
-used to determine the best hyperparameters. It was found that the best
-performing algorithm on the validation set was the ridge
-regression(regularized Liner regression) and this was chosen as the
+The Model was then trained using different regression algorithms such as
+a linear regression, an RFregressor, Lasso, ridge regression, and SVM,
+all from the sklearn package in Python. 10-fold cross validation was
+used to determine the best hyperparameters when possible. It was found
+that the best performing algorithm on the validation set was the ridge
+regression (regularized linear regression) and this was chosen as the
 final model.
 
 # Results
 
-  - Results(Sievert 2018) of the fitting model are as shown below. The
-    error metric used is MSE (mean square error)
+  - Results of the model while hyperparameters were being tuned are
+    shown below. The error metric used is MSE (mean square error)
 
   - The final error obtained on the unseen test data is 0.867 which is
     similar to the training error obtained. The model generalizes well
@@ -171,10 +180,10 @@ Scotts Valley, CA: CreateSpace.
 
 </div>
 
-<div id="ref-tidyverse">
+<div id="ref-ggplot2">
 
-Wickham, Hadley. 2017. *Tidyverse: Easily Install and Load the
-’Tidyverse’*. <https://CRAN.R-project.org/package=tidyverse>.
+Wickham, Hadley. 2016. *Ggplot2: Elegant Graphics for Data Analysis*.
+Springer-Verlag New York. <https://ggplot2.tidyverse.org>.
 
 </div>
 
