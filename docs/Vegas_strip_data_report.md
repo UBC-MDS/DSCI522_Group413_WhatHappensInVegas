@@ -1,7 +1,7 @@
-What happens in vegas: Predicting hotel ratings from amenities provided
+What Happens in Vegas: Predicting Hotel Ratings From Hotel and User Data
 ================
 Bronwyn Baillie, Arun Maria, Manish Joshi </br>
-2020/1/24 (updated: 2020-01-25)
+2020/1/24 (updated: 2020-01-29)
 
 # Summary
 
@@ -55,50 +55,23 @@ From the preliminary EDA, it became apparent that some features did not
 have much impact on the hotel ratings, whereas other features such as
 the presence of a swimming pool and free wifi showed a potential effect.
 Many of these realizations came from visualizations made using the
-ggplot2 library in R (Wickham 2016).
+ggplot2 library in R (Wickham
+2016).
 
-<div class="figure">
-
-<img src="../src/eda_plots/numeric_predictor_distributions_across_scores.png" alt="Figure 1. Hotel scores distribution for numeric features" width="100%" />
-
-<p class="caption">
-
-Figure 1. Hotel scores distribution for numeric features
-
-</p>
-
-</div>
-
-<div class="figure">
-
-<img src="../src/eda_plots/score_distributions_across_predictors.png" alt="Figure 2. Hotel scores distribution for categorical features" width="100%" />
-
-<p class="caption">
-
-Figure 2. Hotel scores distribution for categorical features
-
-</p>
-
-</div>
+<img src="../src/eda_plots/numeric_predictor_distributions_across_scores.png" title="Figure 1. Hotel scores distribution for numeric features" alt="Figure 1. Hotel scores distribution for numeric features" width="100%" />
+<img src="../src/eda_plots/score_distributions_across_predictors.png" title="Figure 2. Hotel scores distribution for categorical features" alt="Figure 2. Hotel scores distribution for categorical features" width="100%" />
 
 The training of the model was done in Python (Van Rossum and Drake
-2009). The model performed poorly with a high mean square error when all
-the features were used in the training dataset, so scikit-learn’s
-recursive feature elimination function was used to remove unnecessary
-features and improve our model (Pedregosa et al. 2011). The improvements
-in error can be seen visualized below using altair (Sievert 2018).
-
-<div class="figure">
-
-<img src="../results/result_features.png" alt="Figure 2. Realation between number of features and validation error" width="100%" />
-
-<p class="caption">
-
-Figure 2. Realation between number of features and validation error
-
-</p>
-
-</div>
+2009), and mean squared error (MSE) was used to measure model
+performance. We chose to use MSE because our goal is to create a model
+that has very strong predictive abilities, and MSE is a good way of
+interpreting how well a model performs. The model performed poorly with
+a high MSE when all the features were used in the training dataset, so
+scikit-learn’s recursive feature elimination function was used to remove
+unnecessary features and improve our model (Pedregosa et al. 2011). The
+improvements in error can be seen visualized below using altair (Sievert
+2018).
+<img src="../results/result_features.png" title="Figure 2. Realation between number of features and validation error" alt="Figure 2. Realation between number of features and validation error" width="100%" />
 
 Our model showed the most promise in terms of both training and
 validation errors when we limited our model to have just 3 features. The
@@ -121,19 +94,10 @@ final model.
 
   - The final error obtained on the unseen test data is 0.867 which is
     similar to the training error obtained. The model generalizes well
-    and does not overfit.
+    and does not
+overfit.
 
-<div class="figure">
-
-<img src="../results/error_table.png" alt="Figure 3. The error metric used is Mean Square Error (MSE)." width="100%" />
-
-<p class="caption">
-
-Figure 3. The error metric used is Mean Square Error (MSE).
-
-</p>
-
-</div>
+<img src="../results/error_table.png" title="Figure 3. The error metric used is Mean Square Error (MSE)." alt="Figure 3. The error metric used is Mean Square Error (MSE)." width="100%" />
 
 # References
 

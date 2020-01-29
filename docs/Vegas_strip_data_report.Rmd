@@ -50,7 +50,7 @@ knitr::include_graphics("../src/eda_plots/score_distributions_across_predictors.
 ```
 
 
-The training of the model was done in Python [@Python]. The model performed poorly with a high mean square error when all the features were used in the training dataset, so scikit-learn's recursive feature elimination function was used to remove unnecessary features and improve our model [@scikit-learn]. The improvements in error can be seen visualized below using altair [@2018-altair].
+The training of the model was done in Python [@Python], and mean squared error (MSE) was used to measure model performance. We chose to use MSE because our goal is to create a model that has very strong predictive abilities, and MSE is a good way of interpreting how well a model performs. The model performed poorly with a high MSE when all the features were used in the training dataset, so scikit-learn's recursive feature elimination function was used to remove unnecessary features and improve our model [@scikit-learn]. The improvements in error can be seen visualized below using altair [@2018-altair].
 ```{r echo=FALSE, fig.cap="Figure 2. Realation between number of features and validation error", out.width = '100%'}
 knitr::include_graphics("../results/result_features.png")
 
