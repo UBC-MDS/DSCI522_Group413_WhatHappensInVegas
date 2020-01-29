@@ -23,7 +23,7 @@ opt <- docopt(doc)
 main <- function(train, out_dir) {
   
   # visualize predictor distributions by class
-  train_data <- read_csv2(train)
+  train_data <- read_csv(train)
   
   train_data_fig_1 <- train_data %>%
     select(pool, gym, tennis_court, spa, casino, free_internet, score)%>%
@@ -42,14 +42,15 @@ main <- function(train, out_dir) {
     labs(x = "", y = "Score", colour = "Score", fill = "Score")
   
   
-  ggsave("score_distributions_across_predictors.png", 
+  ggsave(paste0(out_dir,"/score_distributions_across_predictors.png"),
          train_data_fig_1,
          width = 10, 
          height = 4)
-  ggsave("numeric_predictor_distributions_across_scores.png", 
+  ggsave(paste0(out_dir,"/numeric_predictor_distributions_across_scores.png"), 
          train_data_fig_2,
          width = 10, 
          height = 4)
+  
 }
 
 input = "./data/processed/training_ml.csv"

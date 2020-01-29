@@ -3,7 +3,7 @@
 
 "The script downloads a file from specified url to specified location on location machine.
 
-Usage: download_file.R <file_source> <destination_file>
+Usage: src/download_file.R <file_source> <destination_file>
 
 Options:
 <file_source>         Takes in a link to the data (this is a required positional argument)
