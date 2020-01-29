@@ -4,7 +4,7 @@ author: "Bronwyn Baillie, Arun Maria, Manish Joshi </br>"
 date: "2020/1/24"
 always_allow_html: true
 output: 
-  html_document:
+  github_document:
     toc: true
 bibliography: references.bib
 ---
