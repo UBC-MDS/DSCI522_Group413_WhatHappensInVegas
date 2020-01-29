@@ -3,6 +3,14 @@ What Happens in Vegas: Predicting Hotel Ratings From Hotel and User Data
 Bronwyn Baillie, Arun Maria, Manish Joshi </br>
 2020/1/24 (updated: 2020-01-29)
 
+  - [Summary](#summary)
+  - [Introduction](#introduction)
+  - [Methods](#methods)
+      - [Data](#data)
+      - [Analysis](#analysis)
+  - [Results](#results)
+  - [References](#references)
+
 # Summary
 
 In this project, we build a regression model that uses data collected
@@ -55,8 +63,7 @@ From the preliminary EDA, it became apparent that some features did not
 have much impact on the hotel ratings, whereas other features such as
 the presence of a swimming pool and free wifi showed a potential effect.
 Many of these realizations came from visualizations made using the
-ggplot2 library in R (Wickham
-2016).
+ggplot2 library in R (Wickham 2016).
 
 <img src="../src/eda_plots/numeric_predictor_distributions_across_scores.png" title="Figure 1. Hotel scores distribution for numeric features" alt="Figure 1. Hotel scores distribution for numeric features" width="100%" />
 <img src="../src/eda_plots/score_distributions_across_predictors.png" title="Figure 2. Hotel scores distribution for categorical features" alt="Figure 2. Hotel scores distribution for categorical features" width="100%" />
@@ -94,8 +101,7 @@ final model.
 
   - The final error obtained on the unseen test data is 0.867 which is
     similar to the training error obtained. The model generalizes well
-    and does not
-overfit.
+    and does not overfit.
 
 <img src="../results/error_table.png" title="Figure 3. The error metric used is Mean Square Error (MSE)." alt="Figure 3. The error metric used is Mean Square Error (MSE)." width="100%" />
 

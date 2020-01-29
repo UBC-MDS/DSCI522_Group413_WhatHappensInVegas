@@ -1,4 +1,4 @@
-What happens in vegas: Predicting hotel ratings from hotel and user data
+What Happens in Vegas: Predicting Hotel Ratings From Hotel and User Data
 ================
 Bronwyn Baillie , Arun Maria , Manish Joshi
 
