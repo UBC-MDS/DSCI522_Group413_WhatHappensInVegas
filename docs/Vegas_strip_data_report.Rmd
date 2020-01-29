@@ -1,5 +1,5 @@
 ---
-title: "What happens in vegas: Predicting hotel ratings from amenities provided"
+title: "What Happens in Vegas: Predicting Hotel Ratings From Hotel and User Data"
 author: "Bronwyn Baillie, Arun Maria, Manish Joshi </br>"
 date: "2020/1/24 (updated: `r Sys.Date()`)"
 always_allow_html: true

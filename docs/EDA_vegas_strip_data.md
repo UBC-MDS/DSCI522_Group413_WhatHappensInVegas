@@ -91,11 +91,11 @@ head(training_set)
     ##   `User country` `Nr. reviews` `Nr. hotel revi~ `Helpful votes` Score
     ##   <chr>                  <dbl>            <dbl>           <dbl> <dbl>
     ## 1 USA                       11                4              13     5
-    ## 2 USA                      119               21              75     3
-    ## 3 USA                       36                9              25     5
-    ## 4 UK                        14                7              14     4
-    ## 5 UK                        45               12              46     4
-    ## 6 USA                        2                1               4     4
+    ## 2 USA                       36                9              25     5
+    ## 3 Canada                    31                8              27     3
+    ## 4 UK                        45               12              46     4
+    ## 5 USA                        2                1               4     4
+    ## 6 India                     24                3               8     4
     ## # ... with 15 more variables: `Period of stay` <chr>, `Traveler type` <chr>,
     ## #   Pool <chr>, Gym <chr>, `Tennis court` <chr>, Spa <chr>, Casino <chr>, `Free
     ## #   internet` <chr>, `Hotel name` <chr>, `Hotel stars` <dbl>, `Nr.
@@ -134,11 +134,11 @@ head(training_set)
     ##   user_country num_reviews num_hotel_revie~ helpful_votes score stay_period
     ##   <chr>              <dbl>            <dbl>         <dbl> <dbl> <chr>      
     ## 1 USA                   11                4            13     5 Dec-Feb    
-    ## 2 USA                  119               21            75     3 Dec-Feb    
-    ## 3 USA                   36                9            25     5 Mar-May    
-    ## 4 UK                    14                7            14     4 Mar-May    
-    ## 5 UK                    45               12            46     4 Mar-May    
-    ## 6 USA                    2                1             4     4 Mar-May    
+    ## 2 USA                   36                9            25     5 Mar-May    
+    ## 3 Canada                31                8            27     3 Mar-May    
+    ## 4 UK                    45               12            46     4 Mar-May    
+    ## 5 USA                    2                1             4     4 Mar-May    
+    ## 6 India                 24                3             8     4 Mar-May    
     ## # ... with 14 more variables: traveller_type <chr>, pool <chr>, gym <chr>,
     ## #   tennis_court <chr>, spa <chr>, casino <chr>, free_internet <chr>,
     ## #   hotel_name <chr>, hotel_stars <dbl>, rooms <dbl>, user_continent <chr>,
@@ -154,20 +154,21 @@ any(is.na(training_set))
 
 This is good as we **do not have any NAs** in the dataset.
 
-Checking datatype for individual columns in dataset.
+Checking datatype for individual columns in
+    dataset.
 
 ``` r
 str(training_set)
 ```
 
     ## Classes 'tbl_df', 'tbl' and 'data.frame':    378 obs. of  20 variables:
-    ##  $ user_country     : chr  "USA" "USA" "USA" "UK" ...
-    ##  $ num_reviews      : num  11 119 36 14 45 2 24 12 102 20 ...
-    ##  $ num_hotel_reviews: num  4 21 9 7 12 1 3 7 24 9 ...
-    ##  $ helpful_votes    : num  13 75 25 14 46 4 8 11 58 24 ...
-    ##  $ score            : num  5 3 5 4 4 4 4 3 2 3 ...
-    ##  $ stay_period      : chr  "Dec-Feb" "Dec-Feb" "Mar-May" "Mar-May" ...
-    ##  $ traveller_type   : chr  "Friends" "Business" "Families" "Friends" ...
+    ##  $ user_country     : chr  "USA" "USA" "Canada" "UK" ...
+    ##  $ num_reviews      : num  11 36 31 45 2 24 12 20 7 22 ...
+    ##  $ num_hotel_reviews: num  4 9 8 12 1 3 7 9 6 5 ...
+    ##  $ helpful_votes    : num  13 25 27 46 4 8 11 24 9 13 ...
+    ##  $ score            : num  5 5 3 4 4 4 3 3 2 3 ...
+    ##  $ stay_period      : chr  "Dec-Feb" "Mar-May" "Mar-May" "Mar-May" ...
+    ##  $ traveller_type   : chr  "Friends" "Families" "Couples" "Couples" ...
     ##  $ pool             : chr  "NO" "NO" "NO" "NO" ...
     ##  $ gym              : chr  "YES" "YES" "YES" "YES" ...
     ##  $ tennis_court     : chr  "NO" "NO" "NO" "NO" ...
@@ -178,9 +179,9 @@ str(training_set)
     ##  $ hotel_stars      : num  3 3 3 3 3 3 3 3 3 3 ...
     ##  $ rooms            : num  3773 3773 3773 3773 3773 ...
     ##  $ user_continent   : chr  "North America" "North America" "North America" "Europe" ...
-    ##  $ member_years     : num  9 3 2 6 4 0 3 5 9 4 ...
-    ##  $ review_month     : chr  "January" "January" "February" "February" ...
-    ##  $ review_weekday   : chr  "Thursday" "Friday" "Saturday" "Friday" ...
+    ##  $ member_years     : num  9 2 2 4 0 3 5 4 1 1 ...
+    ##  $ review_month     : chr  "January" "February" "March" "April" ...
+    ##  $ review_weekday   : chr  "Thursday" "Saturday" "Tuesday" "Friday" ...
 
 ``` r
 # checking summary info for the training dataframe
@@ -190,16 +191,16 @@ summary(training_set)
 
     ##  user_country        num_reviews     num_hotel_reviews helpful_votes   
     ##  Length:378         Min.   :  1.00   Min.   :  0.00    Min.   :  0.00  
-    ##  Class :character   1st Qu.: 12.00   1st Qu.:  5.00    1st Qu.:  7.25  
-    ##  Mode  :character   Median : 23.00   Median :  9.00    Median : 16.00  
-    ##                     Mean   : 44.78   Mean   : 15.30    Mean   : 31.29  
-    ##                     3rd Qu.: 50.00   3rd Qu.: 17.75    3rd Qu.: 31.75  
-    ##                     Max.   :608.00   Max.   :263.00    Max.   :365.00  
+    ##  Class :character   1st Qu.: 11.25   1st Qu.:  5.00    1st Qu.:  7.25  
+    ##  Mode  :character   Median : 24.00   Median :  9.00    Median : 16.00  
+    ##                     Mean   : 49.26   Mean   : 16.46    Mean   : 32.89  
+    ##                     3rd Qu.: 54.75   3rd Qu.: 18.00    3rd Qu.: 34.50  
+    ##                     Max.   :775.00   Max.   :263.00    Max.   :365.00  
     ##      score       stay_period        traveller_type         pool          
     ##  Min.   :1.000   Length:378         Length:378         Length:378        
     ##  1st Qu.:4.000   Class :character   Class :character   Class :character  
     ##  Median :4.000   Mode  :character   Mode  :character   Mode  :character  
-    ##  Mean   :4.122                                                           
+    ##  Mean   :4.127                                                           
     ##  3rd Qu.:5.000                                                           
     ##  Max.   :5.000                                                           
     ##      gym            tennis_court           spa               casino         
@@ -216,13 +217,13 @@ summary(training_set)
     ##                                        Mean   :4.143   Mean   :2196  
     ##                                        3rd Qu.:5.000   3rd Qu.:3025  
     ##                                        Max.   :5.000   Max.   :4027  
-    ##  user_continent      member_years        review_month       review_weekday    
-    ##  Length:378         Min.   :-1806.0000   Length:378         Length:378        
-    ##  Class :character   1st Qu.:    2.0000   Class :character   Class :character  
-    ##  Mode  :character   Median :    4.0000   Mode  :character   Mode  :character  
-    ##                     Mean   :   -0.4392                                        
-    ##                     3rd Qu.:    6.7500                                        
-    ##                     Max.   :   13.0000
+    ##  user_continent      member_years    review_month       review_weekday    
+    ##  Length:378         Min.   : 0.000   Length:378         Length:378        
+    ##  Class :character   1st Qu.: 2.000   Class :character   Class :character  
+    ##  Mode  :character   Median : 4.000   Mode  :character   Mode  :character  
+    ##                     Mean   : 4.347                                        
+    ##                     3rd Qu.: 6.000                                        
+    ##                     Max.   :13.000
 
 Clearly based on summary statistics, the column `member_years` has
 negative values which seems incorrect as number of years of membership
@@ -232,7 +233,7 @@ of a customer cannot be negative.
 sort(training_set$member_years)[1:10]
 ```
 
-    ##  [1] -1806     0     0     0     0     0     0     0     0     0
+    ##  [1] 0 0 0 0 0 0 0 0 0 0
 
 Replacing the minimum value by 0 as it logically makes sense to do so.
 
@@ -248,20 +249,21 @@ min(training_set$member_years)
 
 Now we have clean data with no NA values, we can start inspecting
 individual features to see if we can identify any relationship between
-target score and the features.
+target score and the
+    features.
 
 ``` r
 str(training_set)
 ```
 
     ## Classes 'tbl_df', 'tbl' and 'data.frame':    378 obs. of  20 variables:
-    ##  $ user_country     : chr  "USA" "USA" "USA" "UK" ...
-    ##  $ num_reviews      : num  11 119 36 14 45 2 24 12 102 20 ...
-    ##  $ num_hotel_reviews: num  4 21 9 7 12 1 3 7 24 9 ...
-    ##  $ helpful_votes    : num  13 75 25 14 46 4 8 11 58 24 ...
-    ##  $ score            : num  5 3 5 4 4 4 4 3 2 3 ...
-    ##  $ stay_period      : chr  "Dec-Feb" "Dec-Feb" "Mar-May" "Mar-May" ...
-    ##  $ traveller_type   : chr  "Friends" "Business" "Families" "Friends" ...
+    ##  $ user_country     : chr  "USA" "USA" "Canada" "UK" ...
+    ##  $ num_reviews      : num  11 36 31 45 2 24 12 20 7 22 ...
+    ##  $ num_hotel_reviews: num  4 9 8 12 1 3 7 9 6 5 ...
+    ##  $ helpful_votes    : num  13 25 27 46 4 8 11 24 9 13 ...
+    ##  $ score            : num  5 5 3 4 4 4 3 3 2 3 ...
+    ##  $ stay_period      : chr  "Dec-Feb" "Mar-May" "Mar-May" "Mar-May" ...
+    ##  $ traveller_type   : chr  "Friends" "Families" "Couples" "Couples" ...
     ##  $ pool             : chr  "NO" "NO" "NO" "NO" ...
     ##  $ gym              : chr  "YES" "YES" "YES" "YES" ...
     ##  $ tennis_court     : chr  "NO" "NO" "NO" "NO" ...
@@ -272,9 +274,9 @@ str(training_set)
     ##  $ hotel_stars      : num  3 3 3 3 3 3 3 3 3 3 ...
     ##  $ rooms            : num  3773 3773 3773 3773 3773 ...
     ##  $ user_continent   : chr  "North America" "North America" "North America" "Europe" ...
-    ##  $ member_years     : num  9 3 2 6 4 0 3 5 9 4 ...
-    ##  $ review_month     : chr  "January" "January" "February" "February" ...
-    ##  $ review_weekday   : chr  "Thursday" "Friday" "Saturday" "Friday" ...
+    ##  $ member_years     : num  9 2 2 4 0 3 5 4 1 1 ...
+    ##  $ review_month     : chr  "January" "February" "March" "April" ...
+    ##  $ review_weekday   : chr  "Thursday" "Saturday" "Tuesday" "Friday" ...
 
 Clearly the dataset has two kind of features.
 
@@ -286,7 +288,8 @@ And within each category we have both categorical and numerical
 features.
 
 We can first re-arrange columns for better interpretation and **remove
-hotel name** column as we do not want it to be one of the features.
+hotel name** column as we do not want it to be one of the
+features.
 
 ``` r
 training_set <- training_set[c("user_country", "user_continent", "traveller_type",  "stay_period","review_month", "review_weekday", "member_years", "num_reviews", "helpful_votes", "pool", "gym", "tennis_court", "spa", "casino", "free_internet", "hotel_stars", "rooms", "num_hotel_reviews","score")]
@@ -298,17 +301,18 @@ head(training_set)
     ##   user_country user_continent traveller_type stay_period review_month
     ##   <chr>        <chr>          <chr>          <chr>       <chr>       
     ## 1 USA          North America  Friends        Dec-Feb     January     
-    ## 2 USA          North America  Business       Dec-Feb     January     
-    ## 3 USA          North America  Families       Mar-May     February    
-    ## 4 UK           Europe         Friends        Mar-May     February    
-    ## 5 UK           Europe         Couples        Mar-May     April       
-    ## 6 USA          North America  Families       Mar-May     April       
+    ## 2 USA          North America  Families       Mar-May     February    
+    ## 3 Canada       North America  Couples        Mar-May     March       
+    ## 4 UK           Europe         Couples        Mar-May     April       
+    ## 5 USA          North America  Families       Mar-May     April       
+    ## 6 India        Asia           Friends        Mar-May     May         
     ## # ... with 14 more variables: review_weekday <chr>, member_years <dbl>,
     ## #   num_reviews <dbl>, helpful_votes <dbl>, pool <chr>, gym <chr>,
     ## #   tennis_court <chr>, spa <chr>, casino <chr>, free_internet <chr>,
     ## #   hotel_stars <dbl>, rooms <dbl>, num_hotel_reviews <dbl>, score <dbl>
 
-Creating vectors for different categories of features.
+Creating vectors for different categories of
+features.
 
 ``` r
 user_specific_features <- c("user_country", "user_continent", "traveller_type",  "stay_period","review_month", "review_weekday", "member_years", "num_reviews", "helpful_votes")
@@ -337,37 +341,39 @@ for (category in categorical_features){
     ## [1] "user_country"
     ## 
     ##            Australia              Belgium               Brazil 
-    ##                   23                    1                    4 
-    ##               Canada                China              Croatia 
-    ##                   50                    1                    1 
-    ##       Czech Republic                Egypt              Finland 
-    ##                    1                    5                    3 
-    ##               France              Germany               Greece 
-    ##                    1                    5                    1 
-    ##               Hawaii             Honduras                India 
-    ##                    2                    1                   10 
-    ##                 Iran              Ireland               Israel 
-    ##                    1                   11                    3 
-    ##                Italy                Japan                Kenya 
+    ##                   28                    1                    3 
+    ##               Canada                China           Costa Rica 
+    ##                   46                    1                    2 
+    ##              Denmark                Egypt              Finland 
+    ##                    1                    3                    3 
+    ##              Germany               Hawaii             Honduras 
+    ##                    6                    3                    1 
+    ##              Hungary                India              Ireland 
+    ##                    1                   11                   10 
+    ##               Israel                Italy               Jordan 
+    ##                    2                    1                    1 
+    ##                Kenya                Korea               Kuwait 
     ##                    1                    1                    1 
-    ##                Korea               Kuwait             Malaysia 
-    ##                    1                    1                    3 
-    ##               Mexico          Netherlands           New Zeland 
-    ##                    5                    2                    4 
-    ##               Norway         Phillippines          Puerto Rico 
+    ##             Malaysia               Mexico          Netherlands 
+    ##                    2                    6                    3 
+    ##           New Zeland               Norway         Phillippines 
+    ##                    3                    3                    1 
+    ##          Puerto Rico         Saudi Arabia             Scotland 
+    ##                    1                    1                    2 
+    ##            Singapore         South Africa                Spain 
+    ##                    3                    1                    2 
+    ##                Swiss          Switzerland                Syria 
     ##                    1                    1                    1 
-    ##            Singapore                Swiss                Syria 
-    ##                    3                    1                    1 
     ##               Taiwan             Thailand                   UK 
-    ##                    1                    2                   58 
+    ##                    1                    3                   54 
     ## United Arab Emirates                  USA 
-    ##                    1                  165 
+    ##                    2                  160 
     ## 
     ## 
     ## [1] "user_continent"
     ## 
     ##        Africa          Asia        Europe North America       Oceania 
-    ##             6            30            87           223            27 
+    ##             5            30            90           217            31 
     ## South America 
     ##             5 
     ## 
@@ -375,27 +381,27 @@ for (category in categorical_features){
     ## [1] "traveller_type"
     ## 
     ## Business  Couples Families  Friends     Solo 
-    ##       55      154       89       62       18 
+    ##       55      158       88       61       16 
     ## 
     ## 
     ## [1] "stay_period"
     ## 
     ## Dec-Feb Jun-Aug Mar-May Sep-Nov 
-    ##      91      94     101      92 
+    ##      97     101      88      92 
     ## 
     ## 
     ## [1] "review_month"
     ## 
     ##     April    August  December  February   January      July      June     March 
-    ##        29        30        33        33        27        34        30        34 
+    ##        34        35        31        31        36        35        31        25 
     ##       May  November   October September 
-    ##        36        33        27        32 
+    ##        28        30        34        28 
     ## 
     ## 
     ## [1] "review_weekday"
     ## 
     ##    Friday    Monday  Saturday    Sunday  Thursday   Tuesday Wednesday 
-    ##        56        52        42        59        51        54        64 
+    ##        47        57        46        61        44        59        64 
     ## 
     ## 
     ## [1] "pool"
@@ -449,7 +455,8 @@ countries(USA, Canada, Australia) as compared to others(France etc.).
 Plus we may have a new user from different country so our model will
 more potentially fail to generalize and it might be a good idea to use
 `user_continents` instead. We will however do some more visualization
-analysis to confirm same.
+analysis to confirm
+same.
 
 ### Inspecting relationship between hotel scores and categorical features
 
