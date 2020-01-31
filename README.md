@@ -103,7 +103,7 @@ project:
 
 # References
 
-Moro, S., Rita, P., & Coelho, J. (2017). Stripping customers’ feedback
+Moro, S., Rita, P.,  & Coelho, J. (2017). Stripping customers’ feedback
 on hotels through data mining: The case of Las Vegas Strip. Tourism
 Management Perspectives, 23, 41-52. “UCI Machine Learning Repository.”
 University of California, Irvine, School of Information; Computer
