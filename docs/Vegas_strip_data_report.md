@@ -1,7 +1,7 @@
 What Happens in Vegas: Predicting Hotel Ratings From Hotel and User Data
 ================
 Bronwyn Baillie, Arun Maria, Manish Joshi </br>
-2020/1/24 (updated: 2020-01-29)
+2020/1/24 (updated: 2020-01-30)
 
   - [Summary](#summary)
   - [Introduction](#introduction)
@@ -73,14 +73,15 @@ The training of the model was done in Python (Van Rossum and Drake
 performance. We chose to use MSE because our goal is to create a model
 that has very strong predictive abilities, and MSE is a good way of
 interpreting how well a model performs. The model performed poorly with
-a high MSE when all the features were used in the training dataset, so
-scikit-learn’s recursive feature elimination function was used to remove
-unnecessary features and improve our model (Pedregosa et al. 2011). The
-improvements in error can be seen visualized below using altair (Sievert
-2018).
+a high MSE when all the features were used in the training dataset. We
+then tried a Linear regression model and used scikit-learn’s recursive
+feature elimination function to remove unnecessary features and improve
+our model (Pedregosa et al. 2011). The improvements in error can be seen
+visualized below using altair (Sievert 2018).
+
 <img src="../results/result_features.png" title="Figure 2. Realation between number of features and validation error" alt="Figure 2. Realation between number of features and validation error" width="100%" />
 
-Our model showed the most promise in terms of both training and
+The model showed the most promise in terms of both training and
 validation errors when we limited our model to have just 3 features. The
 3 features selected were whether or not the hotel had a swimming pool,
 whether or not the hotel had free Wifi, and the user’s continent. These
@@ -97,7 +98,7 @@ final model.
 # Results
 
   - Results of the model while hyperparameters were being tuned are
-    shown below. The error metric used is MSE (mean square error)
+    shown below. The error metric used is MSE (mean square error).
 
   - The final error obtained on the unseen test data is 0.867 which is
     similar to the training error obtained. The model generalizes well
