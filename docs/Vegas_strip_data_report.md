@@ -9,6 +9,7 @@ Bronwyn Baillie, Arun Maria, Manish Joshi </br>
       - [Data](#data)
       - [Analysis](#analysis)
   - [Results](#results)
+  - [Discussion](#discussion)
   - [References](#references)
 
 # Summary
@@ -100,11 +101,29 @@ final model.
   - Results of the model while hyperparameters were being tuned are
     shown below. The error metric used is MSE (mean square error).
 
+We chose the value of the hyperparameter alpha based on the minimum
+value of the MSE.
+
+<img src="../results/cv_results.png" title="Figure 3. The error metric used is Mean Square Error (MSE)." alt="Figure 3. The error metric used is Mean Square Error (MSE)." width="100%" />
+
   - The final error obtained on the unseen test data is 0.867 which is
     similar to the training error obtained. The model generalizes well
     and does not overfit.
 
-<img src="../results/error_table.png" title="Figure 3. The error metric used is Mean Square Error (MSE)." alt="Figure 3. The error metric used is Mean Square Error (MSE)." width="100%" />
+  - The model is not overfit but based on the value of the final error
+    it is apparent that the model is not performing upto the standards
+    that were aspired for.
+
+# Discussion
+
+Considering the results of our analysis, we can see there is some
+potential for improving the model as a MSE of 0.867 is not that good
+considering ratings of hotels vary from 1 to 5.
+
+Also the dataset is unbalanced(more ratings in 3 and 4 range), so in
+retrospect it may have been beneficial to attempt to build a
+classification model instead of the regression model. If this analysis
+is revisited in the future we may include such a model.
 
 # References
 
