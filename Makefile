@@ -2,7 +2,7 @@
 # author: Arun, Bronwyn, Manish
 # date: 2020-01-30
 
-all : data/raw/vegas_data.csv docs/EDA_vegas_strip_data.md data/processed/test_ml.csv data/processed/train_vegas_plot.csv data/processed/training_ml.csv src/eda_plots/numeric_predictor_distributions_across_scores.png src/eda_plots/score_distributions_across_predictors.png results/features_to_use.npy results/finalized_model.sav results/result_features.png docs/Vegas_strip_data_report.md
+all : data/raw/vegas_data.csv docs/EDA_vegas_strip_data.md data/processed/test_ml.csv data/processed/train_vegas_plot.csv data/processed/training_ml.csv src/eda_plots/numeric_predictor_distributions_across_scores.png src/eda_plots/score_distributions_across_predictors.png results/features_to_use.npy results/finalized_model.sav results/result_features.png results/hyperparameter_results.csv docs/Vegas_strip_data_report.md
 
 
 # download data
@@ -23,12 +23,13 @@ data/processed/test_ml.csv data/processed/train_vegas_plot.csv data/processed/tr
 # create exploratory data analysis figure and write to file
 src/eda_plots/numeric_predictor_distributions_across_scores.png src/eda_plots/score_distributions_across_predictors.png : src/eda_figures.R data/processed/train_vegas_plot.csv
 	Rscript src/eda_figures.R --train=data/processed/train_vegas_plot.csv --out_dir=src/eda_plots
-	rm -rf results
+	
 	
 
 
 # delete older results(if any) tune model
-results/features_to_use.npy results/finalized_model.sav results/result_features.png : src/fit_vegas_predict_model.py data/processed/training_ml.csv
+results/features_to_use.npy results/finalized_model.sav results/result_features.png results/hyperparameter_results.csv : src/fit_vegas_predict_model.py data/processed/training_ml.csv
+	 rm -rf results
 	 python src/fit_vegas_predict_model.py  --train=data/processed/training_ml.csv --out_dir=results
 
 
