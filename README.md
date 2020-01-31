@@ -49,8 +49,18 @@ The final report can be found [here](docs/Vegas_strip_data_report.md)
 
 To replicate the analysis, clone this GitHub repository, install the
 [dependencies](#dependencies) listed below, and run the following
-commands at the command line/terminal from the root directory of this
+command at the command line/terminal from the root directory of this
 project:
+
+    make all
+
+To reset the repo to a clean state, with no intermediate or results
+files, run the following command at the command line/terminal from the
+root directory of this project:
+
+    make clean
+
+Alternatively, you can run following sequence of commands
 
     # download data
     #Rscript.exe src/download_file.R https://archive.ics.uci.edu/ml/machine-learning-databases/00397/LasVegasTripAdvisorReviews-Dataset.csv data/raw/vegas_data.csv
@@ -103,7 +113,7 @@ project:
 
 # References
 
-Moro, S., Rita, P.,  & Coelho, J. (2017). Stripping customers’ feedback
+Moro, S., Rita, P., & Coelho, J. (2017). Stripping customers’ feedback
 on hotels through data mining: The case of Las Vegas Strip. Tourism
 Management Perspectives, 23, 41-52. “UCI Machine Learning Repository.”
 University of California, Irvine, School of Information; Computer
