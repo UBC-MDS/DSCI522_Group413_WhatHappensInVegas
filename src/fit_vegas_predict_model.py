@@ -239,6 +239,7 @@ def main(train,  out_dir):
     results_df['Validation'] = results_df['mean_valid_error'] 
     results_df = results_df.drop(columns = ["params","mean_train_error","mean_valid_error" ])
     results_df = results_df.melt(id_vars = ["alpha"], value_vars = ["Training","Validation"], var_name = "error_type", value_name = "mean_error")
+    results_df.to_csv(out_dir + "/hyperparamter_results.csv")
     chart = alt.Chart(results_df).mark_line().encode(
         x = alt.X( 'alpha:Q', title ="alpha", scale = alt.Scale(type = 'log')),
         y = alt.Y( 'mean_error:Q', title ="Mean Squared Error"),
