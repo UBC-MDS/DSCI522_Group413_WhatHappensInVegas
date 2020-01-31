@@ -231,21 +231,35 @@ def main(train,  out_dir):
     filename = '/finalized_model.sav'
     pickle.dump(model, open(out_dir +filename, 'wb'))
      # EDIT: see deprecation warnings below
-    
-    
+
     #exporting results on test set
     results_df = model_results(model)
-    ax = plt.subplot(111, frame_on=False) # no visible frame
-    ax.xaxis.set_visible(False)  # hide the x axis
-    ax.yaxis.set_visible(False)  # hide the y axis
+    results_df['alpha'] = np.logspace(-6, 6, 13) 
+    results_df['Training'] = results_df['mean_train_error'] 
+    results_df['Validation'] = results_df['mean_valid_error'] 
+    results_df = results_df.drop(columns = ["params","mean_train_error","mean_valid_error" ])
+    results_df = results_df.melt(id_vars = ["alpha"], value_vars = ["Training","Validation"], var_name = "error_type", value_name = "mean_error")
+    chart = alt.Chart(results_df).mark_line().encode(
+        x = alt.X( 'alpha:Q', title ="alpha", scale = alt.Scale(type = 'log')),
+        y = alt.Y( 'mean_error:Q', title ="Mean Squared Error"),
+        color = alt.Color("error_type", title = "Error Type")).properties(
+    title = "MSE error based on hyperparameter alpha")
+
+    chart.save(out_dir +"/cv_results.png")
     
-    table(ax, results_df, loc = "center",  colWidths = [0.5]*len(results_df.columns),
-        
-        cellLoc = 'center', rowLoc = 'center')
-    
-    plt.savefig(out_dir +'/error_table.png', bbox_inches='tight')
-    
-    print("Model fitted based on training data and results are generated ")
+    # #exporting results on test set
+    # results_df = model_results(model)
+    # ax = plt.subplot(111, frame_on=False) # no visible frame
+    # ax.xaxis.set_visible(False)  # hide the x axis
+    # ax.yaxis.set_visible(False)  # hide the y axis
+
+    # table(ax, results_df, loc = "center",  colWidths = [0.5]*len(results_df.columns),
+
+    #     cellLoc = 'center', rowLoc = 'center')
+
+    # plt.savefig(out_dir +'/error_table.png', bbox_inches='tight')
+
+    # print("Model fitted based on training data and results are generated ")
     #print()
     #print("Best validation score",-1*model.best_score_)
     #
