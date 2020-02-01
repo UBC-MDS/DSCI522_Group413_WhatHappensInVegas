@@ -1,7 +1,7 @@
 What Happens in Vegas: Predicting Hotel Ratings From Hotel and User Data
 ================
 Bronwyn Baillie, Arun Maria, Manish Joshi </br>
-2020/1/24 (updated: 2020-01-30)
+2020/1/24 (updated: 2020-02-01)
 
   - [Summary](#summary)
   - [Introduction](#introduction)
@@ -122,10 +122,11 @@ metrics were in line with what was seen during the EDA stage.
 The Model was then trained using different regression algorithms such as
 a linear regression, an RFregressor, Lasso, ridge regression, and SVM,
 all from the sklearn package in Python. 10-fold cross validation was
-used to determine the best hyperparameters when possible. It was found
-that the best performing algorithm on the validation set was the ridge
-regression (regularized linear regression) and this was chosen as the
-final model.
+used to determine the best hyperparameters. The detailed results of
+hyperparameter optimization can be found
+[here](../results/hyperparamter_results.csv). It was found that the best
+performing algorithm on the validation set was the ridge regression
+(regularized linear regression) and this was chosen as the final model.
 
 # Results
 

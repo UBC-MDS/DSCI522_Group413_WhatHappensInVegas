@@ -601,7 +601,7 @@ body {
 <body>
 
 <h1 id="what-happens-in-vegas-predicting-hotel-ratings-from-hotel-and-user-data">What Happens in Vegas: Predicting Hotel Ratings From Hotel and User Data</h1>
-<p>Bronwyn Baillie, Arun Maria, Manish Joshi </br> 2020/1/24 (updated: 2020-01-30)</p>
+<p>Bronwyn Baillie, Arun Maria, Manish Joshi </br> 2020/1/24 (updated: 2020-02-01)</p>
 <ul>
 <li><a href="#summary">Summary</a></li>
 <li><a href="#introduction">Introduction</a></li>
@@ -658,7 +658,7 @@ body {
 </div>
 
 <p>The model showed the most promise in terms of both training and validation errors when we limited our model to have just 3 features. The 3 features selected were whether or not the hotel had a swimming pool, whether or not the hotel had free Wifi, and the user’s continent. These metrics were in line with what was seen during the EDA stage.</p>
-<p>The Model was then trained using different regression algorithms such as a linear regression, an RFregressor, Lasso, ridge regression, and SVM, all from the sklearn package in Python. 10-fold cross validation was used to determine the best hyperparameters when possible. It was found that the best performing algorithm on the validation set was the ridge regression (regularized linear regression) and this was chosen as the final model.</p>
+<p>The Model was then trained using different regression algorithms such as a linear regression, an RFregressor, Lasso, ridge regression, and SVM, all from the sklearn package in Python. 10-fold cross validation was used to determine the best hyperparameters. The detailed results of hyperparameter optimization can be found <a href="../results/hyperparamter_results.csv">here</a>. It was found that the best performing algorithm on the validation set was the ridge regression (regularized linear regression) and this was chosen as the final model.</p>
 <h1 id="results">Results</h1>
 <ul>
 <li>Results of the model while hyperparameters were being tuned are shown below. The error metric used is MSE (mean square error).</li>
