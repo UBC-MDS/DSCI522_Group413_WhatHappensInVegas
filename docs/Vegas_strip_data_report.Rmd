@@ -20,7 +20,7 @@ library(caret)
 
 # Summary
 
-In this project, we build a regression model that uses data collected from TripAdvisor user reviews of Las Vegas hotels to predict what kind of user ratings can be expected for a hotel [@vegas].  Exploratory data analysis was performed in R on only a portion of our data reserved for training [@R]. In our preliminary EDA, we checked the effect of different user and hotel specific features against user ratings, and it became apparent that most features did not have much impact on the hotel ratings. However, upon further analysis throughout our project we discovered that some features, such as the presence of a swimming pool, free wifi, and user continent, did have an effect on hotel ratings.
+In this project, we build a regression model that uses data collected from TripAdvisor user reviews of Las Vegas hotels to predict what kind of user ratings can be expected for a hotel [@vegas].  Exploratory data analysis was performed in R on only a portion of our data reserved for training [@R]. In our preliminary EDA, we checked the effect of different user and hotel specific features against user ratings, and it became apparent that most of the user specific features did not have much impact on the hotel ratings. However, upon further analysis throughout our project we discovered that some features, such as the presence of a swimming pool, free wifi, and user continent, did have an effect on hotel ratings.
 
 
 # Introduction
@@ -38,13 +38,13 @@ It was sourced from the UCI machine learning repositories, and can be found [her
 
 ## Analysis
 
-From the preliminary EDA, it became apparent that some features did not have much impact on the hotel ratings, whereas other features such as the presence of a swimming pool and free wifi showed a potential effect. Many of these realizations came from visualizations made using the ggplot2 library in R [@ggplot2]. 
+From the preliminary EDA, it became apparent that most of the user specific features did not have much impact on the hotel ratings, whereas other features such as the presence of a swimming pool and free wifi showed a potential effect. Many of these realizations came from visualizations made using the ggplot2 library in R [@ggplot2]. 
 
 ```{r echo=FALSE, fig.cap="Figure 1. Hotel scores distribution for numeric features", out.width = '100%'}
 knitr::include_graphics("../src/eda_plots/numeric_predictor_distributions_across_scores.png")
 
 ```
-```{r echo=FALSE, fig.cap="Figure 2. Hotel scores distribution for categorical features", out.width = '100%'}
+```{r echo=FALSE, fig.cap="Figure 2. Average Hotel scores based on  categorical features", out.width = '100%'}
 knitr::include_graphics("../src/eda_plots/score_distributions_across_predictors.png")
 
 ```

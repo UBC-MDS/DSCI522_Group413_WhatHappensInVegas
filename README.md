@@ -4,7 +4,10 @@ Bronwyn Baillie , Arun Maria , Manish Joshi
 
   - [About](#about)
   - [Report](#report)
-  - [Usage](#usage)
+  - [Usage:](#usage)
+      - [1. Using Docker](#using-docker)
+      - [2. After installing all dependencies (does not depend on
+        Docker)](#after-installing-all-dependencies-does-not-depend-on-docker)
   - [Dependencies](#dependencies)
   - [References](#references)
 
@@ -45,47 +48,41 @@ hotel.
 
 The final report can be found [here](docs/Vegas_strip_data_report.md)
 
-## Usage
+## Usage:
 
-To replicate the analysis, clone this GitHub repository, install the
-[dependencies](#dependencies) listed below, and run the following
-command at the command line/terminal from the root directory of this
-project:
+There are two suggested ways to run this analysis:
+
+### 1\. Using Docker
+
+*note - the instructions in this section also depends on running this in
+a unix shell (e.g., terminal or Git Bash), if you are using Windows
+Command Prompt, replace `/$(pwd)` with PATH\_ON\_YOUR\_COMPUTER.*
+
+1.  Install [Docker](https://www.docker.com/get-started)
+2.  Download/clone this repository
+3.  Use the command line to navigate to the root of this
+    downloaded/cloned repo
+4.  Type the following:
+
+<!-- end list -->
+
+    docker run --rm -v /$(pwd): need to fill
+
+### 2\. After installing all dependencies (does not depend on Docker)
+
+1.  Clone this repo, and using the command line, navigate to the root of
+    this project.
+2.  To run the analysis, type the following commands:
+
+<!-- end list -->
 
     make all
 
-To reset the repo to a clean state, with no intermediate or results
-files, run the following command at the command line/terminal from the
-root directory of this project:
+3.  To reset/undo the analysis, type the following commands:
+
+<!-- end list -->
 
     make clean
-
-Alternatively, you can run following sequence of commands
-
-    # download data
-    #Rscript.exe src/download_file.R https://archive.ics.uci.edu/ml/machine-learning-databases/00397/LasVegasTripAdvisorReviews-Dataset.csv data/raw/vegas_data.csv
-    
-    # run eda report
-    #Rscript.exe -e "rmarkdown::render('docs/EDA_vegas_strip_data.Rmd')"
-    
-    # pre-process data
-    #Rscript.exe src/pre_process_vegas.R --input=data/raw/vegas_data.csv --out_dir=data/processed
-    
-    # create exploratory data analysis figure and write to file
-    #Rscript src/eda_figures.R --train=data/processed/train_vegas_plot.csv --out_dir=src/eda_plots
-    
-    #Delete old results
-    rm -rf results
-    
-    # tune model
-    python src/fit_vegas_predict_model.py  --train=data/processed/training_ml.csv --out_dir=results
-    
-    
-    # test model
-    # python src/vegas_test_results.py  --test=data/processed/test_ml.csv --out_dir=results
-    
-    # render final report
-    #Rscript.exe -e "rmarkdown::render('docs/Vegas_strip_data_report.Rmd', 'github_document')"
 
 ## Dependencies
 

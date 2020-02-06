@@ -10,7 +10,7 @@ Options:
 --out_dir=<out_dir> Path to directory where the plots should be saved
 " -> doc
 
-library(feather)
+
 library(tidyverse)
 library(caret)
 library(docopt)
@@ -28,10 +28,13 @@ main <- function(train, out_dir) {
   train_data_fig_1 <- train_data %>%
     select(pool, gym, tennis_court, spa, casino, free_internet, score)%>%
     gather(key = amenity, value = has_amenity, -score) %>% 
-    ggplot(aes(x = score, colour = has_amenity, fill = has_amenity)) +
+    ggplot(aes(x = has_amenity, y = score )) +
     facet_wrap(. ~ amenity, scale = "free", ncol = 3) +
-    geom_density(alpha = 0.4) + 
-    labs(x = "Score", y = "Density", colour = "Has amenity", fill = "Has amenity")
+    geom_bar(stat = "summary", fun.y = "mean", fill = "royalblue3") + 
+    geom_jitter(alpha =0.4)+
+    labs(x = "Categorical features", y = "Score")
+   
+    
   
   train_data_fig_2 <- train_data %>%
     select(member_years,num_reviews,helpful_votes,hotel_stars,rooms,num_hotel_reviews, score)%>%
@@ -39,7 +42,7 @@ main <- function(train, out_dir) {
     ggplot(aes(x = value, y = as.factor(score), colour = as.factor(score), fill = as.factor(score))) +
     facet_wrap(. ~ predictor, scale = "free")+
     geom_density_ridges(alpha = 0.2)+ 
-    labs(x = "", y = "Score", colour = "Score", fill = "Score")
+    labs(x = "Numeric features", y = "Score", colour = "Score", fill = "Score")
   
   
   ggsave(paste0(out_dir,"/score_distributions_across_predictors.png"),
