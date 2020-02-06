@@ -164,59 +164,18 @@ def main(train,  out_dir):
      ## Simple linear regression 
     model = LinearRegression()
     model.fit(X_train, y_train)
-    #mean_squared_error(y_test, model.predict(X_test))
-    
-    #print(np.argsort(model.coef_))
-    #
-    #np.sort(model.coef_)
-    #
-    #X_train.columns[np.argsort(model.coef_)]
-    
-    # based on this features of interest are 
-    
-    # cols_to_consider = X_train.columns[np.argsort(model.coef_)][[0,1,-1,-2,-3,-4,-5,-6,-7,-8, -10, -12, -14, -18, -21, 4]]
-    # cols_to_consider = X_train.columns[np.argsort(model.coef_)][[-1,-2,-3,-4,-5,-6,-7,-8, -10,  -18,  4]]
     cols_to_consider = X_train.columns[np.argsort(model.coef_)][[-1,-2,-3,-4,-5,-6,-7]]
-    # hotel specific
-    # cols_to_consider = X_train.columns[np.argsort(model.coef_)][[1,4,6,12,13, 16,21,22, 23,25,30]]
-    # cols_to_consider = X_train.columns[np.argsort(model.coef_)][[25,30]]
-    
-    
-    #cols_to_consider
+
     ## saving important features in numpy arraay to disk
     
     np.save(out_dir +"/features_to_use", cols_to_consider, allow_pickle= True)
     
-    #test
-    #test = np.load("test.npy", allow_pickle = True )
-    #print(test)
-    # modeling on the important features
     
     X_train = X_train[cols_to_consider]
     X_test =  X_test[cols_to_consider]
     model = LinearRegression()
     model.fit(X_train, y_train)
-    #mean_squared_error(y_test, model.predict(X_test))
-    
-    
-    
-    ##Checking random forest regressor- best off the shelf method
-    #test_ran = RandomForestRegressor()
-    #parameters =  {
-    #    'n_estimators' : [50,100, 150],
-    #    
-    #    'max_depth' : [5,10, 15]
-    #}
-    #
-    #model = grid_fit_model(test_ran,X_train,y_train,parameters= parameters, cv=10 )
-    
-    #print(model_results(model))
-    #-1*model.best_score_
-    
-    # error on test set -- not that good.
-    #mean_squared_error(y_test, model.predict(X_test))
-    
-    
+   
     
     
     # Ridge regression 
@@ -248,58 +207,6 @@ def main(train,  out_dir):
 
     chart.save(out_dir +"/cv_results.png")
     
-    # #exporting results on test set
-    # results_df = model_results(model)
-    # ax = plt.subplot(111, frame_on=False) # no visible frame
-    # ax.xaxis.set_visible(False)  # hide the x axis
-    # ax.yaxis.set_visible(False)  # hide the y axis
-
-    # table(ax, results_df, loc = "center",  colWidths = [0.5]*len(results_df.columns),
-
-    #     cellLoc = 'center', rowLoc = 'center')
-
-    # plt.savefig(out_dir +'/error_table.png', bbox_inches='tight')
-
-    # print("Model fitted based on training data and results are generated ")
-    #print()
-    #print("Best validation score",-1*model.best_score_)
-    #
-    ## error on test set -- not that good.
-    #print("Error on test set", mean_squared_error(y_test, model.predict(X_test)))
-    
-    
-    #
-    #
-    #
-    ##  Lasso regression - linear regression with regularizaton 
-    #rid_model = Lasso()
-    #parameters = {
-    #    'alpha' : np.logspace(-6, 6, 13)
-    #}
-    #model = grid_fit_model(rid_model,X_train,y_train,parameters= parameters, cv=10 )
-    #print(model_results(model))
-    #print("Best validation score",-1*model.best_score_)
-    #
-    ## error on test set -- not that good.
-    #print("Error on test set", mean_squared_error(y_test, model.predict(X_test)))
-    
-    
-    
-    #
-    #
-    ## SVM(lnear kernel)
-    ##  Lasso regression - linear regression with regularizaton 
-    #svr_model = SVR()
-    #parameters = {
-    #    'kernel':['linear', 'poly', 'rbf'],
-    #    'gamma' : ['scale', 'auto'],'C':[0.01,0.05, 0.1,0.2,0.5,1]  }
-    #model = grid_fit_model(svr_model,X_train,y_train,parameters= parameters, cv=10 )
-    #print(model_results(model))
-    #print("Best validation score",-1*model.best_score_)
-    #
-    ## error on test set -- not that good.
-    #print("Error on test set", mean_squared_error(y_test, model.predict(X_test)))
-
-     
+  
 if __name__ == "__main__":
   main(opt["--train"], opt["--out_dir"])

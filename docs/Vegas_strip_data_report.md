@@ -20,11 +20,11 @@ of user ratings can be expected for a hotel (Moro 2017). Exploratory
 data analysis was performed in R on only a portion of our data reserved
 for training (R Core Team 2019). In our preliminary EDA, we checked the
 effect of different user and hotel specific features against user
-ratings, and it became apparent that most features did not have much
-impact on the hotel ratings. However, upon further analysis throughout
-our project we discovered that some features, such as the presence of a
-swimming pool, free wifi, and user continent, did have an effect on
-hotel ratings.
+ratings, and it became apparent that most of the user specific features
+did not have much impact on the hotel ratings. However, upon further
+analysis throughout our project we discovered that some features, such
+as the presence of a swimming pool, free wifi, and user continent, did
+have an effect on hotel ratings.
 
 # Introduction
 
@@ -60,14 +60,35 @@ hotel.
 
 ## Analysis
 
-From the preliminary EDA, it became apparent that some features did not
-have much impact on the hotel ratings, whereas other features such as
-the presence of a swimming pool and free wifi showed a potential effect.
-Many of these realizations came from visualizations made using the
-ggplot2 library in R (Wickham 2016).
+From the preliminary EDA, it became apparent that most of the user
+specific features did not have much impact on the hotel ratings, whereas
+other features such as the presence of a swimming pool and free wifi
+showed a potential effect. Many of these realizations came from
+visualizations made using the ggplot2 library in R (Wickham 2016).
 
-<img src="../src/eda_plots/numeric_predictor_distributions_across_scores.png" title="Figure 1. Hotel scores distribution for numeric features" alt="Figure 1. Hotel scores distribution for numeric features" width="100%" />
-<img src="../src/eda_plots/score_distributions_across_predictors.png" title="Figure 2. Hotel scores distribution for categorical features" alt="Figure 2. Hotel scores distribution for categorical features" width="100%" />
+<div class="figure">
+
+<img src="../src/eda_plots/numeric_predictor_distributions_across_scores.png" alt="Figure 1. Hotel scores distribution for numeric features" width="100%" />
+
+<p class="caption">
+
+Figure 1. Hotel scores distribution for numeric features
+
+</p>
+
+</div>
+
+<div class="figure">
+
+<img src="../src/eda_plots/score_distributions_across_predictors.png" alt="Figure 2. Average Hotel scores based on  categorical features" width="100%" />
+
+<p class="caption">
+
+Figure 2. Average Hotel scores based on categorical features
+
+</p>
+
+</div>
 
 The training of the model was done in Python (Van Rossum and Drake
 2009), and mean squared error (MSE) was used to measure model
@@ -80,7 +101,17 @@ feature elimination function to remove unnecessary features and improve
 our model (Pedregosa et al. 2011). The improvements in error can be seen
 visualized below using altair (Sievert 2018).
 
-<img src="../results/result_features.png" title="Figure 3. Realation between number of features and validation error" alt="Figure 3. Realation between number of features and validation error" width="70%" />
+<div class="figure">
+
+<img src="../results/result_features.png" alt="Figure 3. Realation between number of features and validation error" width="70%" />
+
+<p class="caption">
+
+Figure 3. Realation between number of features and validation error
+
+</p>
+
+</div>
 
 The model showed the most promise in terms of both training and
 validation errors when we limited our model to have just 3 features. The
@@ -105,7 +136,17 @@ performing algorithm on the validation set was the ridge regression
 We chose the value of the hyperparameter alpha based on the minimum
 value of the MSE.
 
-<img src="../results/cv_results.png" title="Figure 4. The error metric used is Mean Square Error (MSE)." alt="Figure 4. The error metric used is Mean Square Error (MSE)." width="70%" />
+<div class="figure">
+
+<img src="../results/cv_results.png" alt="Figure 4. The error metric used is Mean Square Error (MSE)." width="70%" />
+
+<p class="caption">
+
+Figure 4. The error metric used is Mean Square Error (MSE).
+
+</p>
+
+</div>
 
   - The final error obtained on the unseen test data is 0.867 which is
     similar to the training error obtained. The model generalizes well

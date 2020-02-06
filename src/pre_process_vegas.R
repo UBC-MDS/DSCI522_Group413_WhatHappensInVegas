@@ -2,7 +2,7 @@
 # date: 2019-12-18
 
 "Cleans, splits and pre-processes (scales) the Las Vegas strip data(from https://archive.ics.uci.edu/ml/datasets/Las+Vegas+Strip).
-Writes the training and test data to separate feather files.
+Writes the training and test data to separate csv files.
 
 Usage: src/pre_process_vegas.r --input=<input> --out_dir=<out_dir>
   
@@ -243,7 +243,7 @@ test_set <- cbind(data.frame(predict(dmy,test_set[categorical_features])), test_
 
 
 
-# write training and test data to feather files
+# write training and test data to csv files
 write_csv(training_set_plot, paste0(out_dir, "/train_vegas_plot.csv"))
 write_csv(training_set, paste0(out_dir, "/training_ml.csv"))
 write_csv(test_set, paste0(out_dir, "/test_ml.csv"))
