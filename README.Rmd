@@ -65,6 +65,10 @@ make all
 make clean
 ```
 
+Find the dependency graph below for different scripts in makefile. 
+
+![](img/graph.png)
+
 ## Dependencies
 - Python 3.7.3 and Python packages:
   - numpy==1.16.4

@@ -2,15 +2,6 @@ What Happens in Vegas: Predicting Hotel Ratings From Hotel and User Data
 ================
 Bronwyn Baillie , Arun Maria , Manish Joshi
 
-  - [About](#about)
-  - [Report](#report)
-  - [Usage:](#usage)
-      - [1. Using Docker](#using-docker)
-      - [2. After installing all dependencies (does not depend on
-        Docker)](#after-installing-all-dependencies-does-not-depend-on-docker)
-  - [Dependencies](#dependencies)
-  - [References](#references)
-
 Demo of a data analysis project for DSCI 522 (Data Science workflows); a
 course in the Master of Data Science program at the University of
 British Columbia.
@@ -83,6 +74,10 @@ Command Prompt, replace `/$(pwd)` with PATH\_ON\_YOUR\_COMPUTER.*
 <!-- end list -->
 
     make clean
+
+Find the dependency graph below for different scripts in makefile.
+
+![](img/graph.png)
 
 ## Dependencies
 

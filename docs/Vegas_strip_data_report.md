@@ -1,16 +1,7 @@
 What Happens in Vegas: Predicting Hotel Ratings From Hotel and User Data
 ================
 Bronwyn Baillie, Arun Maria, Manish Joshi </br>
-2020/1/24 (updated: 2020-02-05)
-
-  - [Summary](#summary)
-  - [Introduction](#introduction)
-  - [Methods](#methods)
-      - [Data](#data)
-      - [Analysis](#analysis)
-  - [Results](#results)
-  - [Discussion](#discussion)
-  - [References](#references)
+2020/1/24 (updated: 2020-02-07)
 
 # Summary
 
@@ -64,7 +55,8 @@ From the preliminary EDA, it became apparent that most of the user
 specific features did not have much impact on the hotel ratings, whereas
 other features such as the presence of a swimming pool and free wifi
 showed a potential effect. Many of these realizations came from
-visualizations made using the ggplot2 library in R (Wickham 2016).
+visualizations made using the ggplot2 library in R (Wickham
+2016).
 
 <div class="figure">
 
@@ -72,7 +64,8 @@ visualizations made using the ggplot2 library in R (Wickham 2016).
 
 <p class="caption">
 
-Figure 1. Hotel scores distribution for numeric features
+Figure 1. Hotel scores distribution for numeric
+features
 
 </p>
 
@@ -99,7 +92,8 @@ a high MSE when all the features were used in the training dataset. We
 then tried a Linear regression model and used scikit-learn’s recursive
 feature elimination function to remove unnecessary features and improve
 our model (Pedregosa et al. 2011). The improvements in error can be seen
-visualized below using altair (Sievert 2018).
+visualized below using altair (Sievert
+2018).
 
 <div class="figure">
 
@@ -134,7 +128,8 @@ performing algorithm on the validation set was the ridge regression
     shown below. The error metric used is MSE (mean square error).
 
 We chose the value of the hyperparameter alpha based on the minimum
-value of the MSE.
+value of the
+MSE.
 
 <div class="figure">
 

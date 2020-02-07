@@ -30,12 +30,12 @@ src/eda_plots/numeric_predictor_distributions_across_scores.png src/eda_plots/sc
 # delete older results(if any) tune model
 results/features_to_use.npy results/finalized_model.sav results/result_features.png results/hyperparameter_results.csv : src/fit_vegas_predict_model.py data/processed/training_ml.csv
 	 rm -rf results
-	 python src/fit_vegas_predict_model.py  --train=data/processed/training_ml.csv --out_dir=results
+	 python3 src/fit_vegas_predict_model.py  --train=data/processed/training_ml.csv --out_dir=results
 
 
 # test model
 results/ : src/vegas_test_results.py data/processed/test_ml.csv  
-	python src/vegas_test_results.py  --test=data/processed/test_ml.csv --out_dir=results
+	python3 src/vegas_test_results.py  --test=data/processed/test_ml.csv --out_dir=results
 
 # render final report
 docs/Vegas_strip_data_report.md : docs/Vegas_strip_data_report.Rmd docs/vegas_hotels_refs.bib

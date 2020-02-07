@@ -154,7 +154,8 @@ any(is.na(training_set))
 
 This is good as we **do not have any NAs** in the dataset.
 
-Checking datatype for individual columns in dataset.
+Checking datatype for individual columns in
+    dataset.
 
 ``` r
 str(training_set)
@@ -248,7 +249,8 @@ min(training_set$member_years)
 
 Now we have clean data with no NA values, we can start inspecting
 individual features to see if we can identify any relationship between
-target score and the features.
+target score and the
+    features.
 
 ``` r
 str(training_set)
@@ -286,7 +288,8 @@ And within each category we have both categorical and numerical
 features.
 
 We can first re-arrange columns for better interpretation and **remove
-hotel name** column as we do not want it to be one of the features.
+hotel name** column as we do not want it to be one of the
+features.
 
 ``` r
 training_set <- training_set[c("user_country", "user_continent", "traveller_type",  "stay_period","review_month", "review_weekday", "member_years", "num_reviews", "helpful_votes", "pool", "gym", "tennis_court", "spa", "casino", "free_internet", "hotel_stars", "rooms", "num_hotel_reviews","score")]
@@ -308,7 +311,8 @@ head(training_set)
     ## #   tennis_court <chr>, spa <chr>, casino <chr>, free_internet <chr>,
     ## #   hotel_stars <dbl>, rooms <dbl>, num_hotel_reviews <dbl>, score <dbl>
 
-Creating vectors for different categories of features.
+Creating vectors for different categories of
+features.
 
 ``` r
 user_specific_features <- c("user_country", "user_continent", "traveller_type",  "stay_period","review_month", "review_weekday", "member_years", "num_reviews", "helpful_votes")
@@ -360,8 +364,8 @@ for (category in categorical_features){
     ##                    3                    1                    1 
     ##               Taiwan             Thailand                   UK 
     ##                    1                    2                   58 
-    ## United Arab Emirates                  USA 
-    ##                    1                  165 
+    ##                  USA United Arab Emirates 
+    ##                  165                    1 
     ## 
     ## 
     ## [1] "user_continent"
@@ -449,7 +453,8 @@ countries(USA, Canada, Australia) as compared to others(France etc.).
 Plus we may have a new user from different country so our model will
 more potentially fail to generalize and it might be a good idea to use
 `user_continents` instead. We will however do some more visualization
-analysis to confirm same.
+analysis to confirm
+same.
 
 ### Inspecting relationship between hotel scores and categorical features
 
