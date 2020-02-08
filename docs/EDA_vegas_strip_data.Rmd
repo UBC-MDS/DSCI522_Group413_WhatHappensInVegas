@@ -1,6 +1,6 @@
 ---
 title: "EDA on Vegas Strip Hotel scores"
-author: "Arun, Bronwyn, Manish"
+author: "Arun Marria, Bronwyn Baillie, Manish Joshi"
 date: "1/17/2020"
 output: github_document
 ---
