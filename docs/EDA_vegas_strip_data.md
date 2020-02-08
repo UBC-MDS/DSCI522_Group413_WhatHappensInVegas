@@ -1,7 +1,7 @@
 EDA on Vegas Strip Hotel scores
 ================
-Arun, Bronwyn, Manish
-1/17/2020
+Arun Marria, Bronwyn Baillie, Manish Joshi
+2020/1/17 (updated: 2020-02-08)
 
 ## Contents
 
