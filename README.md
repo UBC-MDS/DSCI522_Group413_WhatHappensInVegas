@@ -46,32 +46,38 @@ There are two suggested ways to run this analysis:
 ### 1\. Using Docker
 
 *note - the instructions in this section also depends on running this in
-a unix shell (e.g., terminal or Git Bash), if you are using Windows
-Command Prompt, replace `/$(pwd)` with PATH\_ON\_YOUR\_COMPUTER.*
+a unix shell (e.g., terminal or Git Bash)*
 
 1.  Install [Docker](https://www.docker.com/get-started)
 2.  Download/clone this repository
 3.  Use the command line to navigate to the root of this
     downloaded/cloned repo
-4.  Type the following:
+4.  Type the
+    following:
 
 <!-- end list -->
 
-    docker run --rm -v /$(pwd): need to fill
+    docker run --rm -v /$(pwd):/home/rstudio/vegas_predictor  arunmarria/milestone4_vegas_dataset:latest make -C /home/rstudio/vegas_predictor all
 
-### 2\. After installing all dependencies (does not depend on Docker)
+To reset the repo to a clean state, with no intermediate or results
+files, run the following command at the command line/terminal from the
+root directory of this
+    project:
 
-1.  Clone this repo, and using the command line, navigate to the root of
-    this project.
-2.  To run the analysis, type the following commands:
+    docker run --rm -v /$(pwd):/home/rstudio/vegas_predictor  arunmarria/milestone4_vegas_dataset:latest make -C /home/rstudio/vegas_predictor clean
 
-<!-- end list -->
+### 2\. Without using Docker
+
+To replicate the analysis, clone this GitHub repository, install the
+[dependencies](#dependencies) listed below, and run the following
+command at the command line/terminal from the root directory of this
+project:
 
     make all
 
-3.  To reset/undo the analysis, type the following commands:
-
-<!-- end list -->
+To reset the repo to a clean state, with no intermediate or results
+files, run the following command at the command line/terminal from the
+root directory of this project:
 
     make clean
 
