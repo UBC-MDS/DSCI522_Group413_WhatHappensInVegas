@@ -1,3 +1,8 @@
+## Docker file for the breast cancer predictor project
+# Arun, Bronwyn, Manish Feb, 2020
+
+# use debian/stable as the base image and
+
 FROM debian:stable
 
 # checking for updates and installing other dependencies of R
