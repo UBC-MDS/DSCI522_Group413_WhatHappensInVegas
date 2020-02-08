@@ -1,5 +1,5 @@
-# vegas data pipeline
-# author: Arun, Bronwyn, Manish
+# Vegas data pipeline
+# authors: Arun Marria, Bronwyn Baillie, Manish Joshi 
 # date: 2020-01-30
 
 all : data/raw/vegas_data.csv docs/EDA_vegas_strip_data.md data/processed/test_ml.csv data/processed/train_vegas_plot.csv data/processed/training_ml.csv src/eda_plots/numeric_predictor_distributions_across_scores.png src/eda_plots/score_distributions_across_predictors.png results/features_to_use.npy results/finalized_model.sav results/result_features.png results/hyperparameter_results.csv docs/Vegas_strip_data_report.md
