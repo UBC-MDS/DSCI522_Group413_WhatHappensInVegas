@@ -1,6 +1,7 @@
 ---
 title: "What Happens in Vegas: Predicting Hotel Ratings From Hotel and User Data"
 author: "Arun Marria, Bronwyn Baillie, and Manish Joshi"
+date: "2020-01-24 (updated: `r Sys.Date()`)"
 bibliography: docs/vegas_hotels_refs.bib
 output:
   github_document:

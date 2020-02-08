@@ -1,6 +1,7 @@
 What Happens in Vegas: Predicting Hotel Ratings From Hotel and User Data
 ================
 Arun Marria, Bronwyn Baillie, and Manish Joshi
+2020-01-24 (updated: 2020-02-08)
 
 Demo of a data analysis project for DSCI 522 (Data Science workflows); a
 course in the Master of Data Science program at the University of
