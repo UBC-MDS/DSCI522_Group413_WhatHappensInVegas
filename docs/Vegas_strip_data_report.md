@@ -1,7 +1,7 @@
 What Happens in Vegas: Predicting Hotel Ratings From Hotel and User Data
 ================
 Arun Marria, Bronwyn Baillie, Manish Joshi </br>
-2020/1/24 (updated: 2020-02-08)
+2020-01-24 (updated: 2020-02-08)
 
 # Summary
 
