@@ -81,7 +81,8 @@ root directory of this project:
 
     make clean
 
-Find the dependency graph below for different scripts in makefile.
+Find the dependency graph below for different scripts in makefile. Click
+on image for detailed view.
 
 ![](img/graph.png)
 

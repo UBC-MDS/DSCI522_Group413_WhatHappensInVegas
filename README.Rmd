@@ -75,7 +75,7 @@ To reset the repo to a clean state, with no intermediate or results files, run t
 make clean
 ```
 
-Find the dependency graph below for different scripts in makefile. 
+Find the dependency graph below for different scripts in makefile. Click on image for detailed view.
 
 ![](img/graph.png)
 
