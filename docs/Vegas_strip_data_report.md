@@ -1,7 +1,7 @@
 What Happens in Vegas: Predicting Hotel Ratings From Hotel and User Data
 ================
-Bronwyn Baillie, Arun Maria, Manish Joshi </br>
-2020/1/24 (updated: 2020-02-07)
+Arun Marria, Bronwyn Baillie, Manish Joshi </br>
+2020/1/24 (updated: 2020-02-08)
 
 # Summary
 
@@ -58,30 +58,8 @@ showed a potential effect. Many of these realizations came from
 visualizations made using the ggplot2 library in R (Wickham
 2016).
 
-<div class="figure">
-
-<img src="../src/eda_plots/numeric_predictor_distributions_across_scores.png" alt="Figure 1. Hotel scores distribution for numeric features" width="100%" />
-
-<p class="caption">
-
-Figure 1. Hotel scores distribution for numeric
-features
-
-</p>
-
-</div>
-
-<div class="figure">
-
-<img src="../src/eda_plots/score_distributions_across_predictors.png" alt="Figure 2. Average Hotel scores based on  categorical features" width="100%" />
-
-<p class="caption">
-
-Figure 2. Average Hotel scores based on categorical features
-
-</p>
-
-</div>
+<img src="../src/eda_plots/numeric_predictor_distributions_across_scores.png" title="Figure 1. Hotel scores distribution for numeric features" alt="Figure 1. Hotel scores distribution for numeric features" width="100%" />
+<img src="../src/eda_plots/score_distributions_across_predictors.png" title="Figure 2. Average Hotel scores based on  categorical features" alt="Figure 2. Average Hotel scores based on  categorical features" width="100%" />
 
 The training of the model was done in Python (Van Rossum and Drake
 2009), and mean squared error (MSE) was used to measure model
@@ -95,17 +73,7 @@ our model (Pedregosa et al. 2011). The improvements in error can be seen
 visualized below using altair (Sievert
 2018).
 
-<div class="figure">
-
-<img src="../results/result_features.png" alt="Figure 3. Realation between number of features and validation error" width="70%" />
-
-<p class="caption">
-
-Figure 3. Realation between number of features and validation error
-
-</p>
-
-</div>
+<img src="../results/result_features.png" title="Figure 3. Realation between number of features and validation error" alt="Figure 3. Realation between number of features and validation error" width="70%" />
 
 The model showed the most promise in terms of both training and
 validation errors when we limited our model to have just 3 features. The
@@ -131,17 +99,7 @@ We chose the value of the hyperparameter alpha based on the minimum
 value of the
 MSE.
 
-<div class="figure">
-
-<img src="../results/cv_results.png" alt="Figure 4. The error metric used is Mean Square Error (MSE)." width="70%" />
-
-<p class="caption">
-
-Figure 4. The error metric used is Mean Square Error (MSE).
-
-</p>
-
-</div>
+<img src="../results/cv_results.png" title="Figure 4. The error metric used is Mean Square Error (MSE)." alt="Figure 4. The error metric used is Mean Square Error (MSE)." width="70%" />
 
   - The final error obtained on the unseen test data is 0.867 which is
     similar to the training error obtained. The model generalizes well

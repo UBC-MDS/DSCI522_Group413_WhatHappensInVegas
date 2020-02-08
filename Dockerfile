@@ -1,5 +1,5 @@
-## Docker file for the breast cancer predictor project
-# Arun, Bronwyn, Manish Feb, 2020
+## Docker file for the Vegas hotel predictor project
+# Arun Marria, Bronwyn Baillie, Manish Joshi Feb, 2020
 
 # use debian/stable as the base image and
 

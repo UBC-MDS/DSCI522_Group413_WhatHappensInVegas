@@ -1,6 +1,6 @@
 ---
 title: "What Happens in Vegas: Predicting Hotel Ratings From Hotel and User Data"
-author: "Bronwyn Baillie, Arun Maria, Manish Joshi </br>"
+author: "Arun Marria, Bronwyn Baillie, Manish Joshi </br>"
 date: "2020/1/24 (updated: `r Sys.Date()`)"
 always_allow_html: true
 output: 
